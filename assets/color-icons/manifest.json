@@ -1,0 +1,404 @@
+{
+  "anvil": {
+    "path": "assets/Hammer and wrench/Flat/hammer_and_wrench_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Hammer%20and%20wrench/Flat/hammer_and_wrench_flat.svg",
+    "sha256": "a478475656fe852afbcb47831d3b69212631454925ca69a7afd30bc9b5846260",
+    "accent": "#FF9B45"
+  },
+  "audio-lines": {
+    "path": "assets/Studio microphone/Flat/studio_microphone_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Studio%20microphone/Flat/studio_microphone_flat.svg",
+    "sha256": "a8b021be5286e53363be39bba0013e2f64e0413c7bcf9aca340e6d34d9b0510e",
+    "accent": "#B99BFF"
+  },
+  "axe": {
+    "path": "assets/Scissors/Flat/scissors_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Scissors/Flat/scissors_flat.svg",
+    "sha256": "67d643e25a39792627bfef5aaea3866cdd083fe047a7e449d0070945e32f163f",
+    "accent": "#FF9B45"
+  },
+  "back": {
+    "path": "assets/Left arrow/Flat/left_arrow_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Left%20arrow/Flat/left_arrow_flat.svg",
+    "sha256": "cc923d67070c390560a499de75e22a2c693ef28f002e5b1b1efdc5eae08f78ef",
+    "accent": "#49A8FF"
+  },
+  "blocks": {
+    "path": "assets/Puzzle piece/Flat/puzzle_piece_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Puzzle%20piece/Flat/puzzle_piece_flat.svg",
+    "sha256": "72b3482570a4041ab8b77a54cf2b4e81fe78dab7c3b9ecb879a2921ab3711533",
+    "accent": "#45D5CC"
+  },
+  "book-a": {
+    "path": "assets/Books/Flat/books_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Books/Flat/books_flat.svg",
+    "sha256": "41e2686cdc526bfa41ea599e2a74378f3a02788ff7e8cd1b9ad0a39ea157000c",
+    "accent": "#49A8FF"
+  },
+  "book-open": {
+    "path": "assets/Open book/Flat/open_book_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Open%20book/Flat/open_book_flat.svg",
+    "sha256": "84809f80ba9252021198ee4f015f1e16ac76020727625c3ee611712c017108b4",
+    "accent": "#49A8FF"
+  },
+  "bookmark-check": {
+    "path": "assets/Bookmark/Flat/bookmark_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bookmark/Flat/bookmark_flat.svg",
+    "sha256": "a1cafb2545b3d9452611ea97d0a42aa24261c9484a033ef6ef7ea3d23719762a",
+    "accent": "#55D99B"
+  },
+  "bot": {
+    "path": "assets/Robot/Flat/robot_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Robot/Flat/robot_flat.svg",
+    "sha256": "5bf295c5a8c7c4197c8deb639c13b93359ad009585c1ff6b3fd0fbdcf6f8da20",
+    "accent": "#B99BFF"
+  },
+  "bot-message-square": {
+    "path": "assets/Robot/Flat/robot_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Robot/Flat/robot_flat.svg",
+    "sha256": "5bf295c5a8c7c4197c8deb639c13b93359ad009585c1ff6b3fd0fbdcf6f8da20",
+    "accent": "#B99BFF"
+  },
+  "bug": {
+    "path": "assets/Lady beetle/Flat/lady_beetle_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Lady%20beetle/Flat/lady_beetle_flat.svg",
+    "sha256": "c6db446e4774261821661bee4a6a8cf660e546ed20e492b8393d832a93c3d88b",
+    "accent": "#FF6576"
+  },
+  "calendar-days": {
+    "path": "assets/Calendar/Flat/calendar_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Calendar/Flat/calendar_flat.svg",
+    "sha256": "a3840f324bdf1ddcb7001d2f238f438760934d24ce368129184f1f1e7ff915c9",
+    "accent": "#45D5CC"
+  },
+  "camera": {
+    "path": "assets/Camera with flash/Flat/camera_with_flash_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Camera%20with%20flash/Flat/camera_with_flash_flat.svg",
+    "sha256": "d20f1940a37c748940f70b8309d7c5722c7c439500587119bfa37309ac9546bb",
+    "accent": "#49A8FF"
+  },
+  "chart-no-axes-combined": {
+    "path": "assets/Chart increasing/Flat/chart_increasing_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Chart%20increasing/Flat/chart_increasing_flat.svg",
+    "sha256": "a306f410105d146d616d5c8e86032c2abe25195ab3e0734746ca05d88855e9d8",
+    "accent": "#55D99B"
+  },
+  "clipboard-list": {
+    "path": "assets/Clipboard/Flat/clipboard_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Clipboard/Flat/clipboard_flat.svg",
+    "sha256": "547c9436baf05f0312c6afa0e9e07d174d22cce8498adf6cf68467487519c102",
+    "accent": "#45D5CC"
+  },
+  "clipboard-minus": {
+    "path": "assets/Page with curl/Flat/page_with_curl_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Page%20with%20curl/Flat/page_with_curl_flat.svg",
+    "sha256": "fdf2a6dcd17e8eddba66e1b5146c5fdbab8eaa73265bea955f6ce0642e7369ce",
+    "accent": "#FFD447"
+  },
+  "copy-plus": {
+    "path": "assets/Bookmark tabs/Flat/bookmark_tabs_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bookmark%20tabs/Flat/bookmark_tabs_flat.svg",
+    "sha256": "21450c74a5917130670067ca4215fedacb4c262e0c1f06eba6fcd055ea545c02",
+    "accent": "#45D5CC"
+  },
+  "drafting-compass": {
+    "path": "assets/Triangular ruler/Flat/triangular_ruler_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Triangular%20ruler/Flat/triangular_ruler_flat.svg",
+    "sha256": "dedb412a28066caad9639f0aa2d6f75a83ead45413e307b720f77d450255b20c",
+    "accent": "#FFD447"
+  },
+  "eraser": {
+    "path": "assets/Pencil/Flat/pencil_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Pencil/Flat/pencil_flat.svg",
+    "sha256": "f82b7820c41b57d2cca96ef75e32fdedcb07d2d8b786a781274c25fe306c76d7",
+    "accent": "#FFD447"
+  },
+  "eye": {
+    "path": "assets/Eyes/Flat/eyes_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Eyes/Flat/eyes_flat.svg",
+    "sha256": "98158bbd366ad8f839967b1d59ee8df8c95755baed7b5fe297fc59b56c53f1bc",
+    "accent": "#49A8FF"
+  },
+  "feather": {
+    "path": "assets/Pen/Flat/pen_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Pen/Flat/pen_flat.svg",
+    "sha256": "302d3ce8f609b09dbff8af43ea9e0b5fbd9a4e9404e8381f0190fd98b4c991d8",
+    "accent": "#FFD447"
+  },
+  "file-text": {
+    "path": "assets/Page facing up/Flat/page_facing_up_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Page%20facing%20up/Flat/page_facing_up_flat.svg",
+    "sha256": "64766aae9c7c49b8e3aae4f6aeaec44af202bec7655d2bb8124f0a74d8b29824",
+    "accent": "#49A8FF"
+  },
+  "flag": {
+    "path": "assets/Triangular flag/Flat/triangular_flag_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Triangular%20flag/Flat/triangular_flag_flat.svg",
+    "sha256": "7446cbfc0eb162768358a9106cac292999fbb4882e68b999282f8998e57e9106",
+    "accent": "#FF9B45"
+  },
+  "flask-conical": {
+    "path": "assets/Test tube/Flat/test_tube_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Test%20tube/Flat/test_tube_flat.svg",
+    "sha256": "307adc05b618900dc1ab38e8e8f3276d54e17e8549df51db610692c9246357dd",
+    "accent": "#B99BFF"
+  },
+  "folder-open": {
+    "path": "assets/Open file folder/Flat/open_file_folder_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Open%20file%20folder/Flat/open_file_folder_flat.svg",
+    "sha256": "2460acdc2c1a44d76dfd41e36e31b16130b39bda9bd3772bcb9362c425a3b1ad",
+    "accent": "#45D5CC"
+  },
+  "footprints": {
+    "path": "assets/Footprints/Flat/footprints_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Footprints/Flat/footprints_flat.svg",
+    "sha256": "741bb568b6a358c77942d0c5a227305322a5dba5fd9008605d182af7e15f3760",
+    "accent": "#49A8FF"
+  },
+  "funnel": {
+    "path": "assets/Magnifying glass tilted left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magnifying%20glass%20tilted%20left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sha256": "cf4a65dfcb94629dba30c3df32077fe35c500b2d5609b08d9fc1532e016952bb",
+    "accent": "#49A8FF"
+  },
+  "gem": {
+    "path": "assets/Gem stone/Flat/gem_stone_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Gem%20stone/Flat/gem_stone_flat.svg",
+    "sha256": "de0a568448d709b01100616a392d58ddb4736c4a0532d802857053daa5f47a5e",
+    "accent": "#B99BFF"
+  },
+  "git-compare-arrows": {
+    "path": "assets/Shuffle tracks button/Flat/shuffle_tracks_button_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Shuffle%20tracks%20button/Flat/shuffle_tracks_button_flat.svg",
+    "sha256": "4310360cec40f3d3451867d6f0162224ca10c4de3430f659b1374b114ea40ae8",
+    "accent": "#FF9B45"
+  },
+  "hammer": {
+    "path": "assets/Hammer and wrench/Flat/hammer_and_wrench_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Hammer%20and%20wrench/Flat/hammer_and_wrench_flat.svg",
+    "sha256": "a478475656fe852afbcb47831d3b69212631454925ca69a7afd30bc9b5846260",
+    "accent": "#FF9B45"
+  },
+  "handshake": {
+    "path": "assets/Handshake/Flat/handshake_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Handshake/Flat/handshake_flat.svg",
+    "sha256": "64206bd30217e01847ac8c6041d1b040bc81fe5efe412ace481c79a579bd1266",
+    "accent": "#55D99B"
+  },
+  "heart-pulse": {
+    "path": "assets/Red heart/Flat/red_heart_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Red%20heart/Flat/red_heart_flat.svg",
+    "sha256": "61846b9c946736481d65dbf244fe53792d06d50405c2d5f3e40a0a06cbfe5317",
+    "accent": "#FF86BF"
+  },
+  "key-round": {
+    "path": "assets/Key/Flat/key_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Key/Flat/key_flat.svg",
+    "sha256": "a526faedcffc7f460053eabc25ac617404009d1536f1f7b172f1dc46b11dd4d1",
+    "accent": "#55D99B"
+  },
+  "languages": {
+    "path": "assets/Globe showing europe-africa/Flat/globe_showing_europe-africa_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Globe%20showing%20europe-africa/Flat/globe_showing_europe-africa_flat.svg",
+    "sha256": "7a1645744c8be909c08d9caa58a5cc3ea5a2f1e13e897cdbf2654303e4a5555f",
+    "accent": "#49A8FF"
+  },
+  "layout-template": {
+    "path": "assets/Card index/Flat/card_index_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Card%20index/Flat/card_index_flat.svg",
+    "sha256": "b2fa40a26cad33c0c03d7ec3a5f7ac30b6f36e0b4a5d67cca02f9f03a5f9cf67",
+    "accent": "#45D5CC"
+  },
+  "list-checks": {
+    "path": "assets/Check mark button/Flat/check_mark_button_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Check%20mark%20button/Flat/check_mark_button_flat.svg",
+    "sha256": "526d3efe42ac3ede81400c171c4a39722034ceb57f661923ef34bea0dcd68532",
+    "accent": "#55D99B"
+  },
+  "list-tree": {
+    "path": "assets/Clipboard/Flat/clipboard_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Clipboard/Flat/clipboard_flat.svg",
+    "sha256": "547c9436baf05f0312c6afa0e9e07d174d22cce8498adf6cf68467487519c102",
+    "accent": "#45D5CC"
+  },
+  "mail": {
+    "path": "assets/Envelope/Flat/envelope_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Envelope/Flat/envelope_flat.svg",
+    "sha256": "82a8b1c5576caa1c83ca9d1f2e7a340f84f86788969a27ff749811089d33353c",
+    "accent": "#49A8FF"
+  },
+  "map": {
+    "path": "assets/World map/Flat/world_map_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/World%20map/Flat/world_map_flat.svg",
+    "sha256": "dcb7208079a961893aac6700bac2cdcb069e30d787ff91cb865c8cb5f7209eea",
+    "accent": "#49A8FF"
+  },
+  "megaphone": {
+    "path": "assets/Megaphone/Flat/megaphone_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Megaphone/Flat/megaphone_flat.svg",
+    "sha256": "05a0a162bc5f231d05dd27422cbee28c91e3c62c65703512919292ea4a5300a3",
+    "accent": "#FF9B45"
+  },
+  "mic": {
+    "path": "assets/Microphone/Flat/microphone_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Microphone/Flat/microphone_flat.svg",
+    "sha256": "fc26fde67149e368178c4e5db7cc66ce0311942ada5a0d4315149e03393f6e01",
+    "accent": "#B99BFF"
+  },
+  "microscope": {
+    "path": "assets/Microscope/Flat/microscope_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Microscope/Flat/microscope_flat.svg",
+    "sha256": "600554164fd9b06b59670ba169c368ab2ab56b87e3fc2de7ff820aab9e985ff5",
+    "accent": "#B99BFF"
+  },
+  "network": {
+    "path": "assets/Electric plug/Flat/electric_plug_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Electric%20plug/Flat/electric_plug_flat.svg",
+    "sha256": "18f96c4dac913737ef6acfb6b612952116a264a8bb973009c12fc2a3bc73109a",
+    "accent": "#45D5CC"
+  },
+  "notebook-pen": {
+    "path": "assets/Memo/Flat/memo_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Memo/Flat/memo_flat.svg",
+    "sha256": "c25d823ddb3ed0d9c66eff249456ff681244dbb1c9a7d19785864607f46a4f3a",
+    "accent": "#FFD447"
+  },
+  "notebook-tabs": {
+    "path": "assets/Notebook/Flat/notebook_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Notebook/Flat/notebook_flat.svg",
+    "sha256": "88d97d0a553b501eab3ed70feb191481dfcf12a308ecc7ece2afdbfb74f102c1",
+    "accent": "#45D5CC"
+  },
+  "package-open": {
+    "path": "assets/Package/Flat/package_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Package/Flat/package_flat.svg",
+    "sha256": "82a5591c465302b009a3681ac2f45d21fac61d1b48e6d7fc956cc8a723dae14d",
+    "accent": "#FF9B45"
+  },
+  "panels-top-left": {
+    "path": "assets/Laptop/Flat/laptop_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Laptop/Flat/laptop_flat.svg",
+    "sha256": "c8fa307ed2c3e7e9e4267cff317caff6f0789a0601dabebde8380a0f0a7671b5",
+    "accent": "#49A8FF"
+  },
+  "pipette": {
+    "path": "assets/Pencil/Flat/pencil_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Pencil/Flat/pencil_flat.svg",
+    "sha256": "f82b7820c41b57d2cca96ef75e32fdedcb07d2d8b786a781274c25fe306c76d7",
+    "accent": "#FFD447"
+  },
+  "play": {
+    "path": "assets/Play button/Flat/play_button_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Play%20button/Flat/play_button_flat.svg",
+    "sha256": "18595887c69b4f762e5f4f569cf40730d9868db03fad9828503f176cb3ae7f2c",
+    "accent": "#55D99B"
+  },
+  "popcorn": {
+    "path": "assets/Popcorn/Flat/popcorn_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Popcorn/Flat/popcorn_flat.svg",
+    "sha256": "660d35469f59019672a5c4b9e03e912cc6f97d799471ef7a5c9b5e297344291f",
+    "accent": "#FFD447"
+  },
+  "puzzle": {
+    "path": "assets/Puzzle piece/Flat/puzzle_piece_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Puzzle%20piece/Flat/puzzle_piece_flat.svg",
+    "sha256": "72b3482570a4041ab8b77a54cf2b4e81fe78dab7c3b9ecb879a2921ab3711533",
+    "accent": "#45D5CC"
+  },
+  "recycle": {
+    "path": "assets/Recycling symbol/Flat/recycling_symbol_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Recycling%20symbol/Flat/recycling_symbol_flat.svg",
+    "sha256": "f04e26c4bdd12bf76e2ddeb2f86244c54970df44f3bcd7686b52ba49140a6397",
+    "accent": "#55D99B"
+  },
+  "repeat-2": {
+    "path": "assets/Repeat button/Flat/repeat_button_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Repeat%20button/Flat/repeat_button_flat.svg",
+    "sha256": "4f7eed9de2cd48b545d707dc2923b132c01251c53ca5b527ebfc8dc01cb2f228",
+    "accent": "#49A8FF"
+  },
+  "reply": {
+    "path": "assets/Speech balloon/Flat/speech_balloon_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speech%20balloon/Flat/speech_balloon_flat.svg",
+    "sha256": "2b40d9136add717dad2389ce77af8eb9ca976963a8190b0097b379497628aac7",
+    "accent": "#49A8FF"
+  },
+  "scale": {
+    "path": "assets/Balance scale/Flat/balance_scale_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Balance%20scale/Flat/balance_scale_flat.svg",
+    "sha256": "086e82d739451ebd0cf8dc7b23376bd3e2e019373dda6da487f8971bc0437e00",
+    "accent": "#B99BFF"
+  },
+  "scan-search": {
+    "path": "assets/Magnifying glass tilted left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magnifying%20glass%20tilted%20left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sha256": "cf4a65dfcb94629dba30c3df32077fe35c500b2d5609b08d9fc1532e016952bb",
+    "accent": "#49A8FF"
+  },
+  "scissors": {
+    "path": "assets/Scissors/Flat/scissors_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Scissors/Flat/scissors_flat.svg",
+    "sha256": "67d643e25a39792627bfef5aaea3866cdd083fe047a7e449d0070945e32f163f",
+    "accent": "#FF9B45"
+  },
+  "shield-check": {
+    "path": "assets/Shield/Flat/shield_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Shield/Flat/shield_flat.svg",
+    "sha256": "838b7367c59cc96bfcbdc4adafb98e2886a6e397aaae1bc751edd91127539bd0",
+    "accent": "#55D99B"
+  },
+  "sparkles": {
+    "path": "assets/Light bulb/Flat/light_bulb_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Light%20bulb/Flat/light_bulb_flat.svg",
+    "sha256": "3e746a9b94051287b263e518e1f156cbfbffb45b5e0a6db6570b99d4c8c56484",
+    "accent": "#FFD447"
+  },
+  "stamp": {
+    "path": "assets/Check mark button/Flat/check_mark_button_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Check%20mark%20button/Flat/check_mark_button_flat.svg",
+    "sha256": "526d3efe42ac3ede81400c171c4a39722034ceb57f661923ef34bea0dcd68532",
+    "accent": "#55D99B"
+  },
+  "sticky-note": {
+    "path": "assets/Memo/Flat/memo_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Memo/Flat/memo_flat.svg",
+    "sha256": "c25d823ddb3ed0d9c66eff249456ff681244dbb1c9a7d19785864607f46a4f3a",
+    "accent": "#FFD447"
+  },
+  "swords": {
+    "path": "assets/Magnifying glass tilted left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magnifying%20glass%20tilted%20left/Flat/magnifying_glass_tilted_left_flat.svg",
+    "sha256": "cf4a65dfcb94629dba30c3df32077fe35c500b2d5609b08d9fc1532e016952bb",
+    "accent": "#49A8FF"
+  },
+  "table-2": {
+    "path": "assets/Bar chart/Flat/bar_chart_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Bar%20chart/Flat/bar_chart_flat.svg",
+    "sha256": "8dc011d7019ed5cc70a6c82540e7f35806b0ff784e50ba6ab77276148ae5f256",
+    "accent": "#45D5CC"
+  },
+  "telescope": {
+    "path": "assets/Telescope/Flat/telescope_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Telescope/Flat/telescope_flat.svg",
+    "sha256": "e43e1a8ced1b03e69e213f6a791f52c1b46b82350f8b4490b82d42bbb655f600",
+    "accent": "#B99BFF"
+  },
+  "timer": {
+    "path": "assets/Stopwatch/Flat/stopwatch_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Stopwatch/Flat/stopwatch_flat.svg",
+    "sha256": "03b819a4446c972580f540caea53a540e05db5d730d44d7dbad30af2c4bbeec8",
+    "accent": "#FF9B45"
+  },
+  "trophy": {
+    "path": "assets/Trophy/Flat/trophy_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Trophy/Flat/trophy_flat.svg",
+    "sha256": "088c6305e4c6551dd64e3aff880aa36c399b9867facb81972c431cfaf5d4bab8",
+    "accent": "#FFD447"
+  },
+  "users-round": {
+    "path": "assets/Busts in silhouette/Flat/busts_in_silhouette_flat.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Busts%20in%20silhouette/Flat/busts_in_silhouette_flat.svg",
+    "sha256": "7c54af879a2699ca05c26115d23246c7a7350f984b1f57ca6b162759be703047",
+    "accent": "#45D5CC"
+  }
+}

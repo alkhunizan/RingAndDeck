@@ -19,7 +19,9 @@ Duplicate variants with private window-layout hotkeys were not selected. Persona
 
 ## Visual direction
 
-Graphite surfaces, restrained jewel accents, warm white symbols, generous spacing and clear labels. Icons describe each action, rather than repeating a single icon across a whole category. Folder cues, consistent Back controls and category accents help navigation. Exported icons and documentation previews share the same artwork. Lucide drawings retain their ISC license; original composition and code use the project MIT license.
+The alpha.3 candidate uses vivid, full-color Microsoft Fluent Emoji Flat illustrations on clean pale fields. A navy title strip keeps Stream Deck labels readable, with shared native and preview sizing from 8 to 10. Familiar objects connect directly to action meanings: magnifiers for search and review, pens for writing, tools for building, a lady beetle for debugging, a robot for AI, a calendar for scheduling, a stopwatch for focus, and a shield or key for security. Semantic accents, folder cues and consistent Back controls help navigation across devices.
+
+Exported icons and documentation previews share the same artwork. Illustrations retain their upstream colors and Microsoft MIT license, with pinned provenance and hashes in `assets/color-icons/`. Earlier Lucide assets retain their ISC license; original composition and code use the project MIT license. This colorful direction follows the owner's rejection of the earlier warm revision.
 
 ## Required evidence
 
@@ -33,4 +35,4 @@ Graphite surfaces, restrained jewel accents, warm white symbols, generous spacin
 
 ## Current progress
 
-The original two Stream Deck candidates are preserved in an ignored private baseline archive. The public edition contains six alpha packages, redesigned native artwork, 55 layout guides and privacy/generalization changes. Local automated checks, limited native Code Ring UI evidence, visual review, exact-artifact scans and verified publication are recorded in [VALIDATION.md](VALIDATION.md). Full interactive device acceptance remains open.
+The original two Stream Deck candidates are preserved in an ignored private baseline archive. Published alpha.2 contains six packages and 55 layout guides; its publication and limited native Code Ring evidence are recorded in [VALIDATION.md](VALIDATION.md). The colorful alpha.3 artwork is included in the alpha.3 prerelease. Fresh validation passes 13 automated tests, deterministic output, package/action comparisons, all 55 rendered guides and 1,269 companion website tests. Full interactive device acceptance remains open.

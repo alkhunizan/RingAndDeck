@@ -1,6 +1,27 @@
 # Validation status
 
-Current alpha candidate: `0.1.0-alpha.2`, prepared 2026-09-24. This updates the build dependency without changing profile functionality. Alpha.1 publication and native UI evidence are preserved below as prior verification.
+## Published alpha.3 evidence
+
+The [alpha.3 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.3) was published on 2026-09-24. All 10 release assets were downloaded anonymously and matched both the prepared files and GitHub's SHA-256 digests. The combined ZIP contains the exact six individual packages. [Machine-readable download verification](releases/v0.1.0-alpha.3-verification.json).
+
+The annotated release tag resolves to the exact prepared source commit `aefcf302157d85143e442008180e1583af11e131`. [Release-tag CI](https://github.com/alkhunizan/RingAndDeck/actions/runs/35974205381) passed on Windows and Ubuntu, including the dependency audit, 13 tests, fresh build and generated-file checks. Subsequent commits update publication documentation and contribution templates without changing the released profile bytes. The tag's preparation-time documentation records its original local-candidate status; the current README and this page record publication.
+
+Native actions, folder/Back navigation, physical controls and alpha.3 Ring imports remain unverified. Marketplace listings and the companion website are separate from this GitHub publication.
+## Alpha.3 validation
+
+The 2026-09-24 colorful revision is the alpha.3 prerelease candidate. It replaces the earlier warm artwork with full-color Microsoft Fluent Emoji Flat illustrations on pale icon fields, with navy Stream Deck title strips and semantic action accents. The native labels retain their shared 8–10 sizing rule. New icon artwork and generated guides must not inherit the alpha.1/alpha.2 native UI acceptance claims below. Alpha.2 remains available unchanged in the release history.
+
+All 67 source SVGs have verified manifest hashes and 32 by 32 viewBoxes; acquisition checks found no scripts, external references, gradients, element IDs or embedded images. The original Microsoft MIT license and pinned provenance are included. Automated validation passes all 13 tests, deterministic build and package comparisons. All 262 Ring images and 257 Deck keys pass geometry and title checks; all 55 guides were visually reviewed. Companion website format, lint, typecheck and all 1,269 tests pass; the production build and responsive browser check are recorded in the final handoff. See [the visual review record](DESIGN-POLISH.md).
+
+## MINI Stream Deck compatibility follow-up
+
+The colorful handoff was subsequently corrected after MINI reported blank pictograms in the Stream Deck native editor. Its nested SVG viewport is now a translated and scaled group. A fresh build preserves all six updated handoff hashes, and XML checks cover all 257 fixed key images. MINI reports Home rendering on all three profiles in Stream Deck 7.6.0.23012; actions, navigation and hardware remain untested. This evidence is reported by the testing agent, not a fresh local import. [Detailed fix, regression and provenance](STREAM-DECK-ICON-FIX.md).
+
+Anonymous verification on 2026-09-24 reconfirmed all nine public alpha.2 asset digests and all six published package checksums. Static review finds nested SVGs in all 257 alpha.2 Deck images, identifying the same compatibility risk without claiming a fresh native reproduction. The public release has not been modified.
+
+## Published alpha.2 evidence
+
+Published alpha: `0.1.0-alpha.2`, prepared 2026-09-24. This updated the build dependency without changing profile functionality. The alpha.1 and alpha.2 publication, build and native UI evidence below is historical; it does not validate the alpha.3 artwork.
 
 ## Build dependency update
 
@@ -14,7 +35,7 @@ With the release version held constant, all six packages remained byte-identical
 | --- | --- | --- |
 | Three Actions Ring profiles | Code Ring: 81 prompts; Work Ring: 81 prompts; Flow Ring: 65 prompts + 7 standard shortcuts | Prepared |
 | Three Stream Deck profiles | Code Workflow: 83 prompts; AI Workflow: 51 prompts; Browser Workflow: 46 prompts + 14 links + 3 shortcuts | Prepared |
-| Visual assets | Shared graphite theme, category accents, action-specific Lucide symbols, native SVG/PNG assets and 55 generated layout guides | Prepared; native checks limited below |
+| Visual assets in alpha.2 | Shared graphite theme, category accents, action-specific Lucide symbols, native SVG/PNG assets and 55 generated layout guides | Historical; replaced by the alpha.3 candidate described above |
 | Personal information removed | Catalog review, source identity comparison and exact source/unpacked-package scans | Passed within stated scanner limits |
 | Originals preserved | SHA-256 comparison of 900 original source files across the six selected profiles | Unchanged |
 | Rebuildable public source | Six editable catalogs, local assets, pinned Sharp lockfile, builders, tests, docs and licenses | Prepared |
@@ -23,7 +44,7 @@ Prompt counts are unique within a profile; Home shortcuts repeat some prompts. S
 
 ## Existing regression and artifact evidence
 
-The artifact and native checks below were recorded during alpha.1 preparation. The Sharp-upgrade comparison above preserves their relevance to the unchanged profile content. Final alpha.2 archive, download and remote CI verification remain pending.
+The artifact and native checks below were recorded during alpha.1 preparation. The Sharp-upgrade comparison above preserves their relevance to the unchanged alpha.2 profile content. Final alpha.2 archive, download and remote CI verification are recorded in the publication section below.
 
 - All 13 unit tests pass. They cover the complete selected collection, default pages, declared ring layout modes, Home/folder capacity, images, folder links, text behavior, ZIP reproducibility, stale artifacts, invalid catalogs, private data shapes and public URL validation.
 - `python scripts/build.py` and `python scripts/build.py --check` pass. The latter rebuilds in memory and compares all generated bytes, including all six packages and their hashes.
@@ -55,11 +76,11 @@ The final alpha.1 Code Ring UI import succeeded. Home displays 8 populated icons
 
 ## Native acceptance still open
 
-Work Ring and Flow Ring UI imports, deeper nested runtime navigation, text insertion and physical-control checks remain unverified. Stream Deck opens, but the attempted UI input has not taken effect, so no Stream Deck UI import is claimed. Original profiles have been backed up. Follow the [setup checklist](SETUP.md) and keep candidate imports separate from working profiles.
+Work Ring and Flow Ring UI imports, deeper nested runtime navigation, text insertion and physical-control checks remain unverified. The historical alpha.1/alpha.2 Stream Deck attempt below did not establish a native import; the later alpha.3 MINI Home-rendering report is recorded separately above. Original profiles have been backed up. Follow the [setup checklist](SETUP.md) and keep candidate imports separate from working profiles.
 
 ## Showcase provenance
 
-The two showcase PNGs are browser captures of designed pages using generated layout guides. They are not native app screenshots or evidence of a successful import. Native fonts, placement and geometry may differ.
+The current alpha.3 showcase PNGs are generated vector layout compositions using generated layout guides; the historical alpha.1/alpha.2 PNGs were browser captures of designed pages. They are not native app screenshots or evidence of a successful import. Native fonts, placement and geometry may differ.
 
 ## Prior alpha.1 publication verification
 

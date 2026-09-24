@@ -1,13 +1,13 @@
 {
   "id": "flow-ring",
   "name": "Flow Ring",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Everyday AI workflows and standard Windows controls in eight folders.",
   "folders": [
     {
       "id": "ai-power",
       "title": "AI Power",
-      "color": "#9FAEF5",
+      "color": "#B99BFF",
       "icon": "bot-message-square",
       "actions": [
         {
@@ -20,13 +20,15 @@
           "id": "deep-work",
           "title": "Deep Work",
           "kind": "prompt",
-          "text": "Work through [TASK] carefully: map constraints, compare credible approaches, choose one, and produce a concrete deliverable with evidence and limits. Work only in the scope I authorize."
+          "text": "Work through [TASK] carefully: map constraints, compare credible approaches, choose one, and produce a concrete deliverable with evidence and limits. Work only in the scope I authorize.",
+          "icon": "timer"
         },
         {
           "id": "expert-review",
           "title": "Expert Review",
           "kind": "prompt",
-          "text": "Review [TASK] from three relevant professional perspectives. Separate each perspective's concerns, reconcile disagreements, and recommend one evidence-based direction. Do not pretend real people reviewed it."
+          "text": "Review [TASK] from three relevant professional perspectives. Separate each perspective's concerns, reconcile disagreements, and recommend one evidence-based direction. Do not pretend real people reviewed it.",
+          "icon": "scan-search"
         },
         {
           "id": "mission-brief",
@@ -38,7 +40,8 @@
           "id": "first-principles",
           "title": "First Principles",
           "kind": "prompt",
-          "text": "Break [PROBLEM] into known facts, constraints and assumptions. Challenge weak assumptions, compare plausible solutions and recommend the smallest useful experiment."
+          "text": "Break [PROBLEM] into known facts, constraints and assumptions. Challenge weak assumptions, compare plausible solutions and recommend the smallest useful experiment.",
+          "icon": "book-open"
         },
         {
           "id": "creative-brief",
@@ -69,7 +72,7 @@
     {
       "id": "ai-follow-up",
       "title": "AI Follow-Up",
-      "color": "#7DCEC2",
+      "color": "#B99BFF",
       "icon": "bot-message-square",
       "actions": [
         {
@@ -106,13 +109,15 @@
           "id": "show-examples",
           "title": "Show Examples",
           "kind": "prompt",
-          "text": "Give 3 concrete examples of the idea in the previous answer, tailored to this task. Start with the most useful everyday example. Show the input, the expected output, and when each example is appropriate. Avoid repeating the explanation."
+          "text": "Give 3 concrete examples of the idea in the previous answer, tailored to this task. Start with the most useful everyday example. Show the input, the expected output, and when each example is appropriate. Avoid repeating the explanation.",
+          "icon": "book-open"
         },
         {
           "id": "improve-answer",
           "title": "Improve Answer",
           "kind": "prompt",
-          "text": "Review the previous answer against my actual goal. Find the 3 most consequential weaknesses, such as missing evidence, impractical steps, or unclear assumptions. Then provide the improved answer. Keep what already works and do not invent new requirements."
+          "text": "Review the previous answer against my actual goal. Find the 3 most consequential weaknesses, such as missing evidence, impractical steps, or unclear assumptions. Then provide the improved answer. Keep what already works and do not invent new requirements.",
+          "icon": "feather"
         },
         {
           "id": "make-a-table",
@@ -131,14 +136,15 @@
     {
       "id": "focus-plan",
       "title": "Focus & Plan",
-      "color": "#E5B879",
+      "color": "#FF9B45",
       "icon": "timer",
       "actions": [
         {
           "id": "start-2-min",
           "title": "Start 2 Min",
           "kind": "prompt",
-          "text": "Help me start this task in 2 minutes. Choose one tiny action that creates useful progress and removes the biggest starting obstacle. Do the setup or first draft for me where possible. Give only the first action and a clear stopping point; keep the larger plan out of this response."
+          "text": "Help me start this task in 2 minutes. Choose one tiny action that creates useful progress and removes the biggest starting obstacle. Do the setup or first draft for me where possible. Give only the first action and a clear stopping point; keep the larger plan out of this response.",
+          "icon": "timer"
         },
         {
           "id": "prioritize",
@@ -156,7 +162,8 @@
           "id": "break-it-down",
           "title": "Break It Down",
           "kind": "prompt",
-          "text": "Break the current task into a short sequence of concrete steps. Make the first step take about 5 minutes. For each step, state the output and how I know it is done. Identify dependencies and remove unnecessary steps. Use the task context instead of generic productivity advice."
+          "text": "Break the current task into a short sequence of concrete steps. Make the first step take about 5 minutes. For each step, state the output and how I know it is done. Identify dependencies and remove unnecessary steps. Use the task context instead of generic productivity advice.",
+          "icon": "list-tree"
         },
         {
           "id": "done-checklist",
@@ -168,7 +175,8 @@
           "id": "unblock-me",
           "title": "Unblock Me",
           "kind": "prompt",
-          "text": "Find the current bottleneck from the available context. Distinguish missing information, a decision, a dependency, and an execution problem. Choose the smallest useful way forward and complete what you can within the authorized scope. Ask one focused question only if progress actually depends on the answer."
+          "text": "Find the current bottleneck from the available context. Distinguish missing information, a decision, a dependency, and an execution problem. Choose the smallest useful way forward and complete what you can within the authorized scope. Ask one focused question only if progress actually depends on the answer.",
+          "icon": "puzzle"
         },
         {
           "id": "action-25-min-sprint",
@@ -180,7 +188,8 @@
           "id": "decision-brief",
           "title": "Decision Brief",
           "kind": "prompt",
-          "text": "Prepare a decision brief for [DECISION]: options, evidence, trade-offs, reversibility and one recommendation. State uncertainty and the next small validation step."
+          "text": "Prepare a decision brief for [DECISION]: options, evidence, trade-offs, reversibility and one recommendation. State uncertainty and the next small validation step.",
+          "icon": "scale"
         },
         {
           "id": "stress-test",
@@ -193,7 +202,7 @@
     {
       "id": "write-speak",
       "title": "Write & Speak",
-      "color": "#AE9CE1",
+      "color": "#FFD447",
       "icon": "feather",
       "actions": [
         {
@@ -230,7 +239,8 @@
           "id": "draft-email",
           "title": "Draft Email",
           "kind": "prompt",
-          "text": "Draft a concise email from the available context. Include a clear subject, the main point first, only essential supporting details, and one specific request or next step. Preserve known names and dates. Do not invent a recipient, commitment, or attachment. Provide the draft for review without sending it."
+          "text": "Draft a concise email from the available context. Include a clear subject, the main point first, only essential supporting details, and one specific request or next step. Preserve known names and dates. Do not invent a recipient, commitment, or attachment. Provide the draft for review without sending it.",
+          "icon": "mail"
         },
         {
           "id": "shorten-text",
@@ -248,14 +258,15 @@
           "id": "make-outline",
           "title": "Make Outline",
           "kind": "prompt",
-          "text": "Turn the current idea or material into a practical writing outline for its intended audience. State the core message, arrange the points in a logical order, and identify evidence or examples needed. Keep it focused on the stated format and goal. Mark missing facts instead of filling them in."
+          "text": "Turn the current idea or material into a practical writing outline for its intended audience. State the core message, arrange the points in a logical order, and identify evidence or examples needed. Keep it focused on the stated format and goal. Mark missing facts instead of filling them in.",
+          "icon": "list-tree"
         }
       ]
     },
     {
       "id": "research",
       "title": "Research",
-      "color": "#E697A5",
+      "color": "#49A8FF",
       "icon": "scan-search",
       "actions": [
         {
@@ -286,13 +297,15 @@
           "id": "paper-brief",
           "title": "Paper Brief",
           "kind": "prompt",
-          "text": "Summarize the supplied research paper or study using the material actually available. Cover its question, design, population or data, main results with units and sample size when reported, limitations, and practical relevance. Distinguish association from causation. If only an abstract is available, state that and do not imply full-text review."
+          "text": "Summarize the supplied research paper or study using the material actually available. Cover its question, design, population or data, main results with units and sample size when reported, limitations, and practical relevance. Distinguish association from causation. If only an abstract is available, state that and do not imply full-text review.",
+          "icon": "file-text"
         },
         {
           "id": "counterpoint",
           "title": "Counterpoint",
           "kind": "prompt",
-          "text": "Find the strongest reasonable counterargument to the current conclusion. Use evidence where available, not a token opposing view. Explain which assumptions it challenges, what evidence would change the conclusion, and whether the recommendation should change. Distinguish uncertainty from disagreement."
+          "text": "Find the strongest reasonable counterargument to the current conclusion. Use evidence where available, not a token opposing view. Explain which assumptions it challenges, what evidence would change the conclusion, and whether the recommendation should change. Distinguish uncertainty from disagreement.",
+          "icon": "scale"
         },
         {
           "id": "extract-data",
@@ -304,7 +317,8 @@
           "id": "check-health-claims",
           "title": "Check Health Claims",
           "kind": "prompt",
-          "text": "Assess the supplied health claims against current authoritative sources if browsing is available. Distinguish evidence strength, uncertainty and marketing language. Do not diagnose or recommend treatment. Cite sources; otherwise state that verification is incomplete."
+          "text": "Assess the supplied health claims against current authoritative sources if browsing is available. Distinguish evidence strength, uncertainty and marketing language. Do not diagnose or recommend treatment. Cite sources; otherwise state that verification is incomplete.",
+          "icon": "heart-pulse"
         },
         {
           "id": "what-is-missing",
@@ -317,7 +331,7 @@
     {
       "id": "build-debug",
       "title": "Build & Debug",
-      "color": "#94C3DD",
+      "color": "#FF6576",
       "icon": "bug",
       "actions": [
         {
@@ -342,7 +356,8 @@
           "id": "code-review",
           "title": "Code Review",
           "kind": "prompt",
-          "text": "Review the relevant code changes for correctness, regressions, security issues, and missing handling of realistic edge cases. Prioritize actionable findings and cite exact files and lines when available. Explain the failure condition and impact. Do not invent findings or turn this into a style checklist. State if no material issues are found."
+          "text": "Review the relevant code changes for correctness, regressions, security issues, and missing handling of realistic edge cases. Prioritize actionable findings and cite exact files and lines when available. Explain the failure condition and impact. Do not invent findings or turn this into a style checklist. State if no material issues are found.",
+          "icon": "scan-search"
         },
         {
           "id": "test-plan",
@@ -354,19 +369,22 @@
           "id": "refactor",
           "title": "Refactor",
           "kind": "prompt",
-          "text": "Refactor the relevant code to reduce complexity while preserving its observable behavior. Focus on a concrete readability or maintenance problem, follow existing conventions, and avoid unrelated cleanup. Make the change if the project is available and it is within scope, then validate the affected behavior. Explain the practical improvement briefly."
+          "text": "Refactor the relevant code to reduce complexity while preserving its observable behavior. Focus on a concrete readability or maintenance problem, follow existing conventions, and avoid unrelated cleanup. Make the change if the project is available and it is within scope, then validate the affected behavior. Explain the practical improvement briefly.",
+          "icon": "blocks"
         },
         {
           "id": "write-docs",
           "title": "Write Docs",
           "kind": "prompt",
-          "text": "Document the relevant implemented behavior from the code and evidence available. Explain its purpose, setup, normal usage, and meaningful limitations with exact examples. Keep commands and paths correct. Distinguish implemented features from plans. Update the appropriate local documentation if that is within the current task scope."
+          "text": "Document the relevant implemented behavior from the code and evidence available. Explain its purpose, setup, normal usage, and meaningful limitations with exact examples. Keep commands and paths correct. Distinguish implemented features from plans. Update the appropriate local documentation if that is within the current task scope.",
+          "icon": "file-text"
         },
         {
           "id": "ux-review",
           "title": "UX Review",
           "kind": "prompt",
-          "text": "Review the interface shown or available in this task against the intended user journey. Identify the most consequential friction in hierarchy, wording, navigation, accessibility, and feedback. Tie each finding to visible evidence and suggest a concrete improvement. Distinguish inspected behavior from assumptions. Prioritize a small set of useful changes."
+          "text": "Review the interface shown or available in this task against the intended user journey. Identify the most consequential friction in hierarchy, wording, navigation, accessibility, and feedback. Tie each finding to visible evidence and suggest a concrete improvement. Distinguish inspected behavior from assumptions. Prioritize a small set of useful changes.",
+          "icon": "scan-search"
         },
         {
           "id": "check-done",
@@ -379,7 +397,7 @@
     {
       "id": "client-content",
       "title": "Client & Content",
-      "color": "#B6CC92",
+      "color": "#55D99B",
       "icon": "handshake",
       "actions": [
         {
@@ -392,19 +410,22 @@
           "id": "repurpose",
           "title": "Repurpose",
           "kind": "prompt",
-          "text": "Repurpose the supplied material into 3 useful formats: a short social post, a concise email or message, and a short outline for a visual or video. Adapt the wording to each format while preserving facts and voice. Mark source gaps and provide drafts only."
+          "text": "Repurpose the supplied material into 3 useful formats: a short social post, a concise email or message, and a short outline for a visual or video. Adapt the wording to each format while preserving facts and voice. Mark source gaps and provide drafts only.",
+          "icon": "recycle"
         },
         {
           "id": "content-ideas",
           "title": "Content Ideas",
           "kind": "prompt",
-          "text": "Generate 5 specific content ideas for the audience and goal in this conversation. For each, give the angle, why the audience would care, a suitable format, and the evidence or asset needed. Avoid generic topic lists. Rank the strongest idea first and briefly explain why."
+          "text": "Generate 5 specific content ideas for the audience and goal in this conversation. For each, give the angle, why the audience would care, a suitable format, and the evidence or asset needed. Avoid generic topic lists. Rank the strongest idea first and briefly explain why.",
+          "icon": "sparkles"
         },
         {
           "id": "brand-check",
           "title": "Brand Check",
           "kind": "prompt",
-          "text": "Review the draft against the brand, audience, and voice requirements actually provided. Flag mismatched tone, unclear claims, inconsistent terminology, and unnecessary formality. Preserve exact approved names and wording. Provide an improved draft, and identify any requirement that cannot be checked from the available context."
+          "text": "Review the draft against the brand, audience, and voice requirements actually provided. Flag mismatched tone, unclear claims, inconsistent terminology, and unnecessary formality. Preserve exact approved names and wording. Provide an improved draft, and identify any requirement that cannot be checked from the available context.",
+          "icon": "stamp"
         },
         {
           "id": "meeting-notes",
@@ -422,7 +443,8 @@
           "id": "status-update",
           "title": "Status Update",
           "kind": "prompt",
-          "text": "Draft a short project status update for the relevant audience. State what was completed with evidence, what is in progress, any actual blocker, and the next step. Distinguish drafted, locally checked, and live work. Use known dates only and do not invent progress or commitments. Do not send the update."
+          "text": "Draft a short project status update for the relevant audience. State what was completed with evidence, what is in progress, any actual blocker, and the next step. Distinguish drafted, locally checked, and live work. Use known dates only and do not invent progress or commitments. Do not send the update.",
+          "icon": "chart-no-axes-combined"
         },
         {
           "id": "handoff",
@@ -441,7 +463,7 @@
     {
       "id": "windows-tools",
       "title": "Windows Tools",
-      "color": "#DDAA83",
+      "color": "#45D5CC",
       "icon": "network",
       "actions": [
         {
@@ -478,7 +500,8 @@
           "id": "task-view",
           "title": "Task View",
           "kind": "hotkey",
-          "shortcut": "task-view"
+          "shortcut": "task-view",
+          "icon": "panels-top-left"
         },
         {
           "id": "snap-layout",
@@ -490,7 +513,8 @@
           "id": "start-ai-work",
           "title": "Start AI Work",
           "kind": "prompt",
-          "text": "Help me begin [TASK] in this AI app. Confirm the objective, the context I supplied, available tools and one concrete first step. Do not assume any connected account or hidden memory."
+          "text": "Help me begin [TASK] in this AI app. Confirm the objective, the context I supplied, available tools and one concrete first step. Do not assume any connected account or hidden memory.",
+          "icon": "bot-message-square"
         },
         {
           "id": "quick-note",

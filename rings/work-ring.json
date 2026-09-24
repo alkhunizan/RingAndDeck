@@ -1,20 +1,21 @@
 {
   "id": "work-ring",
   "name": "Work Ring",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "81 prompts for clients, team, focus, writing and operations.",
   "folders": [
     {
       "id": "start",
       "title": "Start",
-      "color": "#9FAEF5",
+      "color": "#49A8FF",
       "icon": "footprints",
       "actions": [
         {
           "id": "morning-brief",
           "title": "Morning Brief",
           "kind": "prompt",
-          "text": "Using only the work, calendar and messages I supply or explicitly authorize, prepare a short morning brief: today's commitments, urgent replies, deadlines, top blocker and three priorities. Identify missing sources. Draft only; do not change tasks or send messages."
+          "text": "Using only the work, calendar and messages I supply or explicitly authorize, prepare a short morning brief: today's commitments, urgent replies, deadlines, top blocker and three priorities. Identify missing sources. Draft only; do not change tasks or send messages.",
+          "icon": "clipboard-list"
         },
         {
           "id": "prime-this-session",
@@ -26,7 +27,8 @@
           "id": "what-changed-overnight",
           "title": "What Changed Overnight",
           "kind": "prompt",
-          "text": "Check my authorized inbox, messages and task manager for anything new since yesterday evening, and report only the items that need an action from me, one line each, because a digest of everything is a digest of nothing. Send nothing and stop."
+          "text": "Check my authorized inbox, messages and task manager for anything new since yesterday evening, and report only the items that need an action from me, one line each, because a digest of everything is a digest of nothing. Send nothing and stop.",
+          "icon": "eye"
         },
         {
           "id": "deadline-radar",
@@ -38,7 +40,8 @@
           "id": "top-blocker",
           "title": "Top Blocker",
           "kind": "prompt",
-          "text": "Across everything you know is open, name the single blocker costing me the most right now and give me the first move against it, startable in 10 minutes, because attacking the wrong bottleneck feels like progress and is not. One blocker only, then stop."
+          "text": "Across everything you know is open, name the single blocker costing me the most right now and give me the first move against it, startable in 10 minutes, because attacking the wrong bottleneck feels like progress and is not. One blocker only, then stop.",
+          "icon": "puzzle"
         },
         {
           "id": "client-fires-scan",
@@ -50,13 +53,15 @@
           "id": "money-scan",
           "title": "Money Scan",
           "kind": "prompt",
-          "text": "Check for failed payments, unpaid invoices, expiring cards and renewals across what you can reach, because money leaks are silent until they are expensive. Report only actionable items with the fix for each, and stop."
+          "text": "Check for failed payments, unpaid invoices, expiring cards and renewals across what you can reach, because money leaks are silent until they are expensive. Report only actionable items with the fix for each, and stop.",
+          "icon": "chart-no-axes-combined"
         },
         {
           "id": "pick-my-battles",
           "title": "Pick My Battles",
           "kind": "prompt",
-          "text": "I will tell you my energy level in one word. Based on it, propose the 3 tasks for today, exactly one of them startable in 10 minutes, and name what we are explicitly not doing today, because an unbounded list is how nothing ships. Then stop."
+          "text": "I will tell you my energy level in one word. Based on it, propose the 3 tasks for today, exactly one of them startable in 10 minutes, and name what we are explicitly not doing today, because an unbounded list is how nothing ships. Then stop.",
+          "icon": "scale"
         },
         {
           "id": "calendar-collisions",
@@ -69,7 +74,7 @@
     {
       "id": "clients",
       "title": "Clients",
-      "color": "#7DCEC2",
+      "color": "#55D99B",
       "icon": "handshake",
       "actions": [
         {
@@ -88,25 +93,29 @@
           "id": "bad-news-owned",
           "title": "Bad News, Owned",
           "kind": "prompt",
-          "text": "Draft the bad news message for what I am about to describe: own it plainly, give the new date, one line of reason, no groveling and no over-apologizing, because a clean owned delay keeps more trust than a decorated excuse. Message only."
+          "text": "Draft the bad news message for what I am about to describe: own it plainly, give the new date, one line of reason, no groveling and no over-apologizing, because a clean owned delay keeps more trust than a decorated excuse. Message only.",
+          "icon": "mail"
         },
         {
           "id": "scope-creep-check",
           "title": "Scope Creep Check",
           "kind": "prompt",
-          "text": "Here is a client request. Check it against what you know we agreed with this client and tell me if it is in scope. If it is not, draft the kind reply that says this is a paid addition, with a placeholder price, because free scope is a discount nobody thanked me for. Request:"
+          "text": "Here is a client request. Check it against what you know we agreed with this client and tell me if it is in scope. If it is not, draft the kind reply that says this is a paid addition, with a placeholder price, because free scope is a discount nobody thanked me for. Request:",
+          "icon": "drafting-compass"
         },
         {
           "id": "weekly-client-update",
           "title": "Weekly Client Update",
           "kind": "prompt",
-          "text": "Draft this week's status update for the client I name, from what you know of their project: what moved, what is next, what I need from them. Six lines maximum, warm and plain, because a long update is an unread update. Message only."
+          "text": "Draft this week's status update for the client I name, from what you know of their project: what moved, what is next, what I need from them. Six lines maximum, warm and plain, because a long update is an unread update. Message only.",
+          "icon": "mail"
         },
         {
           "id": "pre-meeting-brief",
           "title": "Pre-Meeting Brief",
           "kind": "prompt",
-          "text": "Give me everything relevant about the client I am about to meet, in 10 lines: state of work, open items, last decisions, money status, and the one thing to raise, because walking in primed is the whole difference. Then stop."
+          "text": "Give me everything relevant about the client I am about to meet, in 10 lines: state of work, open items, last decisions, money status, and the one thing to raise, because walking in primed is the whole difference. Then stop.",
+          "icon": "users-round"
         },
         {
           "id": "proposal-skeleton",
@@ -118,27 +127,30 @@
           "id": "chase-the-payment",
           "title": "Chase The Payment",
           "kind": "prompt",
-          "text": "Draft the payment reminder for the invoice I describe: polite, firm, specific amount and date, one clear way to pay, because awkwardness about money is how it stays unpaid. If this is the second reminder, make it firmer without apology. Message only."
+          "text": "Draft the payment reminder for the invoice I describe: polite, firm, specific amount and date, one clear way to pay, because awkwardness about money is how it stays unpaid. If this is the second reminder, make it firmer without apology. Message only.",
+          "icon": "file-text"
         },
         {
           "id": "voice-note-to-reply",
           "title": "Voice Note To Reply",
           "kind": "prompt",
-          "text": "From the voice note transcript I am pasting, extract what they are actually asking for in one line, then draft my reply, because the ask is usually buried in minute two. Message only. Transcript:"
+          "text": "From the voice note transcript I am pasting, extract what they are actually asking for in one line, then draft my reply, because the ask is usually buried in minute two. Message only. Transcript:",
+          "icon": "mic"
         }
       ]
     },
     {
       "id": "team",
       "title": "Team",
-      "color": "#E5B879",
+      "color": "#45D5CC",
       "icon": "users-round",
       "actions": [
         {
           "id": "draft-a-task",
           "title": "Draft A Task",
           "kind": "prompt",
-          "text": "Turn the supplied content into a task draft: action title, description, proposed owner, project, due date and acceptance criteria. Use only the team and project details I provide. Mark unknown fields. Do not create or assign a task until I approve the draft."
+          "text": "Turn the supplied content into a task draft: action title, description, proposed owner, project, due date and acceptance criteria. Use only the team and project details I provide. Mark unknown fields. Do not create or assign a task until I approve the draft.",
+          "icon": "clipboard-list"
         },
         {
           "id": "brain-dump-to-tasks",
@@ -156,7 +168,8 @@
           "id": "review-this-work",
           "title": "Review This Work",
           "kind": "prompt",
-          "text": "Review the work I am pasting or screenshotting the way I would: specific, kind, and actionable, lead with what is right, then the fixes ranked by importance, because vague feedback produces a second bad version. Draft it as a message to the person. Work:"
+          "text": "Review the work I am pasting or screenshotting the way I would: specific, kind, and actionable, lead with what is right, then the fixes ranked by importance, because vague feedback produces a second bad version. Draft it as a message to the person. Work:",
+          "icon": "scan-search"
         },
         {
           "id": "answer-or-task",
@@ -168,7 +181,8 @@
           "id": "weekly-team-digest",
           "title": "Weekly Team Digest",
           "kind": "prompt",
-          "text": "From the authorized task manager, summarize what each employee completed this week, one line each with the specific thing, so I can thank people for specifics and not for vibes, because specific praise is the cheapest retention tool I have. Then stop."
+          "text": "From the authorized task manager, summarize what each employee completed this week, one line each with the specific thing, so I can thank people for specifics and not for vibes, because specific praise is the cheapest retention tool I have. Then stop.",
+          "icon": "file-text"
         },
         {
           "id": "handoff-brief",
@@ -193,7 +207,7 @@
     {
       "id": "focus",
       "title": "Focus",
-      "color": "#AE9CE1",
+      "color": "#FF9B45",
       "icon": "timer",
       "actions": [
         {
@@ -212,7 +226,8 @@
           "id": "unstick-me",
           "title": "Unstick Me",
           "kind": "prompt",
-          "text": "I am stuck. Ask me at most 2 questions, then give me the smallest possible first step. Do not give me a plan, give me a first move."
+          "text": "I am stuck. Ask me at most 2 questions, then give me the smallest possible first step. Do not give me a plan, give me a first move.",
+          "icon": "puzzle"
         },
         {
           "id": "decide-for-me",
@@ -242,20 +257,22 @@
           "id": "kill-my-open-loops",
           "title": "Kill My Open Loops",
           "kind": "prompt",
-          "text": "I will list the loops open in my head. For each one tell me: close it now in 2 minutes, delegate it, schedule it, or drop it, and be willing to say drop, because carrying them all is the actual exhaustion. Then give me the single loop to close first."
+          "text": "I will list the loops open in my head. For each one tell me: close it now in 2 minutes, delegate it, schedule it, or drop it, and be willing to say drop, because carrying them all is the actual exhaustion. Then give me the single loop to close first.",
+          "icon": "list-checks"
         },
         {
           "id": "fried-mode",
           "title": "Fried Mode",
           "kind": "prompt",
-          "text": "I am fried. Give me one genuinely useful task that needs zero thinking and zero decisions, from my real open work, because a tired hour can still ship something mechanical. One task, then stop."
+          "text": "I am fried. Give me one genuinely useful task that needs zero thinking and zero decisions, from my real open work, because a tired hour can still ship something mechanical. One task, then stop.",
+          "icon": "heart-pulse"
         }
       ]
     },
     {
       "id": "find",
       "title": "Find",
-      "color": "#E697A5",
+      "color": "#49A8FF",
       "icon": "scan-search",
       "actions": [
         {
@@ -274,19 +291,22 @@
           "id": "find-the-file",
           "title": "Find The File",
           "kind": "prompt",
-          "text": "Find [FILE DESCRIPTION] in the folders or connected sources I explicitly authorize. Return the exact matching path or link with date and source. Identify uncertain matches and inaccessible sources. Do not search other accounts or private directories."
+          "text": "Find [FILE DESCRIPTION] in the folders or connected sources I explicitly authorize. Return the exact matching path or link with date and source. Identify uncertain matches and inaccessible sources. Do not search other accounts or private directories.",
+          "icon": "folder-open"
         },
         {
           "id": "find-the-link",
           "title": "Find The Link",
           "kind": "prompt",
-          "text": "Find the last URL shared about the topic I name, across the messaging and email sources I authorize: the link itself, who sent it, and when, because I remember the link exists and nothing else. Topic:"
+          "text": "Find the last URL shared about the topic I name, across the messaging and email sources I authorize: the link itself, who sent it, and when, because I remember the link exists and nothing else. Topic:",
+          "icon": "network"
         },
         {
           "id": "find-a-contact",
           "title": "Find A Contact",
           "kind": "prompt",
-          "text": "Find [CONTACT] in the address book or business records I explicitly provide or authorize. Resolve ambiguous names before returning the relevant business contact entry. Do not infer identities or search unrelated personal records."
+          "text": "Find [CONTACT] in the address book or business records I explicitly provide or authorize. Resolve ambiguous names before returning the relevant business contact entry. Do not infer identities or search unrelated personal records.",
+          "icon": "users-round"
         },
         {
           "id": "what-did-we-decide",
@@ -298,13 +318,15 @@
           "id": "find-the-invoice",
           "title": "Find The Invoice",
           "kind": "prompt",
-          "text": "Find the transaction I describe in the email sources I authorize: amount, date, sender, and the attachment if there is one, because tax season does not accept I think I paid it. Transaction:"
+          "text": "Find the transaction I describe in the email sources I authorize: amount, date, sender, and the attachment if there is one, because tax season does not accept I think I paid it. Transaction:",
+          "icon": "file-text"
         },
         {
           "id": "rebuild-the-timeline",
           "title": "Rebuild The Timeline",
           "kind": "prompt",
-          "text": "Rebuild the timeline of the topic I name: every relevant message, file and decision in order, each with its source and date, because the story assembled beats my memory arguing with itself. Then give me the current state in 2 lines. Topic:"
+          "text": "Rebuild the timeline of the topic I name: every relevant message, file and decision in order, each with its source and date, because the story assembled beats my memory arguing with itself. Then give me the current state in 2 lines. Topic:",
+          "icon": "calendar-days"
         },
         {
           "id": "where-does-this-live",
@@ -317,7 +339,7 @@
     {
       "id": "write",
       "title": "Write",
-      "color": "#94C3DD",
+      "color": "#FFD447",
       "icon": "feather",
       "actions": [
         {
@@ -342,7 +364,8 @@
           "id": "summarize-to-5-lines",
           "title": "Summarize To 5 Lines",
           "kind": "prompt",
-          "text": "Compress what I am pasting into 5 lines I can actually scan. Keep numbers, names and dates exact, because a summary that rounds the numbers is a new document. Content:"
+          "text": "Compress what I am pasting into 5 lines I can actually scan. Keep numbers, names and dates exact, because a summary that rounds the numbers is a new document. Content:",
+          "icon": "clipboard-minus"
         },
         {
           "id": "translate-with-tone",
@@ -372,21 +395,23 @@
           "id": "action-5-hooks-ranked",
           "title": "5 Hooks Ranked",
           "kind": "prompt",
-          "text": "Give me 5 opening hooks for the content I am pasting, ranked, with one line on why the top one wins, because the first line decides whether the rest exists. No hashtags, no emojis. Content:"
+          "text": "Give me 5 opening hooks for the content I am pasting, ranked, with one line on why the top one wins, because the first line decides whether the rest exists. No hashtags, no emojis. Content:",
+          "icon": "list-tree"
         }
       ]
     },
     {
       "id": "social",
       "title": "Social",
-      "color": "#B6CC92",
+      "color": "#FF9B45",
       "icon": "megaphone",
       "actions": [
         {
           "id": "schedule-preview",
           "title": "Schedule Preview",
           "kind": "prompt",
-          "text": "Prepare a scheduling preview for [CONTENT]: exact account, channel, date, time zone, media and final text. Ask for missing details together. Show exactly what would publish and stop for approval before scheduling or posting."
+          "text": "Prepare a scheduling preview for [CONTENT]: exact account, channel, date, time zone, media and final text. Ask for missing details together. Show exactly what would publish and stop for approval before scheduling or posting.",
+          "icon": "calendar-days"
         },
         {
           "id": "one-idea-all-platforms",
@@ -398,7 +423,8 @@
           "id": "daily-cards",
           "title": "Daily Cards",
           "kind": "prompt",
-          "text": "Use the supplied daily stories and brand guide to prepare distinct social cards for [FORMAT / SIZE]. Keep sources, dates and claims accurate. If image tools are available and authorized, create draft visuals; otherwise provide final copy and a layout brief. Do not publish."
+          "text": "Use the supplied daily stories and brand guide to prepare distinct social cards for [FORMAT / SIZE]. Keep sources, dates and claims accurate. If image tools are available and authorized, create draft visuals; otherwise provide final copy and a layout brief. Do not publish.",
+          "icon": "layout-template"
         },
         {
           "id": "campaign-skeleton",
@@ -410,7 +436,8 @@
           "id": "repurpose-this",
           "title": "Repurpose This",
           "kind": "prompt",
-          "text": "Turn the long content I am pasting into a carousel outline with a caption: slide-by-slide text, 8 slides maximum, hook on slide one, because long content unrepurposed is reach left on the table. Content:"
+          "text": "Turn the long content I am pasting into a carousel outline with a caption: slide-by-slide text, 8 slides maximum, hook on slide one, because long content unrepurposed is reach left on the table. Content:",
+          "icon": "recycle"
         },
         {
           "id": "caption-draft",
@@ -422,13 +449,15 @@
           "id": "failed-posts-check",
           "title": "Failed Posts Check",
           "kind": "prompt",
-          "text": "Check the authorized publishing service for failed posts today: group the failures by channel, name the likely cause for each group, and give me the reconnect order that fixes the most with the fewest logins, because token rot eats mornings silently. Then stop."
+          "text": "Check the authorized publishing service for failed posts today: group the failures by channel, name the likely cause for each group, and give me the reconnect order that fixes the most with the fewest logins, because token rot eats mornings silently. Then stop.",
+          "icon": "chart-no-axes-combined"
         },
         {
           "id": "keywords-and-tags",
           "title": "Keywords And Tags",
           "kind": "prompt",
-          "text": "Give me the keywords and tags for the post I am pasting, per platform, only ones that fit the actual content, because tag spam reads desperate and ranks worse. Post:"
+          "text": "Give me the keywords and tags for the post I am pasting, per platform, only ones that fit the actual content, because tag spam reads desperate and ranks worse. Post:",
+          "icon": "scan-search"
         },
         {
           "id": "week-of-content",
@@ -441,7 +470,7 @@
     {
       "id": "ops",
       "title": "Operations",
-      "color": "#DDAA83",
+      "color": "#45D5CC",
       "icon": "network",
       "actions": [
         {
@@ -503,44 +532,50 @@
     {
       "id": "rescue",
       "title": "Recover",
-      "color": "#A8B8C9",
+      "color": "#49A8FF",
       "icon": "repeat-2",
       "actions": [
         {
           "id": "close-the-loop",
           "title": "Close The Loop",
           "kind": "prompt",
-          "text": "End of day check. What did I ship today, what is still open, and what is the first thing I touch tomorrow morning. Keep it under 12 lines, because tomorrow-me should start with zero decisions."
+          "text": "End of day check. What did I ship today, what is still open, and what is the first thing I touch tomorrow morning. Keep it under 12 lines, because tomorrow-me should start with zero decisions.",
+          "icon": "list-checks"
         },
         {
           "id": "weekly-reset",
           "title": "Weekly Reset",
           "kind": "prompt",
-          "text": "Review the projects I list: one line of current state for each, with evidence or an unknown marker. Choose the three priorities for the coming week, explain what can wait and name the first small action. Do not invent projects or change their status."
+          "text": "Review the projects I list: one line of current state for each, with evidence or an unknown marker. Choose the three priorities for the coming week, explain what can wait and name the first small action. Do not invent projects or change their status.",
+          "icon": "repeat-2"
         },
         {
           "id": "externalize-the-state",
           "title": "Externalize The State",
           "kind": "prompt",
-          "text": "Write the current state of what we are working on so a fresh chat can continue cold: done, in progress, decisions with reasons, open questions, and the exact next step, because this window will not survive and the summary is what does. Then stop."
+          "text": "Write the current state of what we are working on so a fresh chat can continue cold: done, in progress, decisions with reasons, open questions, and the exact next step, because this window will not survive and the summary is what does. Then stop.",
+          "icon": "notebook-pen"
         },
         {
           "id": "memory-draft",
           "title": "Memory Draft",
           "kind": "prompt",
-          "text": "Draft a concise memory update from today's confirmed facts, decisions, corrections and completed work. Exclude sensitive information. Show the exact text and destination, if known. Do not persist anything until I approve it."
+          "text": "Draft a concise memory update from today's confirmed facts, decisions, corrections and completed work. Exclude sensitive information. Show the exact text and destination, if known. Do not persist anything until I approve it.",
+          "icon": "sticky-note"
         },
         {
           "id": "break-the-spiral",
           "title": "Break The Spiral",
           "kind": "prompt",
-          "text": "I am overwhelmed. Cut my list to 3 things and explicitly name what we are dropping or deferring, because the full list is the weight. No motivation speech, just the 3 and the first move on the first one."
+          "text": "I am overwhelmed. Cut my list to 3 things and explicitly name what we are dropping or deferring, because the full list is the weight. No motivation speech, just the 3 and the first move on the first one.",
+          "icon": "repeat-2"
         },
         {
           "id": "say-no-for-me",
           "title": "Say No For Me",
           "kind": "prompt",
-          "text": "Draft the decline for the ask I am about to describe: kind, short, final, no fake maybe-later unless I say so, because a soft no becomes a second ask next week. Message only."
+          "text": "Draft the decline for the ask I am about to describe: kind, short, final, no fake maybe-later unless I say so, because a soft no becomes a second ask next week. Message only.",
+          "icon": "shield-check"
         },
         {
           "id": "restart-ritual",
@@ -552,13 +587,15 @@
           "id": "damage-control",
           "title": "Damage Control",
           "kind": "prompt",
-          "text": "Something went wrong with a client or publicly. I will describe it. Give me the first 3 moves in strict order, the first one doable in 10 minutes, and draft the first message, because speed of the first response sets the whole tone. Then stop."
+          "text": "Something went wrong with a client or publicly. I will describe it. Give me the first 3 moves in strict order, the first one doable in 10 minutes, and draft the first message, because speed of the first response sets the whole tone. Then stop.",
+          "icon": "shield-check"
         },
         {
           "id": "tell-me-the-truth",
           "title": "Tell Me The Truth",
           "kind": "prompt",
-          "text": "Look at everything you know about my work right now and tell me plainly what I am avoiding and what is not working, with evidence only, no cushioning, because the comfortable version costs me months. Three items maximum, then stop."
+          "text": "Look at everything you know about my work right now and tell me plainly what I am avoiding and what is not working, with evidence only, no cushioning, because the comfortable version costs me months. Three items maximum, then stop.",
+          "icon": "eye"
         }
       ]
     }

@@ -227,7 +227,7 @@ def build_ring(catalog):
         emit(
             "ActionIcons/" + ref + ".ict",
             {
-                "backgroundColor": 4279442213,
+                "backgroundColor": 0xFF111827,
                 "items": [
                     {
                         "$type": SERVICE + "ActionIconImageItem, LoupedeckShared",
@@ -471,7 +471,7 @@ def build_ring(catalog):
         + "\n"
     ).encode()
     files["metadata/Icon-LICENSE.txt"] = (
-        ROOT / "assets/icons/LICENSE.txt"
+        ROOT / "assets/color-icons/LICENSE.txt"
     ).read_bytes()
     files["metadata/LICENSE.txt"] = (ROOT / "LICENSE").read_bytes()
     return files
@@ -481,17 +481,17 @@ def layout_svg(catalog, nav_page=None):
     nav_page = navigation_pages(catalog)[0] if nav_page is None else nav_page
     items = nav_page["items"]
     title = catalog["name"] + " / " + nav_page["title"]
-    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="900" height="850" viewBox="0 0 900 850"><rect width="900" height="850" rx="28" fill="#0E151E"/><text x="36" y="48" fill="#F4F0E8" font-family="Arial,sans-serif" font-size="25" font-weight="700">{html.escape(title)}</text><circle cx="450" cy="425" r="278" fill="none" stroke="#293646"/><circle cx="450" cy="425" r="102" fill="#18232F" stroke="#435163"/><text x="450" y="418" text-anchor="middle" fill="#E5B879" font-family="Arial,sans-serif" font-size="14" letter-spacing="2">ACTIONS RING</text><text x="450" y="447" text-anchor="middle" fill="#F4F0E8" font-family="Arial,sans-serif" font-size="21">Native navigation</text>'
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="900" height="850" viewBox="0 0 900 850"><rect width="900" height="850" rx="28" fill="#F7F9FD"/><text x="36" y="48" fill="#172033" font-family="Arial,sans-serif" font-size="25" font-weight="700">{html.escape(title)}</text><circle cx="450" cy="425" r="278" fill="none" stroke="#DCE4F0"/><circle cx="450" cy="425" r="102" fill="#FFFFFF" stroke="#DCE4F0"/><text x="450" y="408" text-anchor="middle" fill="#4965D6" font-family="Arial,sans-serif" font-size="14" letter-spacing="2">ACTIONS RING</text><text x="450" y="441" text-anchor="middle" fill="#172033" font-family="Arial,sans-serif" font-size="{24 if len(nav_page["title"]) < 14 else 18}" font-weight="600">{html.escape(nav_page["title"])}</text><text x="450" y="470" text-anchor="middle" fill="#56657A" font-family="Arial,sans-serif" font-size="13">{len(items)} controls</text>'
     for i, item in enumerate(items):
         slots = HOME_SLOTS if nav_page["id"] == "home" else FOLDER_SLOTS
         angle = -math.pi / 2 + i * 2 * math.pi / slots
         x = 450 + 270 * math.cos(angle)
         y = 425 + 270 * math.sin(angle)
         color = item["color"]
-        symbol = item.get("icon") or artwork.pick_icon(item["title"])
+        symbol = item.get("icon") or artwork.pick_icon(item["title"], nav_page["icon"])
         svg += (
             f'<g transform="translate({x - 54:.2f},{y - 54:.2f})"><svg width="108" height="108" viewBox="0 0 144 144">'
-            + artwork.icon_svg(color, symbol, ring=True)
+            + artwork.icon_svg(color, symbol, folder=item["kind"] == "folder", ring=True)
             + "</svg></g>"
         )
         words = item["title"].split()
@@ -509,8 +509,8 @@ def layout_svg(catalog, nav_page=None):
             )
             lines = [" ".join(words[:middle]), " ".join(words[middle:])]
         for j, line in enumerate(lines):
-            svg += f'<text x="{x:.2f}" y="{y + 72 + j * 19:.2f}" text-anchor="middle" fill="#F4F0E8" font-family="Arial,sans-serif" font-size="16" font-weight="600">{html.escape(line)}</text>'
+            svg += f'<text x="{x:.2f}" y="{y + 72 + j * 19:.2f}" text-anchor="middle" fill="#172033" font-family="Arial,sans-serif" font-size="16" font-weight="600">{html.escape(line)}</text>'
     return (
         svg
-        + '<text x="36" y="820" fill="#A4B1C2" font-family="Arial,sans-serif" font-size="13">Generated layout guide. Native overlay geometry and labels may differ.</text></svg>'
+        + '<text x="36" y="820" fill="#56657A" font-family="Arial,sans-serif" font-size="13">Generated layout guide. Native overlay geometry and labels may differ.</text></svg>'
     )

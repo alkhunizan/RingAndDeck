@@ -1,9 +1,10 @@
 # Known issues and limits
 
 - Code Ring's alpha.1 native import, populated 8-control Home and More workflows folder have been checked. Alpha.2 has the same actions and artwork but has not been separately imported. Deeper nested runtime navigation, text pasting and physical-button behavior remain unverified. Work Ring and Flow Ring UI imports are still pending.
-- Stream Deck opens but has not responded to the attempted UI input. No Stream Deck UI import is claimed. Original profiles are backed up; import candidates separately from working profiles.
+- The colorful alpha.3 handoff originally showed blank Stream Deck pictograms because its SVGs used nested viewports. The fixed source uses transformed groups. MINI reports Home pictograms and titles on all three fixed profiles in Stream Deck 7.6.0.23012; folder/Back navigation, text paste, shortcuts, links and physical keys remain unverified. Published alpha.2 also contains nested SVGs in all 257 Deck keys; this is a static compatibility finding, not a fresh native reproduction. [Fix and evidence](docs/STREAM-DECK-ICON-FIX.md).
+- MINI reported a duplicate Default-page warning and tight native title spacing. Page metadata and title geometry are unchanged so the tested fixed package bytes remain reproducible. Original profiles are backed up; import candidates separately from working profiles.
 - Logitech's native JSON loader accepted earlier ring files without detecting an invalid layout mode or proving the Home capacity. Parsing success is not UI or hardware acceptance.
-- The showcase PNGs are browser captures of designed generated-layout pages, not native app or hardware screenshots. They do not establish that a profile imports or works on a device.
+- The alpha.3 showcase PNGs are generated layout previews composed from vector guides, not native app or hardware screenshots. Historical alpha.1/alpha.2 showcases were browser captures of designed layout pages. They do not establish that a profile imports or works on a device.
 - Targets are Windows 15-key Stream Deck and Logitech Actions Ring in `Loupedeck72` format. Other layouts and macOS are untested.
 - Text actions use the focused input, may replace the clipboard and can be handled differently by different apps. Test a scratch document first.
 - Browser links open the default browser and its current account state. The profiles do not route to a specific browser profile or account.

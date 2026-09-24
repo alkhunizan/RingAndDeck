@@ -1,7 +1,7 @@
 {
   "id": "browser-workflow",
   "name": "Browser Workflow",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Browser analysis, reporting, focus and public service launchers.",
   "prompts": {
     "do-it-now": {
@@ -25,17 +25,18 @@
     },
     "next-7": {
       "title": "Next 7",
-      "text": "Turn that into a 7-day plan. One action per day, each under 30 minutes. Day 1 starts today."
+      "text": "Turn that into a 7-day plan. One action per day, each under 30 minutes. Day 1 starts today.",
+      "icon": "calendar-days"
     },
     "prove-it": {
       "title": "Prove It",
-      "icon": "shield-check",
+      "icon": "microscope",
       "text": "Point to the exact rows, columns, and values on screen that support each claim. If you can't point to one, retract the claim."
     },
     "argue-back": {
       "title": "Argue Back",
       "text": "Argue the opposite of what you just told me. Make the strongest case that I should do nothing. Then tell me which case is stronger and why.",
-      "icon": "swords"
+      "icon": "scale"
     },
     "client-words": {
       "title": "Client Words",
@@ -55,7 +56,8 @@
     },
     "top-3": {
       "title": "Top 3",
-      "text": "Out of everything you just said, what are the 3 highest-impact actions? Rank by impact-to-effort and drop the rest."
+      "text": "Out of everything you just said, what are the 3 highest-impact actions? Rank by impact-to-effort and drop the rest.",
+      "icon": "list-checks"
     },
     "scale": {
       "title": "Scale",
@@ -91,15 +93,18 @@
     },
     "audience": {
       "title": "Audience",
-      "text": "Read the targeting setup on this screen. Where is it too broad, too narrow, or overlapping with another ad set?"
+      "text": "Read the targeting setup on this screen. Where is it too broad, too narrow, or overlapping with another ad set?",
+      "icon": "users-round"
     },
     "store": {
       "title": "Store",
-      "text": "Read this store dashboard. Orders, AOV, top products, drop-offs. What's the one lever worth pulling this week?"
+      "text": "Read this store dashboard. Orders, AOV, top products, drop-offs. What's the one lever worth pulling this week?",
+      "icon": "package-open"
     },
     "tweaks": {
       "title": "Tweaks",
-      "text": "List concrete changes I can make on this exact screen right now. For each: the change, where to click, expected effect, and risk. Rank by impact-to-effort. Max 7."
+      "text": "List concrete changes I can make on this exact screen right now. For each: the change, where to click, expected effect, and risk. Rank by impact-to-effort. Max 7.",
+      "icon": "hammer"
     },
     "budget": {
       "title": "Budget",
@@ -107,11 +112,13 @@
     },
     "where-am-i": {
       "title": "Where Am I",
-      "text": "I just opened this page and lost the thread. In 4 lines: what am I looking at, what state is it in, what can be established about the next step, and what's the single next click."
+      "text": "I just opened this page and lost the thread. In 4 lines: what am I looking at, what state is it in, what can be established about the next step, and what's the single next click.",
+      "icon": "map"
     },
     "winners": {
       "title": "Winners",
-      "text": "Rank everything on this page by performance. Show the top 3 and tell me exactly why each is winning and whether it's scalable or a fluke."
+      "text": "Rank everything on this page by performance. Show the top 3 and tell me exactly why each is winning and whether it's scalable or a fluke.",
+      "icon": "trophy"
     },
     "funnel": {
       "title": "Funnel",
@@ -148,7 +155,8 @@
     },
     "vs-last": {
       "title": "Vs Last",
-      "text": "Compare this period to the previous one. Only surface changes over [10]%. For each, one sentence on the likely cause."
+      "text": "Compare this period to the previous one. Only surface changes over [10]%. For each, one sentence on the likely cause.",
+      "icon": "scale"
     },
     "exec-5": {
       "title": "Exec 5",
@@ -157,7 +165,8 @@
     },
     "wins": {
       "title": "Wins",
-      "text": "Write the wins section. 3 wins, each with the number that proves it. No fluff wins."
+      "text": "Write the wins section. 3 wins, each with the number that proves it. No fluff wins.",
+      "icon": "trophy"
     },
     "client-update": {
       "title": "Client Update",
@@ -177,7 +186,8 @@
     },
     "brain-dump": {
       "title": "Brain Dump",
-      "text": "I'm going to dump everything in my head. Sort it into: do now, do this week, delegate, delete. Don't ask questions until I stop typing."
+      "text": "I'm going to dump everything in my head. Sort it into: do now, do this week, delegate, delete. Don't ask questions until I stop typing.",
+      "icon": "notebook-pen"
     },
     "body-double": {
       "title": "Body Double",
@@ -202,7 +212,7 @@
     {
       "id": "home",
       "title": "Home",
-      "color": "#9FAEF5",
+      "color": "#49A8FF",
       "symbol": "search",
       "buttons": [
         {
@@ -339,7 +349,7 @@
     {
       "id": "follow-up",
       "title": "Follow-up",
-      "color": "#7DCEC2",
+      "color": "#49A8FF",
       "symbol": "reply",
       "buttons": [
         {
@@ -459,7 +469,7 @@
     {
       "id": "analyze",
       "title": "Analyze",
-      "color": "#E5B879",
+      "color": "#55D99B",
       "symbol": "chart-no-axes-combined",
       "buttons": [
         {
@@ -579,7 +589,7 @@
     {
       "id": "reports",
       "title": "Reports",
-      "color": "#AE9CE1",
+      "color": "#49A8FF",
       "symbol": "file-text",
       "buttons": [
         {
@@ -676,7 +686,7 @@
     {
       "id": "focus",
       "title": "Focus",
-      "color": "#E697A5",
+      "color": "#FF9B45",
       "symbol": "timer",
       "buttons": [
         {
@@ -740,7 +750,7 @@
     {
       "id": "launch",
       "title": "Public Launchers",
-      "color": "#94C3DD",
+      "color": "#49A8FF",
       "symbol": "panels-top-left",
       "buttons": [
         {
