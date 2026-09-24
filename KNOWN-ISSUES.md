@@ -1,6 +1,6 @@
 # Known issues and limits
 
-- Code Ring's final native import, populated 8-control Home and More workflows folder have been checked. Deeper nested runtime navigation, text pasting and physical-button behavior remain unverified. Work Ring and Flow Ring UI imports are still pending.
+- Code Ring's alpha.1 native import, populated 8-control Home and More workflows folder have been checked. Alpha.2 has the same actions and artwork but has not been separately imported. Deeper nested runtime navigation, text pasting and physical-button behavior remain unverified. Work Ring and Flow Ring UI imports are still pending.
 - Stream Deck opens but has not responded to the attempted UI input. No Stream Deck UI import is claimed. Original profiles are backed up; import candidates separately from working profiles.
 - Logitech's native JSON loader accepted earlier ring files without detecting an invalid layout mode or proving the Home capacity. Parsing success is not UI or hardware acceptance.
 - The showcase PNGs are browser captures of designed generated-layout pages, not native app or hardware screenshots. They do not establish that a profile imports or works on a device.
@@ -14,6 +14,8 @@
 - Re-import behavior may create duplicates. Verify vendor app behavior before removing a prior version.
 
 ## Corrected during preparation
+
+- Alpha.2 updates the Sharp build dependency from 0.34.5 to 0.35.4. The npm audit result changed from 2 high-severity advisories to 0 vulnerabilities. Before the release-version bump, all six generated packages remained byte-identical; profile functionality and artwork are unchanged.
 
 - Replaced personal AI commands and machine hotkeys with self-contained prompts.
 - Removed personal clients, account references, private URLs, executable bindings and inherited identifiers.

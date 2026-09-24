@@ -1,6 +1,6 @@
 # Six-profile public edition
 
-Goal: prepare three existing Logitech Actions Ring workflows and three existing Stream Deck workflows, remove personal information and dependencies, and substantially improve the visual design. Preparation does not authorize publishing or replacing installed profiles.
+Goal: prepare three existing Logitech Actions Ring workflows and three existing Stream Deck workflows, remove personal information and dependencies, and substantially improve the visual design. The initial preparation scope excluded publication; the owner subsequently authorized the public GitHub repository and alpha release. Existing installed source profiles remain preserved.
 
 ## Selected workflows
 
@@ -33,4 +33,4 @@ Graphite surfaces, restrained jewel accents, warm white symbols, generous spacin
 
 ## Current progress
 
-The original two Stream Deck candidates are preserved in an ignored private baseline archive. The expanded edition now contains all six candidate packages, redesigned native artwork, 53 layout guides and privacy/generalization changes. Local automated checks, native Logitech parsing, visual review and exact-artifact scans are recorded in VALIDATION.md. Interactive device acceptance and public release are separate pending steps.
+The original two Stream Deck candidates are preserved in an ignored private baseline archive. The public edition contains six alpha packages, redesigned native artwork, 55 layout guides and privacy/generalization changes. Local automated checks, limited native Code Ring UI evidence, visual review, exact-artifact scans and verified publication are recorded in [VALIDATION.md](VALIDATION.md). Full interactive device acceptance remains open.

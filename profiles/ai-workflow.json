@@ -1,7 +1,7 @@
 {
   "id": "ai-workflow",
   "name": "AI Workflow",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Provider-neutral prompts for AI chat: control the session, research decisions, organize work, draft content and recover focus.",
   "prompts": {
     "orient-me": {

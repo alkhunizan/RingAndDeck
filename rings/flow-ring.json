@@ -1,7 +1,7 @@
 {
   "id": "flow-ring",
   "name": "Flow Ring",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Everyday AI workflows and standard Windows controls in eight folders.",
   "folders": [
     {

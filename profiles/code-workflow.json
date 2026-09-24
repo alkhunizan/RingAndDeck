@@ -1,7 +1,7 @@
 {
   "id": "code-workflow",
   "name": "Code Workflow",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Coding-agent prompts for VS Code and other editors: understand, plan, build, debug, review, recover and hand off.",
   "prompts": {
     "prime-this-session-cold": {

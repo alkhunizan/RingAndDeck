@@ -1,5 +1,7 @@
 # Public release checklist
 
+Current candidate: `v0.1.0-alpha.2`. The update changes the Sharp build dependency and release metadata, with no profile functionality changes.
+
 ## Preparation completed
 
 - [x] Three Actions Ring and three Stream Deck source catalogs and native candidate packages prepared.
@@ -20,7 +22,17 @@
 - [x] Original installed profiles backed up before candidate import work.
 - [x] Owner authorized the public GitHub repository and `v0.1.0-alpha.1` prerelease.
 
-## Prerelease publication
+## Alpha.2 build and publication
+
+- [x] Update Sharp from 0.34.5 to 0.35.4; npm audit now reports 0 vulnerabilities, down from 2 high-severity advisories.
+- [x] Confirm all six packages remain byte-identical after the dependency upgrade with the release version held constant.
+- [x] Pass all 13 unit tests after the build dependency update.
+- [ ] Verify final alpha.2 package contents, hashes and privacy scans after the version bump.
+- [ ] Publish `v0.1.0-alpha.2` as a prerelease with six packages, checksums and showcase images.
+- [ ] Download the alpha.2 assets anonymously and compare hashes.
+- [ ] Record passing Windows and Ubuntu CI runs for alpha.2.
+
+## Prior alpha.1 publication verified
 
 - [x] Two complete 1279 by 722 showcase PNGs prepared with captions identifying browser captures of designed layouts, not native app screenshots.
 - [x] Recheck the final six packages, hashes and privacy scan after the layout-mode and Home-capacity fixes.
@@ -30,8 +42,10 @@
 
 ## Native and hardware acceptance still required
 
-- [x] Re-import the final Code Ring and confirm Home shows 8 populated controls.
-- [x] Open More workflows in the final Code Ring UI and confirm Env & Tooling and Correct & Recover are present.
+The checked UI steps below belong to alpha.1. Alpha.2 retains the same actions and artwork; a separate alpha.2 import has not been verified.
+
+- [x] Re-import the final alpha.1 Code Ring and confirm Home shows 8 populated controls.
+- [x] Open More workflows in the final alpha.1 Code Ring UI and confirm Env & Tooling and Correct & Recover are present.
 - [x] Record the earlier Plan & Scope folder rendering with its 9 unchanged actions, separately from final-build evidence.
 - [ ] Verify deeper nested folders at runtime, text insertion and physical controls.
 - [ ] Import all six candidates as separate profiles and verify native icons and navigation.

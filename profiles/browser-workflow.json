@@ -1,7 +1,7 @@
 {
   "id": "browser-workflow",
   "name": "Browser Workflow",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Browser analysis, reporting, focus and public service launchers.",
   "prompts": {
     "do-it-now": {

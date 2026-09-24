@@ -21,8 +21,8 @@ Open Actions Ring customization in Logi Options+. Use the profile import control
 
 The native target is `Loupedeck72`, matching the inspected Actions Ring installation. A supported Logitech device and Logi Options+ are required. The native JSON loader was tested; interactive import remains an acceptance step.
 
-1. Verify the Home folder counts: Code 9, Work 9, Flow 8.
-2. Open every folder. Each contains 9 actions. Test the application's own return/back navigation.
+1. Verify Home shows 8 controls in every profile. Code and Work each place 7 categories directly on Home and the remaining 2 inside More workflows. Flow shows all 8 categories directly.
+2. Open every category, including those inside More workflows. Each category contains 9 actions. Test the application's own return/back navigation, including nested folders.
 3. Focus a blank scratch document before invoking text. Wait for the one-second overlay delay and confirm the full prompt is pasted without Enter.
 4. Review the default clipboard behavior. Text macros explicitly use the clipboard to preserve multiline content.
 5. Test the seven Flow Ring Windows controls separately, only when you intend their effects: Dictate (`Win+H`), Capture (`Win+Shift+S`), Clipboard (`Win+V`), Plain Paste (`Ctrl+Shift+V`), Files (`Win+E`), Task View (`Win+Tab`) and Snap Layout (`Win+Z`).
@@ -33,7 +33,7 @@ Logitech's [profile documentation](https://support.logi.com/hc/en-au/articles/25
 
 ## Editing and troubleshooting
 
-- Stream Deck catalogs use `column,row` positions; child slot `0,0` is reserved for Back. Ring catalogs use ordered folders and actions, up to 9 per level.
+- Stream Deck catalogs use `column,row` positions; child slot `0,0` is reserved for Back. Ring catalogs use up to 9 categories with up to 9 actions each. The builder respects the native 8-slot Home limit by adding More workflows when needed.
 - Text prompts often need `[TASK]`, `[LANGUAGE / TONE]`, `[TIME ZONE]` or other context supplied after pasting. No private account is preconfigured.
 - Wrong input receives text: focus the intended input before activation. Stop if a host treats multiline paste as submission.
 - Missing icons or a rejected import: record the vendor version and exact error, keep the original profile, and compare hashes. Do not overwrite a working setup to troubleshoot.

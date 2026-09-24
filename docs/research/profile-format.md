@@ -18,6 +18,8 @@ The public edition uses the general `@_defaultwin` System context with no execut
 
 The installed `Loupedeck.Service.ApplicationProfile.LoadFromJson` accepts all three candidate profile JSON documents. A controlled probe identified that `supportedOs: Windows` is invalid; the native enum is `Win`. The native keyboard parser resolves all seven Flow Ring keys and modifiers. These checks do not write live configuration, import profiles or press physical controls.
 
+Subsequent UI import checks found two constraints not enforced by that JSON loader: the layout mode must match the application's declared `System` mode, and Home exposes only 8 controls. Category folders show 9 actions. The builder keeps additional Home categories under More workflows. The final Code Ring Home and More contents were inspected in the native editor; full nested runtime and physical-control acceptance remain open in [validation](../VALIDATION.md).
+
 [Logitech's profile documentation](https://support.logi.com/hc/en-au/articles/25575505956119-Profiles-in-Logi-Options-MX-Creative-Console) confirms `.lp4`/`.lp5` import. [Actions Ring guidance](https://support.logi.com/hc/en-ca/articles/17844647906967-Actions-Ring) covers action and icon customization. Exact overlay geometry is controlled by Logi Options+; rendered documentation is an illustrative guide.
 
 ## Visual assets and privacy

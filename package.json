@@ -1,6 +1,6 @@
 {
   "name": "ring-and-deck-productivity",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "private": true,
   "description": "Build portable Actions Ring and Stream Deck profiles with shared artwork.",
   "license": "MIT",
@@ -9,6 +9,6 @@
     "check": "python -m unittest discover -s tests -v && python scripts/build.py --check"
   },
   "dependencies": {
-    "sharp": "0.34.5"
+    "sharp": "0.35.4"
   }
 }

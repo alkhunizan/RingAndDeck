@@ -6,22 +6,22 @@ Stop hunting for the same prompt or switching menus for a routine action. Ring &
 
 Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. A shared graphite theme, soft category accents and action-specific symbols make the controls easier to recognize. [Explore every layout](docs/gallery.html).
 
-**Alpha prerelease: `v0.1.0-alpha.1`.** All 13 automated tests pass. The final Code Ring imports into Logi Options+ with a populated Home, and its More workflows folder opens. Broader native and hardware acceptance remains incomplete. [Validation status](docs/VALIDATION.md).
+**Alpha prerelease candidate: `v0.1.0-alpha.2`.** This updates the Sharp build dependency to 0.35.4 with no profile functionality changes. All 13 automated tests pass. Native Code Ring evidence comes from alpha.1, which has the same actions and artwork; broader native and hardware acceptance remains incomplete. [Validation status](docs/VALIDATION.md).
 
 ## Download an alpha candidate
 
-Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.1).
+Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2). Alpha.2 upload and remote verification are pending.
 
 | Device | Download (alpha candidate) |
 | --- | --- |
-| Actions Ring | [Code Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/code-ring-0.1.0-alpha.1.lp5) |
-| Actions Ring | [Work Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/work-ring-0.1.0-alpha.1.lp5) |
-| Actions Ring | [Flow Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/flow-ring-0.1.0-alpha.1.lp5) |
-| 15-key Stream Deck | [Code Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/code-workflow-0.1.0-alpha.1.streamDeckProfile) |
-| 15-key Stream Deck | [AI Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/ai-workflow-0.1.0-alpha.1.streamDeckProfile) |
-| 15-key Stream Deck | [Browser Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/browser-workflow-0.1.0-alpha.1.streamDeckProfile) |
+| Actions Ring | [Code Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/code-ring-0.1.0-alpha.2.lp5) |
+| Actions Ring | [Work Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/work-ring-0.1.0-alpha.2.lp5) |
+| Actions Ring | [Flow Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/flow-ring-0.1.0-alpha.2.lp5) |
+| 15-key Stream Deck | [Code Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/code-workflow-0.1.0-alpha.2.streamDeckProfile) |
+| 15-key Stream Deck | [AI Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/ai-workflow-0.1.0-alpha.2.streamDeckProfile) |
+| 15-key Stream Deck | [Browser Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/browser-workflow-0.1.0-alpha.2.streamDeckProfile) |
 
-Verify downloads against [SHA256SUMS.txt](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt). Back up your current profiles and import candidates separately. Start with a blank scratch document and the [setup checklist](docs/SETUP.md).
+Verify downloads against [SHA256SUMS.txt](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/SHA256SUMS.txt). Back up your current profiles and import candidates separately. Start with a blank scratch document and the [setup checklist](docs/SETUP.md).
 
 ## Choose a workflow
 
@@ -50,11 +50,11 @@ These screenshots are browser captures of designed showcases built from the gene
 
 ![Code Ring imported into Logi Options+ with eight populated Home controls](docs/screenshots/code-ring-native-home.jpg)
 
-*Actual Logi Options+ capture of the final Code Ring import. Home displays 8 populated controls. More workflows was also opened and showed Env & Tooling and Correct & Recover. This checks configuration UI, not physical-button operation or prompt insertion.*
+*Actual Logi Options+ capture of the alpha.1 Code Ring import. Home displays 8 populated controls. More workflows was also opened and showed Env & Tooling and Correct & Recover. Alpha.2 retains the same actions and artwork; it has not been separately imported. This checks configuration UI, not physical-button operation or prompt insertion.*
 
 ![Plan and Scope folder rendered in Logi Options+](docs/screenshots/code-ring-native-folder.jpg)
 
-*Actual Plan & Scope folder capture from the preceding build, with the same 9 actions retained in the final package. It verifies that folder's rendering; deeper nested navigation, text pasting and hardware behavior remain unverified. Work Ring, Flow Ring and Stream Deck imports still need UI acceptance.*
+*Actual Plan & Scope folder capture from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. It verifies that folder's rendering; deeper nested navigation, text pasting and hardware behavior remain unverified. Work Ring, Flow Ring and Stream Deck imports still need UI acceptance.*
 
 ## How it works
 
@@ -72,7 +72,7 @@ The profiles do not read browser pages themselves. For browser analysis, provide
 
 Target: **Windows**, **15-key Stream Deck (5 by 3)** and the **Logitech Actions Ring `Loupedeck72` profile format**. Other device layouts and macOS have not been validated.
 
-Build requirements: Python 3.11+, Node.js 22+ and npm. Sharp renders PNG icons for Logitech; its version is pinned in the lockfile. No API account is needed to build.
+Build requirements: Python 3.11+, Node.js 22+ and npm. Sharp 0.35.4 renders PNG icons for Logitech and is pinned in the lockfile. No API account is needed to build.
 
 ```sh
 npm ci
@@ -83,12 +83,12 @@ python scripts/build.py --check
 
 Outputs in `dist/`:
 
-- `code-ring-0.1.0-alpha.1.lp5`
-- `work-ring-0.1.0-alpha.1.lp5`
-- `flow-ring-0.1.0-alpha.1.lp5`
-- `code-workflow-0.1.0-alpha.1.streamDeckProfile`
-- `ai-workflow-0.1.0-alpha.1.streamDeckProfile`
-- `browser-workflow-0.1.0-alpha.1.streamDeckProfile`
+- `code-ring-0.1.0-alpha.2.lp5`
+- `work-ring-0.1.0-alpha.2.lp5`
+- `flow-ring-0.1.0-alpha.2.lp5`
+- `code-workflow-0.1.0-alpha.2.streamDeckProfile`
+- `ai-workflow-0.1.0-alpha.2.streamDeckProfile`
+- `browser-workflow-0.1.0-alpha.2.streamDeckProfile`
 - `SHA256SUMS.txt`
 
 Back up your current profiles, then import these as separate profiles through the respective app's profile import control. **First test text actions in a blank scratch document.** Do not test them in a terminal, address bar or valuable document. Follow the [complete setup and acceptance checklist](docs/SETUP.md).
@@ -118,7 +118,7 @@ Edit the JSON catalogs and rebuild. The builder produces packages, full button g
 
 The build rejects stale generated files after a version, page or profile is removed. Review and archive only the listed files outside the repository before rebuilding. It never deletes your files.
 
-The prepared GitHub workflow validates on Windows and Linux and uploads candidate artifacts. It has not yet run remotely and does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
+GitHub CI passed on Windows and Ubuntu for alpha.1. Alpha.2 CI and download verification are pending; the earlier runs are recorded in [validation](docs/VALIDATION.md). The workflow checks builds and uploads candidate artifacts; it does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
 
 ## License
 
