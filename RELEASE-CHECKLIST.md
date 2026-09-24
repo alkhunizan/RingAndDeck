@@ -10,10 +10,14 @@ Current alpha prerelease: `v0.1.0-alpha.3`. It adds colorful artwork and the MIN
 - [x] Independently inspect 257 Deck key images and 262 Ring icon templates, archive integrity, references and license bytes.
 - [x] Compare native behavior with immutable public main `bf98287c53d034540ba4204ba4d220ffc9dc114c`.
 - [x] Record the MINI-reported Home rendering and remaining native limits separately in [the fix note](docs/STREAM-DECK-ICON-FIX.md).
-- [x] Prepare [draft alpha.3 release notes](docs/releases/v0.1.0-alpha.3.md).
+- [x] Prepare [alpha.3 release notes](docs/releases/v0.1.0-alpha.3.md).
 - [ ] Complete native action, folder/Back, Ring import and physical-device acceptance.
 - [x] Obtain the owner's explicit approval for GitHub alpha.3 publication. Marketplace submissions remain separate.
 - [x] Rebuild and match all six prepared alpha.3 package checksums before publication; preserve alpha.2.
+
+- [x] Publish alpha.3 as a Windows prerelease on the exact prepared source commit.
+- [x] Verify all 10 public downloads anonymously and confirm the combined ZIP contains the exact six packages.
+- [x] Verify Windows and Ubuntu CI for the release tag; see [validation](docs/VALIDATION.md).
 
 The following sections retain historical alpha.1/alpha.2 preparation evidence.
 

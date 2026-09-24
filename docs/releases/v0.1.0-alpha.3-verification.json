@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-09-24T08:18:03.463801+00:00",
+  "anonymous_downloads": true,
+  "release_url": "https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.3",
+  "tag": "v0.1.0-alpha.3",
+  "commit": "aefcf302157d85143e442008180e1583af11e131",
+  "draft": false,
+  "prerelease": true,
+  "assets": [
+    {
+      "name": "actions-ring-showcase.png",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/actions-ring-showcase.png",
+      "bytes": 153105,
+      "sha256": "2f337a7626c2e8d36eadb7b1c6815ddb2ccbb8dd8f4137ac333a5f1802ef6262",
+      "matches_prepared": true
+    },
+    {
+      "name": "ai-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/ai-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "bytes": 114212,
+      "sha256": "f2699c2927ad246d2e05d567d3dc64f2cf19a99652d8a8f08a96e821f29384f1",
+      "matches_prepared": true
+    },
+    {
+      "name": "browser-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/browser-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "bytes": 115321,
+      "sha256": "7dcd16b33975fba221ece9c12c79def308fc74ad1f19717d0a3fe071dac16971",
+      "matches_prepared": true
+    },
+    {
+      "name": "code-ring-0.1.0-alpha.3.lp5",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/code-ring-0.1.0-alpha.3.lp5",
+      "bytes": 2707540,
+      "sha256": "77e95aa6143dd8bfd354f111536432d1f9fb73b655ff08743c7ac2d2788295b1",
+      "matches_prepared": true
+    },
+    {
+      "name": "code-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/code-workflow-0.1.0-alpha.3.streamDeckProfile",
+      "bytes": 170652,
+      "sha256": "867e23cf7a1690ee2568bc70ab03411d39d1fe86e208d34d0f21810a0da4110d",
+      "matches_prepared": true
+    },
+    {
+      "name": "flow-ring-0.1.0-alpha.3.lp5",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/flow-ring-0.1.0-alpha.3.lp5",
+      "bytes": 2359688,
+      "sha256": "5b3efc0a1b0d148b5cad0717c8db0df653ee1cbf81868763f374feef819730d9",
+      "matches_prepared": true
+    },
+    {
+      "name": "RingAndDeck-0.1.0-alpha.3-profiles.zip",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/RingAndDeck-0.1.0-alpha.3-profiles.zip",
+      "bytes": 9318159,
+      "sha256": "0e065f2306756f2b97789f24bc58c9e681ef9265307ff44c5f92a69b7c260874",
+      "matches_prepared": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/SHA256SUMS.txt",
+      "bytes": 619,
+      "sha256": "be9e9bc43f67ba08bf0571c1350f4b76c10a4e9a777965900c054625c61ea3f7",
+      "matches_prepared": true
+    },
+    {
+      "name": "stream-deck-showcase.png",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/stream-deck-showcase.png",
+      "bytes": 166563,
+      "sha256": "530040ff73e0318690bfec7df48ef17608dc74fcfc11033e8fbba31e80ba8838",
+      "matches_prepared": true
+    },
+    {
+      "name": "work-ring-0.1.0-alpha.3.lp5",
+      "url": "https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/work-ring-0.1.0-alpha.3.lp5",
+      "bytes": 2705201,
+      "sha256": "90eed3914385ee6173a8d1d8560f148939e6a3d2671d6316f48c745c3f33ebd3",
+      "matches_prepared": true
+    }
+  ]
+}

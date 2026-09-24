@@ -1,6 +1,6 @@
 # Alpha.3 Stream Deck icon fix
 
-Prepared 2026-09-24. This is an unpublished local candidate. The public download remains [alpha.2](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2).
+Prepared 2026-09-24. This fix is included in the [alpha.3 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.3). Earlier alpha.2 downloads remain available unchanged.
 
 ## Reported native finding
 
@@ -28,7 +28,7 @@ The full colorful handoff source, including the MINI fix, was imported into an i
 | `browser-workflow-0.1.0-alpha.3.streamDeckProfile` | `7dcd16b33975fba221ece9c12c79def308fc74ad1f19717d0a3fe071dac16971` |
 | `code-workflow-0.1.0-alpha.3.streamDeckProfile` | `867e23cf7a1690ee2568bc70ab03411d39d1fe86e208d34d0f21810a0da4110d` |
 
-The published alpha.2 release was reverified anonymously: its nine assets match GitHub's SHA-256 digests, and all six packages match the published checksum file. Static inspection also finds nested SVGs in all 257 alpha.2 Deck key images. This identifies the same structural compatibility risk; alpha.2 was not freshly imported to reproduce the symptom. Alpha.2 remains unchanged, and the corrected candidate has not been published.
+The published alpha.2 release was reverified anonymously: its nine assets match GitHub's SHA-256 digests, and all six packages match the published checksum file. Static inspection also finds nested SVGs in all 257 alpha.2 Deck key images. This identifies the same structural compatibility risk; alpha.2 was not freshly imported to reproduce the symptom. Alpha.2 remains unchanged; the corrected packages are distributed separately as alpha.3.
 
 ## Follow-ups kept separate
 

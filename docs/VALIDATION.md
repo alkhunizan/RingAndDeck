@@ -1,10 +1,17 @@
 # Validation status
 
+## Published alpha.3 evidence
+
+The [alpha.3 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.3) was published on 2026-09-24. All 10 release assets were downloaded anonymously and matched both the prepared files and GitHub's SHA-256 digests. The combined ZIP contains the exact six individual packages. [Machine-readable download verification](releases/v0.1.0-alpha.3-verification.json).
+
+The annotated release tag resolves to the exact prepared source commit `aefcf302157d85143e442008180e1583af11e131`. [Release-tag CI](https://github.com/alkhunizan/RingAndDeck/actions/runs/35974205381) passed on Windows and Ubuntu, including the dependency audit, 13 tests, fresh build and generated-file checks. Subsequent commits update publication documentation and contribution templates without changing the released profile bytes. The tag's preparation-time documentation records its original local-candidate status; the current README and this page record publication.
+
+Native actions, folder/Back navigation, physical controls and alpha.3 Ring imports remain unverified. Marketplace listings and the companion website are separate from this GitHub publication.
 ## Alpha.3 validation
 
 The 2026-09-24 colorful revision is the alpha.3 prerelease candidate. It replaces the earlier warm artwork with full-color Microsoft Fluent Emoji Flat illustrations on pale icon fields, with navy Stream Deck title strips and semantic action accents. The native labels retain their shared 8–10 sizing rule. New icon artwork and generated guides must not inherit the alpha.1/alpha.2 native UI acceptance claims below. Alpha.2 remains available unchanged in the release history.
 
-All 67 source SVGs have verified manifest hashes and 32 by 32 viewBoxes; acquisition checks found no scripts, external references, gradients, element IDs or embedded images. The original Microsoft MIT license and pinned provenance are included. Fresh native validation passes all 13 tests, deterministic build and package comparisons. All 262 Ring images and 257 Deck keys pass geometry and title checks; all 55 guides were visually reviewed. Companion website format, lint, typecheck and all 1,269 tests pass; the production build and responsive browser check are recorded in the final handoff. See [the visual review record](DESIGN-POLISH.md).
+All 67 source SVGs have verified manifest hashes and 32 by 32 viewBoxes; acquisition checks found no scripts, external references, gradients, element IDs or embedded images. The original Microsoft MIT license and pinned provenance are included. Automated validation passes all 13 tests, deterministic build and package comparisons. All 262 Ring images and 257 Deck keys pass geometry and title checks; all 55 guides were visually reviewed. Companion website format, lint, typecheck and all 1,269 tests pass; the production build and responsive browser check are recorded in the final handoff. See [the visual review record](DESIGN-POLISH.md).
 
 ## MINI Stream Deck compatibility follow-up
 

@@ -1,6 +1,6 @@
 # Alpha.3 visual candidate
 
-Prepared on 2026-09-24. Local review candidate; not published. The MINI agent subsequently reported native Stream Deck Home rendering after the SVG fix; see [the separate evidence record](STREAM-DECK-ICON-FIX.md).
+Design review recorded on 2026-09-24 before publication. The reviewed artwork is now included in the alpha.3 prerelease. The MINI agent subsequently reported native Stream Deck Home rendering after the SVG fix; see [the separate evidence record](STREAM-DECK-ICON-FIX.md).
 
 ## What changed
 
@@ -27,7 +27,7 @@ All prompt text, action labels, profile and action identifiers, shortcuts, timin
 - All 55 generated guides were rendered and visually reviewed; 887 measured text elements have no clipping or overlap findings.
 - [Artwork study](design-polish/native-artwork-review.png) and [72px exported-artwork proof](design-polish/native-72px-proof.png) were regenerated and inspected for this revision.
 
-The companion website gives each profile more space and preserves its image proportions in English and Arabic. It separates these local alpha.3 visuals from published alpha.2 downloads. Fresh format, lint, typecheck, 1,269 tests and production build pass. Browser DOM checks cover both project pages and languages at 375px and 1440px with correct direction and no horizontal overflow. All eight served artworks match the source hashes. Below-fold images remain lazy-loaded. Browser screenshot capture was unreliable, so the showcase PNGs were generated as complete vector layout compositions and visually inspected. Physical mobile review remains open.
+The companion website gives each profile more space and preserves its image proportions in English and Arabic. At review time, it separated the then-local alpha.3 visuals from published alpha.2 downloads. That companion website work is separate from GitHub publication. Fresh format, lint, typecheck, 1,269 tests and production build pass. Browser DOM checks cover both project pages and languages at 375px and 1440px with correct direction and no horizontal overflow. All eight served artworks match the source hashes. Below-fold images remain lazy-loaded. Browser screenshot capture was unreliable, so the showcase PNGs were generated as complete vector layout compositions and visually inspected. Physical mobile review remains open.
 
 ## Acceptance still open
 
