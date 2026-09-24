@@ -1,0 +1,861 @@
+{
+  "id": "browser-workflow",
+  "name": "Browser Workflow",
+  "version": "0.1.0-alpha.1",
+  "description": "Browser analysis, reporting, focus and public service launchers.",
+  "prompts": {
+    "do-it-now": {
+      "title": "Do It Now",
+      "text": "One change. The one I can make in the next 10 minutes on this screen that moves the most money. Just that one, with the clicks.",
+      "icon": "play"
+    },
+    "kill-rule": {
+      "title": "Kill Rule",
+      "text": "Write kill criteria: exact metric, exact threshold, exact number of days. Something I can check in 30 seconds without thinking.",
+      "icon": "flag"
+    },
+    "why": {
+      "title": "Why",
+      "text": "Why that conclusion? Walk me through the numbers you used, in order. If any step is inference rather than data, label it.",
+      "icon": "microscope"
+    },
+    "risk": {
+      "title": "Risk",
+      "text": "What breaks if I do this? Worst case, how likely, and the cheapest way to test it first."
+    },
+    "next-7": {
+      "title": "Next 7",
+      "text": "Turn that into a 7-day plan. One action per day, each under 30 minutes. Day 1 starts today."
+    },
+    "prove-it": {
+      "title": "Prove It",
+      "icon": "shield-check",
+      "text": "Point to the exact rows, columns, and values on screen that support each claim. If you can't point to one, retract the claim."
+    },
+    "argue-back": {
+      "title": "Argue Back",
+      "text": "Argue the opposite of what you just told me. Make the strongest case that I should do nothing. Then tell me which case is stronger and why.",
+      "icon": "swords"
+    },
+    "client-words": {
+      "title": "Client Words",
+      "text": "Rewrite that for the client. No jargon, no platform names they don't use, lead with the result. 6 lines max."
+    },
+    "so-what": {
+      "title": "So What",
+      "text": "Convert that into decisions. Each one: do X, by when, expected result, how I'll know it worked."
+    },
+    "cheaper": {
+      "title": "Cheaper",
+      "text": "Same outcome, less spend. What's the low-budget version of that plan?"
+    },
+    "change-tone": {
+      "title": "Change Tone",
+      "text": "Rewrite the previous answer in [LANGUAGE / TONE], concise and clear. Keep every fact and number accurate."
+    },
+    "top-3": {
+      "title": "Top 3",
+      "text": "Out of everything you just said, what are the 3 highest-impact actions? Rank by impact-to-effort and drop the rest."
+    },
+    "scale": {
+      "title": "Scale",
+      "text": "If this works, what's the scale-up sequence? Budget steps and the checkpoint at each."
+    },
+    "save": {
+      "title": "Save",
+      "text": "Output the whole thread as one clean markdown block: context, findings, decisions, next actions. Ready to paste into a doc."
+    },
+    "waste": {
+      "title": "Waste",
+      "text": "Find the spend that isn't returning on this page. Give me a review list of proposed pauses with a threshold for each: kill if [metric] stays below [number] for [days]. Do not pause campaigns or change spend."
+    },
+    "ga4": {
+      "title": "Ga4",
+      "text": "Read this Analytics screen. What changed vs the previous period, which causes the evidence supports and which remain hypotheses, and what's noise? Ignore anything under [5]% movement."
+    },
+    "audit": {
+      "title": "Audit",
+      "text": "Read the campaign data on this page. Give me: what's working, what's wasting money, and what's about to break. Use only numbers visible on screen - no assumptions. If a number I'd need is missing, say which one and where to find it."
+    },
+    "creative": {
+      "title": "Creative",
+      "text": "Judge the ad creative and copy visible here as a [TARGET AUDIENCE] would see it. Hook, clarity, offer, CTA, language quality. Score each out of 10 and rewrite the weakest one."
+    },
+    "search": {
+      "title": "Search",
+      "text": "Read this Search Console screen. Which queries are one small fix away from page 1, and what's the fix?"
+    },
+    "insights": {
+      "title": "Insights",
+      "text": "From this page, give me the 5 non-obvious things a good media buyer would notice and a junior would miss. One line each, each tied to a specific number on screen."
+    },
+    "audience": {
+      "title": "Audience",
+      "text": "Read the targeting setup on this screen. Where is it too broad, too narrow, or overlapping with another ad set?"
+    },
+    "store": {
+      "title": "Store",
+      "text": "Read this store dashboard. Orders, AOV, top products, drop-offs. What's the one lever worth pulling this week?"
+    },
+    "tweaks": {
+      "title": "Tweaks",
+      "text": "List concrete changes I can make on this exact screen right now. For each: the change, where to click, expected effect, and risk. Rank by impact-to-effort. Max 7."
+    },
+    "budget": {
+      "title": "Budget",
+      "text": "Check pacing on this page. Are we under- or over-spending vs the period? What should the budget be tomorrow, and why?"
+    },
+    "where-am-i": {
+      "title": "Where Am I",
+      "text": "I just opened this page and lost the thread. In 4 lines: what am I looking at, what state is it in, what can be established about the next step, and what's the single next click."
+    },
+    "winners": {
+      "title": "Winners",
+      "text": "Rank everything on this page by performance. Show the top 3 and tell me exactly why each is winning and whether it's scalable or a fluke."
+    },
+    "funnel": {
+      "title": "Funnel",
+      "text": "Open the destination URL from this page and audit the landing experience against the ad promise. Where does the message break?"
+    },
+    "page-summary": {
+      "title": "Page Summary",
+      "text": "Summarize this page in [LANGUAGE / TONE]: what works, what needs attention, and the next action. Use only visible evidence."
+    },
+    "email": {
+      "title": "Email",
+      "text": "Client email draft: subject line, 3 short paragraphs, one clear ask or next step. Warm, plain, no jargon."
+    },
+    "next-month": {
+      "title": "Next Month",
+      "text": "Write next month's plan: 3 initiatives, budget split, and the single metric that defines success."
+    },
+    "weekly": {
+      "title": "Weekly",
+      "icon": "file-text",
+      "text": "Build this week's report for [CLIENT] from the data on screen. Sections: headline result, spend vs return, what we changed, what we learned, next week. Numbers only from this page."
+    },
+    "table": {
+      "title": "Table",
+      "text": "Extract every metric on this page into a clean markdown table: metric, this period, last period, % change, verdict (good/watch/bad)."
+    },
+    "delivered": {
+      "title": "Delivered",
+      "text": "List everything delivered this period, in client-facing language, suitable for attaching to an invoice."
+    },
+    "monthly": {
+      "title": "Monthly",
+      "text": "Build the monthly report for [CLIENT] from the data on screen: headline result, spend vs return, what we changed, what we learned, a vs-last-month table, and one strategic recommendation with a reason."
+    },
+    "vs-last": {
+      "title": "Vs Last",
+      "text": "Compare this period to the previous one. Only surface changes over [10]%. For each, one sentence on the likely cause."
+    },
+    "exec-5": {
+      "title": "Exec 5",
+      "icon": "clipboard-minus",
+      "text": "Five lines for someone who will not read more than five lines: result, spend, best channel, biggest problem, what we're doing about it."
+    },
+    "wins": {
+      "title": "Wins",
+      "text": "Write the wins section. 3 wins, each with the number that proves it. No fluff wins."
+    },
+    "client-update": {
+      "title": "Client Update",
+      "text": "Draft a short client update in [LANGUAGE / TONE]: result first, what changed, and what happens next. Use only verified figures. Do not send."
+    },
+    "issues": {
+      "title": "Issues",
+      "text": "Write the issues section. Each issue: what happened, impact in numbers, what we're doing, by when. Own it, don't hedge."
+    },
+    "park-it": {
+      "title": "Park It",
+      "text": "Capture [THOUGHT] as a short note in this chat, then return me to the current task. Do not persist it elsewhere without approval."
+    },
+    "start-5": {
+      "title": "Start 5",
+      "text": "I have 5 minutes and no motivation. Look at this page and give me one thing I can finish in 5 minutes. Not a plan. One thing."
+    },
+    "brain-dump": {
+      "title": "Brain Dump",
+      "text": "I'm going to dump everything in my head. Sort it into: do now, do this week, delegate, delete. Don't ask questions until I stop typing."
+    },
+    "body-double": {
+      "title": "Body Double",
+      "text": "Help me focus on [TASK] for 25 minutes. Define one finish line and a five-minute checkpoint. Check in when I return; do not promise timed background messages without a supported, authorized reminder tool."
+    },
+    "one-thing": {
+      "title": "One Thing",
+      "icon": "footprints",
+      "text": "From everything on this screen, what is the single next action? Not a list. One action, one sentence, starting with a verb."
+    },
+    "where-was-i": {
+      "title": "Where Was I",
+      "icon": "notebook-tabs",
+      "text": "Recap this session: what I was doing, what I decided, what's unfinished, and the exact next click."
+    },
+    "done": {
+      "title": "Done",
+      "text": "Close out this session. Give me: what got done, what didn't, the one thing to start with tomorrow. Then stop - no encouragement, no summary of the summary."
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "color": "#9FAEF5",
+      "symbol": "search",
+      "buttons": [
+        {
+          "slot": "0,0",
+          "kind": "folder",
+          "page": "follow-up",
+          "label": [
+            "FOLLOW-UP"
+          ]
+        },
+        {
+          "slot": "1,0",
+          "kind": "folder",
+          "page": "analyze",
+          "label": [
+            "ANALYZE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "folder",
+          "page": "reports",
+          "label": [
+            "REPORTS"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "folder",
+          "page": "focus",
+          "label": [
+            "FOCUS"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "folder",
+          "page": "launch",
+          "label": [
+            "LAUNCHERS"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "audit",
+          "label": [
+            "ANALYZE",
+            "PAGE"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "prove-it",
+          "label": [
+            "PROVE",
+            "CLAIM"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "one-thing",
+          "label": [
+            "NEXT",
+            "ACTION"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "weekly",
+          "label": [
+            "DRAFT",
+            "REPORT"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "exec-5",
+          "label": [
+            "SUMMARIZE"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "where-was-i",
+          "label": [
+            "RECAP",
+            "SESSION"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "done",
+          "label": [
+            "CLOSE",
+            "SESSION"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "hotkey",
+          "shortcut": "tab-search",
+          "label": [
+            "TAB",
+            "SEARCH"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "hotkey",
+          "shortcut": "reopen-tab",
+          "label": [
+            "REOPEN",
+            "TAB"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "hotkey",
+          "shortcut": "zoom-reset",
+          "label": [
+            "ZOOM",
+            "RESET"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "follow-up",
+      "title": "Follow-up",
+      "color": "#7DCEC2",
+      "symbol": "reply",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "do-it-now",
+          "label": [
+            "DO IT NOW"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "kill-rule",
+          "label": [
+            "KILL RULE"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "why",
+          "label": [
+            "WHY"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "risk",
+          "label": [
+            "RISK"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "next-7",
+          "label": [
+            "NEXT 7"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "prove-it",
+          "label": [
+            "PROVE IT"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "argue-back",
+          "label": [
+            "ARGUE BACK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "client-words",
+          "label": [
+            "CLIENT WORDS"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "so-what",
+          "label": [
+            "SO WHAT"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "cheaper",
+          "label": [
+            "CHEAPER"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "change-tone",
+          "label": [
+            "CHANGE TONE"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "prompt",
+          "prompt": "top-3",
+          "label": [
+            "TOP 3"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "prompt",
+          "prompt": "scale",
+          "label": [
+            "SCALE"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "prompt",
+          "prompt": "save",
+          "label": [
+            "SAVE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analyze",
+      "title": "Analyze",
+      "color": "#E5B879",
+      "symbol": "chart-no-axes-combined",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "waste",
+          "label": [
+            "WASTE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "ga4",
+          "label": [
+            "GA4"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "audit",
+          "label": [
+            "AUDIT"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "creative",
+          "label": [
+            "CREATIVE"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "search",
+          "label": [
+            "SEARCH"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "insights",
+          "label": [
+            "INSIGHTS"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "audience",
+          "label": [
+            "AUDIENCE"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "store",
+          "label": [
+            "STORE"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "tweaks",
+          "label": [
+            "TWEAKS"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "budget",
+          "label": [
+            "BUDGET"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "where-am-i",
+          "label": [
+            "WHERE AM I"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "prompt",
+          "prompt": "winners",
+          "label": [
+            "WINNERS"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "prompt",
+          "prompt": "funnel",
+          "label": [
+            "FUNNEL"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "prompt",
+          "prompt": "page-summary",
+          "label": [
+            "PAGE SUMMARY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "title": "Reports",
+      "color": "#AE9CE1",
+      "symbol": "file-text",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "email",
+          "label": [
+            "EMAIL"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "next-month",
+          "label": [
+            "NEXT MONTH"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "weekly",
+          "label": [
+            "WEEKLY"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "table",
+          "label": [
+            "TABLE"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "delivered",
+          "label": [
+            "DELIVERED"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "monthly",
+          "label": [
+            "MONTHLY"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "vs-last",
+          "label": [
+            "VS LAST"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "exec-5",
+          "label": [
+            "EXEC 5"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "wins",
+          "label": [
+            "WINS"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "client-update",
+          "label": [
+            "CLIENT",
+            "UPDATE"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "issues",
+          "label": [
+            "ISSUES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "focus",
+      "title": "Focus",
+      "color": "#E697A5",
+      "symbol": "timer",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "park-it",
+          "label": [
+            "PARK IT"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "start-5",
+          "label": [
+            "START 5"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "brain-dump",
+          "label": [
+            "BRAIN DUMP"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "body-double",
+          "label": [
+            "BODY DOUBLE"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "one-thing",
+          "label": [
+            "ONE THING"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "where-was-i",
+          "label": [
+            "WHERE WAS I"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "done",
+          "label": [
+            "DONE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Public Launchers",
+      "color": "#94C3DD",
+      "symbol": "panels-top-left",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "website",
+          "url": "https://chatgpt.com/",
+          "label": [
+            "CHATGPT"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "website",
+          "url": "https://claude.ai/",
+          "label": [
+            "CLAUDE"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "website",
+          "url": "https://gemini.google.com/",
+          "label": [
+            "GEMINI"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "website",
+          "url": "https://www.perplexity.ai/",
+          "label": [
+            "PERPLEXITY"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "website",
+          "url": "https://notebooklm.google.com/",
+          "label": [
+            "NOTEBOOK LM"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "website",
+          "url": "https://github.com/",
+          "label": [
+            "GITHUB"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "website",
+          "url": "https://vercel.com/",
+          "label": [
+            "VERCEL"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "website",
+          "url": "https://app.netlify.com/",
+          "label": [
+            "NETLIFY"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "website",
+          "url": "https://analytics.google.com/",
+          "label": [
+            "ANALYTICS"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "website",
+          "url": "https://search.google.com/search-console/",
+          "label": [
+            "SEARCH"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "website",
+          "url": "https://ads.google.com/",
+          "label": [
+            "GOOGLE ADS"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "website",
+          "url": "https://lookerstudio.google.com/",
+          "label": [
+            "LOOKER"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "website",
+          "url": "https://mail.google.com/",
+          "label": [
+            "MAIL"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "website",
+          "url": "https://drive.google.com/",
+          "label": [
+            "DRIVE"
+          ]
+        }
+      ]
+    }
+  ]
+}

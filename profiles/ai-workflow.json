@@ -1,0 +1,857 @@
+{
+  "id": "ai-workflow",
+  "name": "AI Workflow",
+  "version": "0.1.0-alpha.1",
+  "description": "Provider-neutral prompts for AI chat: control the session, research decisions, organize work, draft content and recover focus.",
+  "prompts": {
+    "orient-me": {
+      "title": "Orient Me",
+      "text": "Orient me. In under 10 lines: what is this session about so far, what's done, what's still open, and the single most valuable next action. No preamble."
+    },
+    "next-action": {
+      "title": "Next Action",
+      "text": "Give me exactly one next action. Not a list. Pick the highest-value move, tell me why in one line, then start it yourself if you can."
+    },
+    "verify-claims": {
+      "title": "Verify Claims",
+      "text": "Standing rule for this session: never answer from memory when a tool can verify. Check the actual file, message, or data before claiming anything. If you can't verify something, mark it \"unverified\" next to the claim."
+    },
+    "stay-scoped": {
+      "title": "Stay Scoped",
+      "text": "Standing rule: stay inside the scope we agreed. If you spot something outside scope worth doing, add it to a \"LATER\" list instead of doing it. Show me the LATER list only when the main task is done."
+    },
+    "plan-first": {
+      "title": "Plan First",
+      "text": "Before touching any files or tools: give me the plan in max 8 bullets :  what you'll change, what you WON'T touch, the risks, and how we'll verify it worked. Wait for my go."
+    },
+    "choose-best": {
+      "title": "Choose Best",
+      "text": "Evaluate the options within our agreed scope, recommend the strongest one and state the main trade-off in one line. Start the first reversible, authorized step if you can. Ask if a personal preference materially changes the decision. Do not treat this prompt as approval to spend, publish, send messages, delete data or expand access."
+    },
+    "prove-work": {
+      "title": "Prove Work",
+      "text": "Prove your work actually works. Run it, test it, screenshot it, or diff it :  whatever fits. Show me evidence, not a claim. If something fails, fix it and prove it again."
+    },
+    "show-changes": {
+      "title": "Show Changes",
+      "text": "Show me exactly what changed. Before vs after, item by item. Flag anything you changed that I didn't ask for."
+    },
+    "unstick-me": {
+      "title": "Unstick Me",
+      "text": "We're stuck. Do this in order:\n1) Restate the actual goal in one line.\n2) List what we tried and why each attempt failed.\n3) Propose the 3 most DIFFERENT approaches :  not variations of the same idea.\n4) Pick one and start it.",
+      "icon": "puzzle"
+    },
+    "close-session": {
+      "title": "Close Session",
+      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project."
+    },
+    "write-handoff": {
+      "title": "Write Handoff",
+      "text": "Write a handoff.md a fresh AI assistant session could run with: goal, current state, key file paths and links, decisions with reasons, next steps in order, and known traps. Assume zero memory of this chat. Save it to the project."
+    },
+    "lock-scope": {
+      "title": "Lock Scope",
+      "text": "Before we build anything: interview me with ONE grouped set of questions (max 5) to lock the spec :  goal, audience, must-haves, non-goals, deadline. Then write the locked spec back in under 20 lines and treat it as the contract for this project."
+    },
+    "map-structure": {
+      "title": "Map Structure",
+      "text": "Audit the structure of [PROJECT / FOLDER]. Map what exists, flag duplicates, dead files, misplaced items, and naming inconsistencies. Propose the cleaned target structure and the exact move plan. Don't move anything yet."
+    },
+    "message-brief": {
+      "title": "Message Brief",
+      "text": "Summarize the conversations I supply or explicitly authorize. Scope: [CONVERSATIONS/DATE RANGE]. For each, report what happened, what is waiting on me and a drafted reply where needed. Put urgent items first, avoid unnecessary personal details and send nothing."
+    },
+    "resume-work": {
+      "title": "Resume Work",
+      "text": "Resume work. Check the project docs and any handoff notes first. Tell me in 5 lines where we left off, then continue the highest-priority open item without waiting for me."
+    },
+    "check-drift": {
+      "title": "Check Drift",
+      "text": "Drift check: compare what our docs and plans SAY against what actually EXISTS (files, store, live site :  whatever applies). List every mismatch, worst first. Per item, either fix the doc or flag the work :  your call."
+    },
+    "cleanup-plan": {
+      "title": "Cleanup Plan",
+      "text": "Deadweight sweep of [SCOPE]: find what's unused, outdated, duplicated, or abandoned. For each item: keep / archive / delete, with a one-line reason. Prepare the cleanup but delete nothing without my confirm."
+    },
+    "privacy-check": {
+      "title": "Privacy Check",
+      "text": "Leak scan before this goes out: check [DELIVERABLE] for anything that shouldn't leave this chat :  personal data, internal names, keys, real prices, client info, embarrassing leftovers, file metadata. List findings by severity and fix what's safe to fix."
+    },
+    "ship-gate": {
+      "title": "Ship Gate",
+      "text": "Ship gate. Run the final checklist on [DELIVERABLE]: correctness, broken links, names and numbers verified, formatting on mobile, tone, and one full end-to-end test. Verdict: SHIP, or the list of blockers. Be strict :  you are the last gate."
+    },
+    "triage-work": {
+      "title": "Triage Work",
+      "text": "Using this chat and the task sources I explicitly authorize, sort current work into DO TODAY, PREPARE A DRAFT, SCHEDULE and DEFER. Explain the top priority. Start one reversible, authorized preparation step if possible. Scheduling, sending, publishing and destructive changes require separate approval."
+    },
+    "find-commitments": {
+      "title": "Find Commitments",
+      "text": "Review only the messages I supply or explicitly authorize for [DATE RANGE]. Find promises, expectations and deadlines. Return a table with commitment, person or team, due date, status and suggested next action. Draft any needed replies. Do not search unrelated accounts or send messages."
+    },
+    "business-pulse": {
+      "title": "Business Pulse",
+      "text": "Using the business data I supply or explicitly authorize, summarize recent orders, abandoned carts, stock issues and reviews for [DATE RANGE]. Identify the three actions that need attention, with evidence. Prepare the highest-value draft or analysis. Do not contact customers or change orders, stock, prices or accounts."
+    },
+    "recovery-drafts": {
+      "title": "Recovery Drafts",
+      "text": "For the abandoned-cart data I supply or explicitly authorize for [DATE RANGE], summarize customer reference, cart value and items. Draft one short, helpful recovery message per eligible prospect in [LANGUAGE/TONE]. Use only approved offers. Mask personal details in shared reports and show the batch for approval. Send nothing."
+    },
+    "review-replies": {
+      "title": "Review Replies",
+      "text": "From the reviews I supply or explicitly authorize, draft a reply to each in [LANGUAGE/TONE]. Thank positive reviewers, acknowledge problems and propose only fixes the business can actually provide. Flag reviews that need a human decision. Present the full batch for approval and post nothing."
+    },
+    "reply-queue": {
+      "title": "Reply Queue",
+      "text": "From the conversations I supply or explicitly authorize for [DATE RANGE], identify messages waiting on me. For each, state what is needed, the deadline if known, and a drafted reply in [TONE]. Prioritize by urgency and impact. Do not send anything."
+    },
+    "inbox-triage": {
+      "title": "Inbox Triage",
+      "text": "Triage my authorized inbox or the messages I supply for the last [DAYS] days. Separate noise, actions, deadlines and money-related items. Draft replies where useful. Propose archive or label changes in one table. Do not archive, send, or change messages until I approve the batch."
+    },
+    "weekly-report": {
+      "title": "Weekly Report",
+      "text": "Using the sales data I supply or explicitly authorize, compare [THIS PERIOD] with [COMPARISON PERIOD]: revenue, units, top products and material changes. Explain what the evidence supports and what is uncertain. Include one useful chart if supported. End with the highest-value action for the next period."
+    },
+    "social-brief": {
+      "title": "Social Brief",
+      "text": "Turn the attached news or source notes into a social content brief using [BRAND/TONE]: a feed post, a story and a carousel outline. Specify copy, dimensions, source attribution and image direction for each. If image tools and approved brand assets are available, prepare review exports; otherwise deliver a usable production brief. Do not claim images were rendered unless they were. Do not publish."
+    },
+    "repurpose-idea": {
+      "title": "Repurpose Idea",
+      "text": "Take this one idea: [IDEA or pasted content]. Repurpose it into 5 native formats: X thread, IG carousel outline, 45-second video script, LinkedIn post, WhatsApp broadcast blurb. Each rebuilt for its platform, not copy-pasted. My voice."
+    },
+    "content-plan": {
+      "title": "Content Plan",
+      "text": "Plan next week's content from [LINKS/NOTES]. Propose the platform, date, time in [TIME ZONE], draft copy and asset requirements. Check for repetition and unsupported claims. Present the complete calendar for approval. Schedule only after explicit approval and only if an authorized scheduling tool is available; otherwise provide a ready-to-use calendar."
+    },
+    "write-thread": {
+      "title": "Write Thread",
+      "text": "Write a thread on [TOPIC] in [LANGUAGE/TONE] for [AUDIENCE]. Generate ten genuinely different hooks, choose the strongest with a one-line reason, then write six to ten posts. Check factual claims against the supplied sources or available research tools. Keep each post useful on its own and end with one relevant next step. Draft only."
+    },
+    "better-hooks": {
+      "title": "Better Hooks",
+      "text": "Give me 10 hooks for [CONTENT/TOPIC] :  10 genuinely different angles (curiosity, contrarian, number, story, fear, question, result...). Rank them, pick the winner, and write the first 3 lines that follow it."
+    },
+    "red-team": {
+      "title": "Red Team",
+      "text": "Red-team this: [PLAN / DRAFT / DECISION]. Attack it like a smart rival who wants it to fail :  weakest assumptions, what breaks first, what I'm not seeing, worst realistic scenario. Then give me the 2 fixes that most reduce the risk."
+    },
+    "fresh-review": {
+      "title": "Fresh Review",
+      "text": "Independently verify the claims, numbers, links and conclusions in this chat. If a separate reviewer is available and authorized, provide only the necessary context and request a fresh review. Otherwise conduct a separate verification pass yourself and disclose that limitation. Report disagreements, missing evidence and unresolved uncertainty. Do not imply independent review happened if it did not."
+    },
+    "research-team": {
+      "title": "Research Team",
+      "text": "Research [TASK] through distinct perspectives, cross-check disputed findings and synthesize one answer. Use parallel agents only when supported and authorized; otherwise work through the perspectives sequentially. Cite the evidence and distinguish verified facts, inference and unknowns. Do not invent sources or tool access."
+    },
+    "deep-research": {
+      "title": "Deep Research",
+      "text": "Deep research: [QUESTION]. Search wide, read the actual sources, separate facts from opinions, and note where sources disagree. Deliver a brief: answer first, then evidence, then sources. No padding."
+    },
+    "compare-options": {
+      "title": "Compare Options",
+      "text": "Compare [A] vs [B] (vs [C]) for [MY USE CASE]. Build the criteria yourself based on what actually matters for me, score them, declare a winner, and state the one reason I might regret it. Decision first, table second."
+    },
+    "both-sides": {
+      "title": "Both Sides",
+      "text": "Steelman both sides of: [DECISION / CLAIM]. Strongest honest case for each, no strawmen. Then your verdict with the deciding factor. If it truly depends on my preference, give me the ONE question that settles it."
+    },
+    "start-small": {
+      "title": "Start Small",
+      "text": "I can't start. Break [TASK] into steps of 5 minutes or less. Then do step 1 for me right now :  completely :  and hand me step 2 ready to go."
+    },
+    "focus-partner": {
+      "title": "Focus Partner",
+      "text": "Body-double me for the next hour on [TASK]. I work, you keep a running checklist. Every time I message progress: check it off, give me the next micro-step, nothing else. Max 2 lines per reply."
+    },
+    "brain-dump": {
+      "title": "Brain Dump",
+      "text": "Brain dump incoming :  my next message will be everything in my head, messy. Your job: sort it into projects, tasks, ideas, worries, and trash. Give every task a next action. Then tell me the ONE thing that matters most today."
+    },
+    "find-priority": {
+      "title": "Find Priority",
+      "text": "Look at everything on my plate (this chat + connected tools) and tell me: what's the frog :  the one task I'm avoiding that matters most? Then make starting it as easy as possible: prep the file, the draft, or the first step yourself."
+    },
+    "timebox-task": {
+      "title": "Timebox Task",
+      "text": "Timebox: we have 25 minutes for [TASK]. Cut scope to what fits, tell me what we're NOT doing, then go. If we run short, ship a smaller complete thing :  never a bigger broken one."
+    },
+    "check-assumptions": {
+      "title": "Check Assumptions",
+      "text": "Before you continue: list every assumption you're making about what I want, ranked by how bad it is if you're wrong. Confirm the top 2 with me in one grouped question, then proceed."
+    },
+    "set-language": {
+      "title": "Set Language",
+      "text": "For this conversation, use [LANGUAGE/DIALECT] and [TONE]. Keep replies short, clear and natural, with familiar wording. Preserve exact code, commands, names and numbers. If these preferences are missing, ask for them once."
+    },
+    "brief-mode": {
+      "title": "Brief Mode",
+      "text": "Switch to TL;DR mode for the rest of this chat: max 5 lines per answer, decision first, no background unless I ask for it."
+    },
+    "teach-topic": {
+      "title": "Teach Topic",
+      "text": "Teach me [TOPIC] for [MY ROLE/CONTEXT]: what it means, why it matters, the few ideas that do most of the work and one concrete example. Define necessary technical terms plainly. Check uncertain or changing facts when research tools are available, and state what remains unverified."
+    },
+    "save-context": {
+      "title": "Save Context",
+      "text": "Save this properly: write what we just produced or decided into the project as a clean doc a future session can use. Clear name, context, decisions, open items. Confirm the path when done."
+    },
+    "task-template": {
+      "title": "Task Template",
+      "text": "Prepare a scheduled-task proposal for [WHAT], [DATE/TIME] and [TIME ZONE]. Write a self-contained prompt with the goal, authorized data sources, expected output, limits and failure behavior. Show the schedule and prompt for approval. Create it only after approval and only if a scheduling tool is available; otherwise provide manual setup steps."
+    },
+    "daily-brief": {
+      "title": "Daily Brief",
+      "text": "Prepare a morning brief from the calendar, messages and business data I supply or explicitly authorize. Show today's commitments, urgent actions, important changes and the one priority that matters most. Use [TIME ZONE]. Label inaccessible sources and do not invent missing information. Draft replies where useful, but send nothing."
+    },
+    "save-session": {
+      "title": "Close and hand off the session",
+      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project.\n\nThen:\n\nWrite a handoff.md a fresh AI assistant session could run with: goal, current state, key file paths and links, decisions with reasons, next steps in order, and known traps. Assume zero memory of this chat. Save it to the project."
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "color": "#9FAEF5",
+      "symbol": "chat",
+      "buttons": [
+        {
+          "slot": "0,0",
+          "kind": "folder",
+          "page": "control",
+          "label": [
+            "CONTROL"
+          ]
+        },
+        {
+          "slot": "1,0",
+          "kind": "folder",
+          "page": "work",
+          "label": [
+            "WORK"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "folder",
+          "page": "operations",
+          "label": [
+            "OPERATIONS"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "folder",
+          "page": "content",
+          "label": [
+            "CONTENT"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "folder",
+          "page": "decisions",
+          "label": [
+            "DECISIONS"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "folder",
+          "page": "focus",
+          "label": [
+            "FOCUS"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "folder",
+          "page": "context",
+          "label": [
+            "CONTEXT"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "orient-me",
+          "label": [
+            "ORIENT",
+            "ME"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "next-action",
+          "label": [
+            "NEXT",
+            "ACTION"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "choose-best",
+          "label": [
+            "CHOOSE",
+            "BEST"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "prove-work",
+          "label": [
+            "PROVE",
+            "WORK"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "unstick-me",
+          "label": [
+            "UNSTICK",
+            "ME"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "prompt",
+          "prompt": "save-session",
+          "label": [
+            "SAVE",
+            "SESSION"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "prompt",
+          "prompt": "reply-queue",
+          "label": [
+            "REPLY",
+            "QUEUE"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "prompt",
+          "prompt": "privacy-check",
+          "label": [
+            "PRIVACY",
+            "CHECK"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "title": "Control",
+      "color": "#7DCEC2",
+      "symbol": "bot-message-square",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "orient-me",
+          "label": [
+            "ORIENT",
+            "ME"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "next-action",
+          "label": [
+            "NEXT",
+            "ACTION"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "verify-claims",
+          "label": [
+            "VERIFY",
+            "CLAIMS"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "stay-scoped",
+          "label": [
+            "STAY",
+            "SCOPED"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "plan-first",
+          "label": [
+            "PLAN",
+            "FIRST"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "choose-best",
+          "label": [
+            "CHOOSE",
+            "BEST"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "prove-work",
+          "label": [
+            "PROVE",
+            "WORK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "show-changes",
+          "label": [
+            "SHOW",
+            "CHANGES"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "unstick-me",
+          "label": [
+            "UNSTICK",
+            "ME"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "close-session",
+          "label": [
+            "CLOSE",
+            "SESSION"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "write-handoff",
+          "label": [
+            "WRITE",
+            "HANDOFF"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "title": "Work",
+      "color": "#E5B879",
+      "symbol": "clipboard-list",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "lock-scope",
+          "label": [
+            "LOCK",
+            "SCOPE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "map-structure",
+          "label": [
+            "MAP",
+            "STRUCTURE"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "message-brief",
+          "label": [
+            "MESSAGE",
+            "BRIEF"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "resume-work",
+          "label": [
+            "RESUME",
+            "WORK"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "check-drift",
+          "label": [
+            "CHECK",
+            "DRIFT"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "cleanup-plan",
+          "label": [
+            "CLEANUP",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "privacy-check",
+          "label": [
+            "PRIVACY",
+            "CHECK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "ship-gate",
+          "label": [
+            "SHIP",
+            "GATE"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "triage-work",
+          "label": [
+            "TRIAGE",
+            "WORK"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "find-commitments",
+          "label": [
+            "FIND",
+            "COMMITMENTS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "color": "#AE9CE1",
+      "symbol": "network",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "business-pulse",
+          "label": [
+            "BUSINESS",
+            "PULSE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "recovery-drafts",
+          "label": [
+            "RECOVERY",
+            "DRAFTS"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "review-replies",
+          "label": [
+            "REVIEW",
+            "REPLIES"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "reply-queue",
+          "label": [
+            "REPLY",
+            "QUEUE"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "inbox-triage",
+          "label": [
+            "INBOX",
+            "TRIAGE"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "weekly-report",
+          "label": [
+            "WEEKLY",
+            "REPORT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "title": "Content",
+      "color": "#E697A5",
+      "symbol": "feather",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "social-brief",
+          "label": [
+            "SOCIAL",
+            "BRIEF"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "repurpose-idea",
+          "label": [
+            "REPURPOSE",
+            "IDEA"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "content-plan",
+          "label": [
+            "CONTENT",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "write-thread",
+          "label": [
+            "WRITE",
+            "THREAD"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "better-hooks",
+          "label": [
+            "BETTER",
+            "HOOKS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decisions",
+      "title": "Decisions",
+      "color": "#94C3DD",
+      "symbol": "scale",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "red-team",
+          "label": [
+            "RED",
+            "TEAM"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "fresh-review",
+          "label": [
+            "FRESH",
+            "REVIEW"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "research-team",
+          "label": [
+            "RESEARCH",
+            "TEAM"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "deep-research",
+          "label": [
+            "DEEP",
+            "RESEARCH"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "compare-options",
+          "label": [
+            "COMPARE",
+            "OPTIONS"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "both-sides",
+          "label": [
+            "BOTH",
+            "SIDES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "focus",
+      "title": "Focus",
+      "color": "#B6CC92",
+      "symbol": "timer",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "start-small",
+          "label": [
+            "START",
+            "SMALL"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "focus-partner",
+          "label": [
+            "FOCUS",
+            "PARTNER"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "brain-dump",
+          "label": [
+            "BRAIN",
+            "DUMP"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "find-priority",
+          "label": [
+            "FIND",
+            "PRIORITY"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "timebox-task",
+          "label": [
+            "TIMEBOX",
+            "TASK"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "title": "Context",
+      "color": "#DDAA83",
+      "symbol": "map",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "check-assumptions",
+          "label": [
+            "CHECK",
+            "ASSUMPTIONS"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "set-language",
+          "label": [
+            "SET",
+            "LANGUAGE"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "brief-mode",
+          "label": [
+            "BRIEF",
+            "MODE"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "teach-topic",
+          "label": [
+            "TEACH",
+            "TOPIC"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "save-context",
+          "label": [
+            "SAVE",
+            "CONTEXT"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "task-template",
+          "label": [
+            "TASK",
+            "TEMPLATE"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "daily-brief",
+          "label": [
+            "DAILY",
+            "BRIEF"
+          ]
+        }
+      ]
+    }
+  ]
+}

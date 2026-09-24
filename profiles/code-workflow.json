@@ -1,0 +1,1277 @@
+{
+  "id": "code-workflow",
+  "name": "Code Workflow",
+  "version": "0.1.0-alpha.1",
+  "description": "Coding-agent prompts for VS Code and other editors: understand, plan, build, debug, review, recover and hand off.",
+  "prompts": {
+    "prime-this-session-cold": {
+      "title": "Prime This Session Cold",
+      "text": "Read the rules file, the plan, the project structure, and the recent git log, then report the files you read, what you understand, and what you believe the next task is, because you have no prior context and I would rather correct your understanding than your diff. Change nothing else, and wait for my confirmation before you touch anything."
+    },
+    "externalize-the-state-before-i-clear": {
+      "title": "Externalize The State Before I Clear",
+      "text": "Write the current state to a file I can hand to a fresh session: what is done, what is in progress, the decisions and their reasons, open questions, and the exact next step, because I am about to clear this window and only the file survives. Report the path, change nothing else, and stop."
+    },
+    "send-subagents-to-research-not-to-build": {
+      "title": "Send Subagents To Research, Not To Build",
+      "text": "Research this task and return findings with source paths. If independent research agents are available and their use is authorized, give them bounded read-only questions and reconcile disagreements. Otherwise do the research yourself and disclose the lack of an independent reviewer. Do not modify files or start implementation."
+    },
+    "set-up-an-isolated-worktree": {
+      "title": "Set Up An Isolated Worktree",
+      "text": "Create a git worktree for this stream so it cannot collide with my other running agents, reinstall the project dependencies inside it, and confirm which worktree and branch you are in, because two agents in one directory overwrite each other. Save it as a reusable command, do not touch my other worktrees, and stop."
+    },
+    "turn-this-into-a-command-or-skill": {
+      "title": "Turn This Into A Command Or Skill",
+      "text": "Turn this procedure into a reusable command or skill now that we have done it more than twice: the trigger, the exact steps, and the script that does the real work. Keep it out of the always-on rules file, because this knowledge is only needed sometimes. Report the path, change nothing else, and stop."
+    },
+    "trim-the-always-on-rules-file": {
+      "title": "Trim The Always-On Rules File",
+      "text": "Audit the rules file line by line, because every line costs tokens on every single request. Move anything conditionally useful into an on-demand reference or a skill, keep only what is always true, and report the before and after line count. Delete nothing I have not approved, and stop."
+    },
+    "fix-the-ai-layer-not-just-the-bug": {
+      "title": "Fix The AI Layer, Not Just The Bug",
+      "text": "Do not change any code. Given the mistake we just hit, tell me what to add to the rules, the spec, or the reference files so this whole class of mistake cannot recur, because fixing the instance leaves the cause in place. Check whether an existing rule already covers it, name the exact file for each change, change nothing else, and stop for my approval."
+    },
+    "map-this-repo-for-the-change": {
+      "title": "Map This Repo For The Change",
+      "text": "Map this repository for the work ahead: entry points, the modules involved, the data flow, where the tests live, and every file this will touch. Cite a path and symbol for each claim and check every path exists, because an uncited map is a guess. End with the minimal execution plan, edit nothing, and stop."
+    },
+    "summarize-this-session-for-tomorrow": {
+      "title": "Summarize This Session For Tomorrow",
+      "text": "Summarize this session into a file: files touched, behavior changed, decisions and why, tests added, and what is still open, because tomorrow the question is not what this project does but what I was in the middle of. Report the path, add nothing else, and stop."
+    },
+    "interrogate-me-before-you-plan": {
+      "title": "Interrogate Me Before You Plan",
+      "text": "Ask me the questions that would reshape your plan, as a numbered multiple-choice list, because every question I answer is an assumption you no longer have to invent. Check the repo first and skip anything it already answers. Cap it at the questions that actually change the plan and ask about nothing else. Do not plan or code yet; stop and wait for my answers."
+    },
+    "write-the-plan-file-with-validation-first": {
+      "title": "Write The Plan File With Validation First",
+      "text": "Write a plan document: goal, success criteria, non-goals, file-level tasks and the validation for each step. Verify existing paths; clearly label proposed new files. Save only the plan, report its location and stop before implementation."
+    },
+    "split-this-into-context-sized-phases": {
+      "title": "Split This Into Context-Sized Phases",
+      "text": "Split this plan into numbered phases, each small enough to finish in one context window and each with an explicit completion condition, because a phase that outgrows its window is where instruction drift starts. Report the phase list and what each one leaves untouched, then stop."
+    },
+    "list-the-unresolved-questions": {
+      "title": "List The Unresolved Questions",
+      "text": "List every question this plan still leaves open, ranked by how much damage a wrong guess would do, because the unresolved list is worth more than the confident parts. Check the repo for anything that already answers one, and say plainly where the data is insufficient instead of guessing. Change nothing else, and stop for my answers."
+    },
+    "compare-two-approaches-and-decide": {
+      "title": "Compare Two Approaches And Decide",
+      "text": "Compare the two most viable approaches on complexity, blast radius, testability, and cost to reverse, because a decision without a reversal cost is a guess. Recommend one, name the single deciding factor, and report what evidence would flip it. Write no code yet, leave the repo untouched, and stop."
+    },
+    "lock-the-data-structures-and-interfaces": {
+      "title": "Lock The Data Structures And Interfaces",
+      "text": "Define the shapes first: data structures, interfaces, types, errors, and events, with usage examples you can run, because if the shapes are wrong nothing built on them can be right. Run one example to prove the shapes compile. Do not implement any behavior yet; stop for my approval, and change nothing else until the shapes are locked."
+    },
+    "rank-the-riskiest-assumptions": {
+      "title": "Rank The Riskiest Assumptions",
+      "text": "List the assumptions this plan rests on, ranked by risk, and for each one name the cheapest check that would prove or kill it, because an assumption nobody tested is a bug with a delay timer. Run the checks that cost nothing, report the output, change nothing else, and stop before acting on the rest."
+    },
+    "define-done-before-any-code": {
+      "title": "Define Done Before Any Code",
+      "text": "Define done before any code: the observable behaviors, the edge cases in scope, what is explicitly out of scope, and the exact command or check that proves each one, because acceptance criteria written afterwards always describe whatever got built. Write no code, and stop for approval."
+    },
+    "write-the-cold-start-handoff-spec": {
+      "title": "Write The Cold-Start Handoff Spec",
+      "text": "Write a spec another assistant can execute without this chat: context, goal, constraints, ordered tasks, acceptance criteria and exact verification commands. Verify existing paths and label new ones as proposed. Save only the spec, report its location and stop."
+    },
+    "implement-this-phase-and-nothing-else": {
+      "title": "Implement This Phase And Nothing Else",
+      "text": "Implement only the current phase of the plan, because scope that grows quietly is scope nobody reviewed. Follow the patterns already in this repo, leave unrelated code untouched, run the checks the plan names, and report the actual output plus every file you touched, and stop at the phase boundary."
+    },
+    "mark-every-todo-before-you-code": {
+      "title": "Mark Every TODO Before You Code",
+      "text": "Insert an explicit TODO marker at every location you intend to change, and report the list with paths and line numbers, because I would rather correct your map than your diff. Write no implementation yet, touch nothing else, and stop until I confirm the markers are right."
+    },
+    "implement-then-revert-and-report-the-breaks": {
+      "title": "Implement Then Revert And Report The Breaks",
+      "text": "Run a disposable implementation probe in a new isolated worktree or scratch directory. First verify the original worktree will remain untouched. Compare the result to the plan, document the assumptions that failed and show the probe diff. Do not merge, delete, or discard the probe without approval. Leave the original project unchanged."
+    },
+    "fix-this-error-and-show-the-output": {
+      "title": "Fix This Error And Show The Output",
+      "text": "Fix this error: read the exact message and stack, name the cause in one line, apply the smallest safe fix, then rerun and paste the real output, because a claim of success without output is not evidence. Do not suppress the warning, change nothing unrelated, and stop once it passes."
+    },
+    "make-it-build-and-run-clean": {
+      "title": "Make It Build And Run Clean",
+      "text": "Get this project building and running clean: run the build, read the errors in order, and fix them one at a time, because fixing the third error first usually invents work. Never silence a warning to make it pass. Paste the successful command output, change nothing else, and stop."
+    },
+    "write-the-migration-with-a-rollback": {
+      "title": "Write The Migration With A Rollback",
+      "text": "Write this migration with its rollback in the same change: forward steps, reverse steps, backfill, and safety on existing rows, because a migration you cannot reverse is a decision you cannot undo. Run it dry and paste the output. Do not execute against real data, change nothing else, and stop for my approval."
+    },
+    "replace-the-mocks-with-real-calls": {
+      "title": "Replace The Mocks With Real Calls",
+      "text": "Replace every mock on this path with the real call, because a step validated on mocked data is a step nobody validated. Remove only what is genuinely mocked, list each one and what now runs instead, exercise the real path, and paste the output. If a credential is missing, say so and stop rather than re-mocking."
+    },
+    "integrate-this-api-from-its-current-docs": {
+      "title": "Integrate This API From Its Current Docs",
+      "text": "Integrate this API from its current published docs, not from memory, because the version you remember is usually the one with the vulnerability: typed client, auth, timeouts, retries with backoff, and error mapping. Prove one real call and paste the response. Pin the version, leave unrelated code untouched, and stop."
+    },
+    "resolve-these-conflicts-by-intent": {
+      "title": "Resolve These Conflicts By Intent",
+      "text": "Resolve these conflicts by working out what each side was trying to do, because deleting a hunk to make the merge pass silently discards someone's decision. Keep both behaviors where both are required, change nothing unrelated to the conflict, run the tests, paste the output, and stop before pushing."
+    },
+    "reproduce-it-end-to-end-first": {
+      "title": "Reproduce It End To End First",
+      "text": "Reproduce this bug end to end, the way a user actually hits it, before you change a single line, because a fix for a bug you never reproduced is a guess with a commit hash. Script the repro if you can, paste the output, report observed versus expected, change nothing else, and stop before editing."
+    },
+    "read-this-stack-trace-precisely": {
+      "title": "Read This Stack Trace Precisely",
+      "text": "Read this stack trace precisely: which frame actually failed, what the frames around it were doing, and the likely causes ranked against each other, because the top frame is usually the victim and not the culprit. Name the first thing to check, change nothing else, and stop there."
+    },
+    "instrument-run-then-diagnose": {
+      "title": "Instrument, Run, Then Diagnose",
+      "text": "Add minimal targeted logging around the suspected path, run the failing scenario, and read the real output before forming a theory, because a diagnosis without instrumentation is just the most plausible story. Report the values you saw, remove the temporary logging, and stop before fixing."
+    },
+    "bisect-to-the-breaking-commit": {
+      "title": "Bisect To The Breaking Commit",
+      "text": "Find the commit that introduced this regression using bisect or history, with a fast repro check at each step, because narrowing to one commit turns a hunt into a diff. Report the commit and explain exactly what it broke. Do not fix it yet, change nothing else, and stop."
+    },
+    "compare-runtime-state-to-our-assumptions": {
+      "title": "Compare Runtime State To Our Assumptions",
+      "text": "Inspect the real runtime state at the failure point, variable values, nulls, types, and collection sizes, then paste the values you actually saw and report where reality and our assumptions disagree, because bugs live in that gap. Do not edit anything, touch nothing else, and stop once the mismatch is named."
+    },
+    "hunt-the-race-or-ordering-bug": {
+      "title": "Hunt The Race Or Ordering Bug",
+      "text": "Hunt the race here: shared state, async ordering, awaited versus fire and forget, and locking, because an intermittent failure is an ordering assumption nobody wrote down. Demonstrate the interleaving that fails and paste the evidence. Propose the safest fix in scope, then stop."
+    },
+    "find-and-measure-the-leak": {
+      "title": "Find And Measure The Leak",
+      "text": "Find the leak: trace allocations, subscriptions, listeners, timers, and handles created and never released across this repository, because a leak you cannot measure is a leak you cannot prove you fixed. Show the growth with numbers, fix only what you proved leaks, and stop."
+    },
+    "kill-this-flake-at-the-root": {
+      "title": "Kill This Flake At The Root",
+      "text": "Kill this flaky test at its root cause, timing, ordering, shared state, or network, because adding a sleep converts a visible flake into an invisible one. Run it repeatedly and report the pass rate over those runs as evidence. Change nothing unrelated, and stop once it is stable."
+    },
+    "explain-the-environment-difference": {
+      "title": "Explain The Environment Difference",
+      "text": "Explain why this works in one environment and fails in another: compare versions, configuration, environment variables, paths, and data, because the decisive difference is always something we assumed was identical. Report the evidence, change nothing else, and stop once you can name it."
+    },
+    "take-this-to-production-ready": {
+      "title": "Take This To Production Ready",
+      "text": "Take this repository to production ready: close the open issues, run tests, lint, and build, refresh the docs and changelog, and produce the exact safe ship commands, because a release assembled by hand is a release with a step missing. Paste the output, leave unrelated behavior untouched, and do not push or deploy without my approval."
+    },
+    "give-me-a-go-or-no-go": {
+      "title": "Give Me A Go Or No-Go",
+      "text": "Run a release readiness check across versioning, migrations, compatibility, secrets, configuration, packaging, tests, CI, rollback, observability, and docs, because a go decision without a rollback plan is a hope. Report a go or no-go with the blocking items named, change nothing else, and stop."
+    },
+    "prove-the-journey-with-real-evidence": {
+      "title": "Prove The Journey With Real Evidence",
+      "text": "Prove the user journey end to end through the real entry point, real persistence, and the visible outcome, because a passing unit test is not evidence that the product works. Capture a screenshot, recording, or log as proof, list every boundary you could not exercise, change nothing else, and stop before fixing."
+    },
+    "run-the-test-blitz-repo-wide": {
+      "title": "Run The Test Blitz Repo Wide",
+      "text": "Design and run a repository-wide test blitz across unit, integration, regression, error-path, and smoke coverage, because a suite that only covers the new code cannot catch what the new code broke. Before you fix anything, report the failure list ordered by blast radius; then fix only what is in scope and show the passing output."
+    },
+    "hunt-the-bugs-no-test-covers": {
+      "title": "Hunt The Bugs No Test Covers",
+      "text": "Hunt for the bugs no test covers across this repository: invariants, error paths, state transitions, concurrency, resource cleanup, and boundary inputs, because the tests encode what we already thought of. Reproduce and rank each issue with evidence, fix only what is in scope, and stop."
+    },
+    "audit-the-repo-for-security-risks": {
+      "title": "Audit The Repo For Security Risks",
+      "text": "Audit this repository for authentication, authorization, input validation, injection, secrets, privacy, dependency, and error-leak risks, because the surface you did not audit is the one that ships. Rank concrete findings with paths, run the checks you can and paste the output, propose a fix for each, change nothing unrelated, and do not change auth or secrets without my approval."
+    },
+    "refactor-with-behavior-locked": {
+      "title": "Refactor With Behavior Locked",
+      "text": "Refactor for clarity and maintainability without changing behavior: lock the current behavior with a test first, then simplify structure, names, and duplication one module at a time, because a refactor without a lock is a rewrite with optimism. Prove parity by running both, and stop."
+    },
+    "profile-then-fix-the-real-bottleneck": {
+      "title": "Profile Then Fix The Real Bottleneck",
+      "text": "Profile before you optimize anything, because the bottleneck is almost never where it feels like it is. Quantify the cost, propose the lowest-risk improvement, apply only what you measured, and report the before and after numbers. Do not make speculative changes, and stop once it is measured."
+    },
+    "assess-the-architecture-honestly": {
+      "title": "Assess The Architecture Honestly",
+      "text": "Assess this architecture against the goal and the constraints: map dependencies and data flow, compare the alternatives, and propose the smallest sustainable evolution with migration and rollback steps, because a rewrite proposed without a payoff is ambition. Record it as an ADR, check every path you cite, change no code, and stop."
+    },
+    "write-the-pr-body-with-evidence": {
+      "title": "Write The PR Body With Evidence",
+      "text": "Write the PR body for every change on this branch: original intent, what changed, how it was tested, links to the evidence, and the risk level, because a reviewer who has to reconstruct intent reviews the diff and not the decision. Cite real paths, add nothing else, and do not push."
+    },
+    "adversarially-review-this-diff": {
+      "title": "Adversarially Review This Diff",
+      "text": "Review this branch as a hostile reviewer whose only job is to find defects, in a fresh mindset, because the author of a change is the worst person to judge it. Rank findings by severity with file and line evidence, flag only what you can confirm, and do not edit anything yet."
+    },
+    "walk-me-through-this-diff-hunk-by-hunk": {
+      "title": "Walk Me Through This Diff Hunk By Hunk",
+      "text": "Walk me through all the changes on this branch file by file: what each hunk does, why it is needed, and which hunks deserve a second pair of eyes, because the risky hunk is rarely the biggest one. Show the diffstat output first, flag only what is real, and do not edit anything."
+    },
+    "split-this-into-reviewable-commits": {
+      "title": "Split This Into Reviewable Commits",
+      "text": "Split this work into commits a human can actually review: one logical change each, conventional messages, unrelated edits excluded, because a single blob commit is a review nobody performs. Report the planned sequence and run the checks. Do not push or merge without my approval."
+    },
+    "answer-every-review-comment": {
+      "title": "Answer Every Review Comment",
+      "text": "Answer every open review comment: agree and fix, or disagree with a technical reason, because an unanswered comment reads as ignored. Keep replies short and specific, run the checks after each fix, and report the output. Leave unrelated code untouched, and do not merge."
+    },
+    "write-the-changelog-entry": {
+      "title": "Write The Changelog Entry",
+      "text": "Write the changelog entry for all the changes on this branch, in this project's existing style: user-visible impact first, breaking changes flagged, migration notes where they apply, because a changelog written for maintainers helps nobody. Check each claim against the code, add nothing else, then stop."
+    },
+    "rebase-and-clear-the-path-to-merge": {
+      "title": "Plan A Rebase",
+      "text": "Inspect the working tree, current branch, configured remote and locally available default-branch reference. State if the reference may be stale. Identify likely conflicts and unrelated commits, then propose the exact rebase steps, recovery path and validation commands. Preserve uncommitted work. Do not fetch, rebase, resolve conflicts, rewrite history, force-push or merge until I approve the plan."
+    },
+    "write-the-minimal-issue-report": {
+      "title": "Write The Minimal Issue Report",
+      "text": "Write a minimal, complete issue report for this bug: title, environment, steps, expected versus actual, the smallest reproduction, and the suspected area, because an issue nobody can reproduce is a note to self. Confirm the repro by running it, paste the output, change nothing else, and stop."
+    },
+    "write-release-notes-for-humans": {
+      "title": "Write Release Notes For Humans",
+      "text": "Write release notes for humans from all the changes since the last release: what users gain, what behavior moved, upgrade steps, and known issues, because internal jargon in release notes is a support ticket waiting to happen. Check every claim against the shipped code, add nothing else, then stop."
+    },
+    "fix-the-failing-ci-run": {
+      "title": "Fix The Failing CI Run",
+      "text": "Fix this CI run: read the actual log, find the first real failure rather than the downstream noise, reproduce it locally, then fix it, because chasing the last error in the log fixes a symptom. Paste the passing run output, change nothing unrelated, and stop before merging."
+    },
+    "pin-the-exact-current-versions": {
+      "title": "Pin The Exact Current Versions",
+      "text": "Pin every dependency to an exact current version, checking what is actually published today rather than what you remember, because models reach for older packages and older packages carry known vulnerabilities. Report the pinned list and run the install. Do not change any major version here, touch nothing else, and stop."
+    },
+    "upgrade-dependencies-without-breaking": {
+      "title": "Upgrade Dependencies Without Breaking",
+      "text": "Upgrade the outdated dependencies in risk order, reading the breaking-change notes first and running the tests between every step, because a batch upgrade that fails tells you nothing about which package did it. Upgrade one package at a time, paste the output at each step, and stop at the first real break."
+    },
+    "turn-on-scanning-and-dependency-bots": {
+      "title": "Turn On Scanning And Dependency Bots",
+      "text": "Turn on dependency and code scanning for this repository before the next merge, because a vulnerability found by a bot is cheaper than one found by a user. Report the exact configuration you added and run it once to confirm it reports. Do not change application code, touch nothing else, and stop."
+    },
+    "build-the-self-verification-harness": {
+      "title": "Build The Self-Verification Harness",
+      "text": "Build a harness that lets you exercise this product headlessly and check your own work, because an agent that cannot run the thing it changed is guessing. Make it one repeatable command, run it, and paste the output. Leave the existing tests untouched, do not weaken any assertion to make it pass, then stop."
+    },
+    "enforce-style-with-tools-not-prose": {
+      "title": "Enforce Style With Tools Not Prose",
+      "text": "Consolidate linting and formatting into tools that run in CI, generating configuration that matches this codebase's dominant style, because a style rule written in prose is a rule nobody enforces. Report what you suppressed and why, run the full check, leave unrelated files untouched, and do not change any logic."
+    },
+    "speed-up-the-feedback-loop": {
+      "title": "Speed Up The Feedback Loop",
+      "text": "Measure the current build, test, and reload times, find the dominant cost, and apply only the highest-impact safe improvement, because a feedback loop slower than my attention span is the real bottleneck. Report the before and after numbers, change nothing unrelated, and stop there."
+    },
+    "create-the-missing-dev-scripts": {
+      "title": "Create The Missing Dev Scripts",
+      "text": "Create the developer scripts this repo is missing, run, test, lint, format, and clean, and wire them into the task configuration, because a command nobody can find gets reinvented wrong. Run each one, paste the output, document them in the README, add nothing else, and stop."
+    },
+    "write-fresh-machine-setup-steps": {
+      "title": "Write Fresh Machine Setup Steps",
+      "text": "Write the exact setup steps for this project on a fresh Windows machine: prerequisites, install commands, environment variables, first run, and how to verify each step worked, because setup instructions nobody tested are fiction. Check each command against the repo, touch nothing else, and stop."
+    },
+    "find-the-change-you-did-not-finish": {
+      "title": "Find The Change You Did Not Finish",
+      "text": "List every place in this repository that should have changed alongside what you just edited but did not: callers, types, tests, config, docs, sibling modules, and error paths. Cite a path and symbol for each, because an uncited miss is only a guess. Report the list ranked by blast radius. Do not fix anything, change nothing else, and stop."
+    },
+    "checkpoint-this-tree-before-you-touch-it": {
+      "title": "Checkpoint This Tree Before You Touch It",
+      "text": "Before editing, inspect the worktree and identify existing work. Propose a recoverable checkpoint for this task only. Do not stage unrelated files, secrets, or personal data. Create a branch or local checkpoint only within my authorization, and report its name and commit if created. Ask before pushing anywhere. Preserve all existing work."
+    },
+    "revert-your-last-run-cleanly": {
+      "title": "Revert Your Last Run Cleanly",
+      "text": "Prepare an undo of only the changes you made in this run. First show the exact diff and distinguish my pre-existing work or other agents' changes. Explain anything that cannot be recovered and ask before deleting or discarding data. Do not use a blanket reset or touch unrelated work. After approval, apply the scoped undo, verify it and stop."
+    },
+    "enumerate-every-callsite-first": {
+      "title": "Enumerate Every Callsite First",
+      "text": "Before changing this signature or shape, enumerate every callsite, import, test, mock, and serialized copy that depends on it, using exact symbol search rather than a semantic guess, because approximate retrieval misses the ones that matter. Paste the list with paths and line numbers, change nothing else, then stop."
+    },
+    "break-the-loop-and-reset": {
+      "title": "Break The Loop And Reset",
+      "text": "Stop retrying, because you have failed the same way more than twice. Write to a file what you attempted, the actual error output each time, and what you now believe is wrong, because the next attempt should start from that evidence in a clean window and not from this one. Do not edit, and change nothing else."
+    },
+    "show-me-the-output-not-the-summary": {
+      "title": "Show Me The Output, Not The Summary",
+      "text": "Paste the proof of what you just claimed: the actual terminal output, screenshot, or file diff, because I do not accept a summary as evidence. If you did not run it, say so plainly before you continue. Name the exact command and the directory you ran it in, and add nothing else."
+    },
+    "split-this-across-parallel-worktrees": {
+      "title": "Plan Parallel Worktrees",
+      "text": "Plan up to four independent work streams. Identify shared files, dependencies and likely collisions; propose a separate branch and worktree path for each stream, plus validation and merge order. If the work cannot be split safely, recommend sequential execution. Do not create branches or worktrees, launch agents, edit files or merge anything until I approve the plan."
+    },
+    "verify-that-finding-three-ways": {
+      "title": "Verify That Finding Three Ways",
+      "text": "Take the finding you just reported and try to disprove it three separate ways: reproduce it, read the code path that contradicts it, and check whether a test already covers it. Report which attempts failed to refute it, because a claim I cannot falsify is not worth acting on. Do not edit anything yet, change nothing else, and stop."
+    },
+    "tell-me-what-you-are-not-sure-about": {
+      "title": "Tell Me What You Are Not Sure About",
+      "text": "Before you continue, list what you are actually unsure about here: the assumptions you never validated, the files you never opened, and the claims you only inferred. If the data is insufficient, say so instead of guessing, because a confident wrong answer costs me hours. Report the list and change nothing else."
+    },
+    "explain-this-code-like-a-mentor": {
+      "title": "Explain This Code Like A Mentor",
+      "text": "Explain this code the way a patient senior would: what it does, why it is written this way, the patterns in play, and the two things most worth understanding deeply, because reading code you do not understand is how architectural debt lands. Cite the lines you mean, check them as you go, and edit nothing.",
+      "icon": "book-open"
+    },
+    "explain-this-error-in-plain-language": {
+      "title": "Explain This Error In Plain Language",
+      "text": "Explain this error in plain language: what the message actually means, the usual causes ranked, how to confirm which one applies here, and the canonical fix, because the message is written for the compiler author and not for me. Name the check that settles it, edit nothing else, and stop."
+    },
+    "teach-the-pattern-behind-this-code": {
+      "title": "Teach The Pattern Behind This Code",
+      "text": "Teach me the pattern behind this code: the problem it solves, how this implementation applies it, when to reach for it, and when it is overkill, because a pattern applied without its problem is just ceremony. Show a short example you can run, edit nothing, and say plainly where you are unsure."
+    },
+    "compare-these-libraries-for-our-case": {
+      "title": "Compare These Libraries For Our Case",
+      "text": "Compare the candidate libraries for our specific case on maturity, API fit, performance, dependency weight, and maintenance risk, because the popular choice and the right choice are different questions. Check the current published versions, recommend one as a short ranked list, install nothing, and stop."
+    },
+    "show-me-the-idiomatic-version": {
+      "title": "Show Me The Idiomatic Version",
+      "text": "Show me the idiomatic version of this code for this language and framework, as an experienced maintainer would write it, and explain each meaningful difference, because unidiomatic code costs a reader more than it saved the writer. Run it to confirm parity, apply nothing yet, edit nothing else, and stop."
+    },
+    "add-only-high-value-comments": {
+      "title": "Add Only High-Value Comments",
+      "text": "Add comments only where they carry intent, invariants, or a non-obvious decision, because a comment that restates the code is a second thing that can go stale. Never narrate what the line already says. Report the comments you added and why, change nothing else, and stop."
+    },
+    "explain-the-framework-magic-here": {
+      "title": "Explain The Framework Magic Here",
+      "text": "Explain what the framework is doing invisibly here: the lifecycle, injection, reactivity, or code generation involved, and trace one real request or render through it step by step, because magic you cannot trace is magic you cannot debug. Cite the framework source, check it as you go, and edit nothing."
+    },
+    "write-the-deep-markdown-report": {
+      "title": "Write The Deep Markdown Report",
+      "text": "Write a deep report to a markdown file rather than to this chat, because a long answer in the window is an answer I lose at the next clear: the question, what you checked, the evidence with paths, the conclusion, and what remains uncertain. Report the file path, edit nothing else, and stop."
+    },
+    "record-this-decision-as-an-adr": {
+      "title": "Record This Decision As An ADR",
+      "text": "Record this decision as an ADR in the repo: the context, the options considered, the decision, the consequences, and what would cause us to revisit it, because a decision nobody wrote down gets relitigated every quarter. Check every path you cite, add nothing else, and stop."
+    },
+    "write-goal": {
+      "title": "Write the goal without executing it",
+      "text": "From the source text or attachments I provide, write a goal in at most five sentences. Include the intended outcome, acceptance criteria, implementation scope, tests and final verification. Preserve constraints and exclusions. Do not inspect other repositories or start the work. Leave acceptance criteria unchecked. If a required source is missing, label the goal draft; otherwise label it ready for implementation. Provide it as an editable document."
+    },
+    "release-gate": {
+      "title": "Check release readiness",
+      "text": "Review this project for release readiness using its actual requirements and supported tools. Check the main user journey, loading and error states, security and privacy, configuration, dependencies, documentation, tests and build. Report only evidenced findings with severity and exact locations. Separate verified results from untested assumptions. Give a go/no-go recommendation. Do not deploy or publish."
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "color": "#9FAEF5",
+      "symbol": "code",
+      "buttons": [
+        {
+          "slot": "0,0",
+          "kind": "folder",
+          "page": "context",
+          "label": [
+            "CONTEXT"
+          ]
+        },
+        {
+          "slot": "1,0",
+          "kind": "folder",
+          "page": "plan",
+          "label": [
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "folder",
+          "page": "build",
+          "label": [
+            "BUILD"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "folder",
+          "page": "debug",
+          "label": [
+            "DEBUG"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "folder",
+          "page": "review",
+          "label": [
+            "REVIEW"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "folder",
+          "page": "git",
+          "label": [
+            "GIT + PR"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "folder",
+          "page": "tooling",
+          "label": [
+            "TOOLING"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "folder",
+          "page": "rescue",
+          "label": [
+            "RECOVER"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "folder",
+          "page": "learn",
+          "label": [
+            "LEARN"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "write-goal",
+          "label": [
+            "WRITE",
+            "GOAL"
+          ]
+        },
+        {
+          "slot": "0,2",
+          "kind": "prompt",
+          "prompt": "release-gate",
+          "label": [
+            "SHIP",
+            "GATE"
+          ]
+        },
+        {
+          "slot": "1,2",
+          "kind": "prompt",
+          "prompt": "fix-this-error-and-show-the-output",
+          "label": [
+            "FIX",
+            "ERROR"
+          ]
+        },
+        {
+          "slot": "2,2",
+          "kind": "prompt",
+          "prompt": "adversarially-review-this-diff",
+          "label": [
+            "REVIEW",
+            "DIFF"
+          ]
+        },
+        {
+          "slot": "3,2",
+          "kind": "prompt",
+          "prompt": "define-done-before-any-code",
+          "label": [
+            "DEFINE",
+            "DONE"
+          ]
+        },
+        {
+          "slot": "4,2",
+          "kind": "prompt",
+          "prompt": "explain-this-code-like-a-mentor",
+          "label": [
+            "EXPLAIN",
+            "CODE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "title": "Context & Agent Ops",
+      "color": "#7DCEC2",
+      "symbol": "map",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "prime-this-session-cold",
+          "label": [
+            "ORIENT",
+            "SESSION"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "externalize-the-state-before-i-clear",
+          "label": [
+            "SAVE",
+            "STATE"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "send-subagents-to-research-not-to-build",
+          "label": [
+            "RESEARCH",
+            "REVIEW"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "set-up-an-isolated-worktree",
+          "label": [
+            "ISOLATE",
+            "WORK"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "turn-this-into-a-command-or-skill",
+          "label": [
+            "REUSE",
+            "WORKFLOW"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "trim-the-always-on-rules-file",
+          "label": [
+            "TRIM",
+            "RULES"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "fix-the-ai-layer-not-just-the-bug",
+          "label": [
+            "IMPROVE",
+            "GUIDANCE"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "map-this-repo-for-the-change",
+          "label": [
+            "MAP",
+            "REPO"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "summarize-this-session-for-tomorrow",
+          "label": [
+            "SESSION",
+            "SUMMARY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": "Plan & Scope",
+      "color": "#E5B879",
+      "symbol": "list-checks",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "interrogate-me-before-you-plan",
+          "label": [
+            "SCOPE",
+            "QUESTIONS"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "write-the-plan-file-with-validation-first",
+          "label": [
+            "WRITE",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "split-this-into-context-sized-phases",
+          "label": [
+            "SPLIT",
+            "PHASES"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "list-the-unresolved-questions",
+          "label": [
+            "OPEN",
+            "QUESTIONS"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "compare-two-approaches-and-decide",
+          "label": [
+            "COMPARE",
+            "APPROACHES"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "lock-the-data-structures-and-interfaces",
+          "label": [
+            "DEFINE",
+            "INTERFACES"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "rank-the-riskiest-assumptions",
+          "label": [
+            "RISK",
+            "CHECK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "define-done-before-any-code",
+          "label": [
+            "DEFINE",
+            "DONE"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "write-the-cold-start-handoff-spec",
+          "label": [
+            "HANDOFF",
+            "SPEC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "title": "Build & Fix",
+      "color": "#AE9CE1",
+      "symbol": "hammer",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "implement-this-phase-and-nothing-else",
+          "label": [
+            "IMPLEMENT",
+            "PHASE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "mark-every-todo-before-you-code",
+          "label": [
+            "MARK",
+            "TODO"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "implement-then-revert-and-report-the-breaks",
+          "label": [
+            "ISOLATED",
+            "PROBE"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "fix-this-error-and-show-the-output",
+          "label": [
+            "FIX",
+            "ERROR"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "make-it-build-and-run-clean",
+          "label": [
+            "BUILD",
+            "CLEAN"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "write-the-migration-with-a-rollback",
+          "label": [
+            "MIGRATION",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "replace-the-mocks-with-real-calls",
+          "label": [
+            "REPLACE",
+            "MOCKS"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "integrate-this-api-from-its-current-docs",
+          "label": [
+            "INTEGRATE",
+            "API"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "resolve-these-conflicts-by-intent",
+          "label": [
+            "RESOLVE",
+            "CONFLICTS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "debug",
+      "title": "Debug & Trace",
+      "color": "#E697A5",
+      "symbol": "bug",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "reproduce-it-end-to-end-first",
+          "label": [
+            "REPRODUCE",
+            "BUG"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "read-this-stack-trace-precisely",
+          "label": [
+            "READ",
+            "STACK"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "instrument-run-then-diagnose",
+          "label": [
+            "INSTRUMENT",
+            "RUN"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "bisect-to-the-breaking-commit",
+          "label": [
+            "FIND BAD",
+            "COMMIT"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "compare-runtime-state-to-our-assumptions",
+          "label": [
+            "COMPARE",
+            "RUNTIME"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "hunt-the-race-or-ordering-bug",
+          "label": [
+            "HUNT",
+            "RACE"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "find-and-measure-the-leak",
+          "label": [
+            "MEASURE",
+            "LEAK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "kill-this-flake-at-the-root",
+          "label": [
+            "FIX",
+            "FLAKY TEST"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "explain-the-environment-difference",
+          "label": [
+            "ENVIRONMENT",
+            "DIFF"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review & Ship",
+      "color": "#94C3DD",
+      "symbol": "shield-check",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "take-this-to-production-ready",
+          "label": [
+            "RELEASE",
+            "REVIEW"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "give-me-a-go-or-no-go",
+          "label": [
+            "GO /",
+            "NO-GO"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "prove-the-journey-with-real-evidence",
+          "label": [
+            "PROVE",
+            "JOURNEY"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "run-the-test-blitz-repo-wide",
+          "label": [
+            "TEST",
+            "COVERAGE"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "hunt-the-bugs-no-test-covers",
+          "label": [
+            "HUNT",
+            "BUGS"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "audit-the-repo-for-security-risks",
+          "label": [
+            "AUDIT",
+            "REPO"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "refactor-with-behavior-locked",
+          "label": [
+            "REFACTOR",
+            "BEHAVIOR"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "profile-then-fix-the-real-bottleneck",
+          "label": [
+            "PROFILE",
+            "PERFORMANCE"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "assess-the-architecture-honestly",
+          "label": [
+            "ASSESS",
+            "ARCHITECTURE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "title": "Git & PR",
+      "color": "#B6CC92",
+      "symbol": "git-compare-arrows",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "write-the-pr-body-with-evidence",
+          "label": [
+            "WRITE",
+            "PR"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "adversarially-review-this-diff",
+          "label": [
+            "REVIEW",
+            "DIFF"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "walk-me-through-this-diff-hunk-by-hunk",
+          "label": [
+            "EXPLAIN",
+            "DIFF"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "split-this-into-reviewable-commits",
+          "label": [
+            "SPLIT",
+            "COMMITS"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "answer-every-review-comment",
+          "label": [
+            "ANSWER",
+            "REVIEW"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "write-the-changelog-entry",
+          "label": [
+            "WRITE",
+            "CHANGELOG"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "rebase-and-clear-the-path-to-merge",
+          "label": [
+            "REBASE",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "write-the-minimal-issue-report",
+          "label": [
+            "ISSUE",
+            "REPORT"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "write-release-notes-for-humans",
+          "label": [
+            "RELEASE",
+            "NOTES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tooling",
+      "title": "Tooling & Automation",
+      "color": "#DDAA83",
+      "symbol": "network",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "fix-the-failing-ci-run",
+          "label": [
+            "FIX",
+            "CI"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "pin-the-exact-current-versions",
+          "label": [
+            "PIN",
+            "VERSIONS"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "upgrade-dependencies-without-breaking",
+          "label": [
+            "UPGRADE",
+            "DEPS"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "turn-on-scanning-and-dependency-bots",
+          "label": [
+            "SECURITY",
+            "SCANS"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "build-the-self-verification-harness",
+          "label": [
+            "VERIFY",
+            "HARNESS"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "enforce-style-with-tools-not-prose",
+          "label": [
+            "ENFORCE",
+            "STYLE"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "speed-up-the-feedback-loop",
+          "label": [
+            "FASTER",
+            "CHECKS"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "create-the-missing-dev-scripts",
+          "label": [
+            "DEV",
+            "SCRIPTS"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "write-fresh-machine-setup-steps",
+          "label": [
+            "FRESH",
+            "SETUP"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rescue",
+      "title": "Correct & Recover",
+      "color": "#A8B8C9",
+      "symbol": "repeat-2",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "find-the-change-you-did-not-finish",
+          "label": [
+            "FIND",
+            "MISSED WORK"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "checkpoint-this-tree-before-you-touch-it",
+          "label": [
+            "CHECKPOINT"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "revert-your-last-run-cleanly",
+          "label": [
+            "SAFE",
+            "UNDO"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "enumerate-every-callsite-first",
+          "label": [
+            "LIST",
+            "CALLSITES"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "break-the-loop-and-reset",
+          "label": [
+            "BREAK",
+            "LOOP"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "show-me-the-output-not-the-summary",
+          "label": [
+            "SHOW",
+            "OUTPUT"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "split-this-across-parallel-worktrees",
+          "label": [
+            "WORKTREE",
+            "PLAN"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "verify-that-finding-three-ways",
+          "label": [
+            "VERIFY",
+            "FINDING"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "tell-me-what-you-are-not-sure-about",
+          "label": [
+            "STATE",
+            "UNCERTAINTY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "title": "Explain & Learn",
+      "color": "#9FAEF5",
+      "symbol": "book-open",
+      "buttons": [
+        {
+          "slot": "1,0",
+          "kind": "prompt",
+          "prompt": "explain-this-code-like-a-mentor",
+          "label": [
+            "EXPLAIN",
+            "CODE"
+          ]
+        },
+        {
+          "slot": "2,0",
+          "kind": "prompt",
+          "prompt": "explain-this-error-in-plain-language",
+          "label": [
+            "EXPLAIN",
+            "ERROR"
+          ]
+        },
+        {
+          "slot": "3,0",
+          "kind": "prompt",
+          "prompt": "teach-the-pattern-behind-this-code",
+          "label": [
+            "TEACH",
+            "PATTERN"
+          ]
+        },
+        {
+          "slot": "4,0",
+          "kind": "prompt",
+          "prompt": "compare-these-libraries-for-our-case",
+          "label": [
+            "COMPARE",
+            "LIBRARIES"
+          ]
+        },
+        {
+          "slot": "0,1",
+          "kind": "prompt",
+          "prompt": "show-me-the-idiomatic-version",
+          "label": [
+            "SHOW",
+            "IDIOMATIC"
+          ]
+        },
+        {
+          "slot": "1,1",
+          "kind": "prompt",
+          "prompt": "add-only-high-value-comments",
+          "label": [
+            "USEFUL",
+            "COMMENTS"
+          ]
+        },
+        {
+          "slot": "2,1",
+          "kind": "prompt",
+          "prompt": "explain-the-framework-magic-here",
+          "label": [
+            "EXPLAIN",
+            "FRAMEWORK"
+          ]
+        },
+        {
+          "slot": "3,1",
+          "kind": "prompt",
+          "prompt": "write-the-deep-markdown-report",
+          "label": [
+            "WRITE",
+            "REPORT"
+          ]
+        },
+        {
+          "slot": "4,1",
+          "kind": "prompt",
+          "prompt": "record-this-decision-as-an-adr",
+          "label": [
+            "DECISION",
+            "RECORD"
+          ]
+        }
+      ]
+    }
+  ]
+}

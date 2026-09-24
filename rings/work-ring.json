@@ -1,0 +1,566 @@
+{
+  "id": "work-ring",
+  "name": "Work Ring",
+  "version": "0.1.0-alpha.1",
+  "description": "81 prompts for clients, team, focus, writing and operations.",
+  "folders": [
+    {
+      "id": "start",
+      "title": "Start",
+      "color": "#9FAEF5",
+      "icon": "footprints",
+      "actions": [
+        {
+          "id": "morning-brief",
+          "title": "Morning Brief",
+          "kind": "prompt",
+          "text": "Using only the work, calendar and messages I supply or explicitly authorize, prepare a short morning brief: today's commitments, urgent replies, deadlines, top blocker and three priorities. Identify missing sources. Draft only; do not change tasks or send messages."
+        },
+        {
+          "id": "prime-this-session",
+          "title": "Prime This Session",
+          "kind": "prompt",
+          "text": "Prime this session cold: check what you remember about my open work, then report what you believe my top 3 priorities are today and why, because I would rather correct your understanding than discover the gap at noon. Send nothing, change nothing, and stop for my correction."
+        },
+        {
+          "id": "what-changed-overnight",
+          "title": "What Changed Overnight",
+          "kind": "prompt",
+          "text": "Check my authorized inbox, messages and task manager for anything new since yesterday evening, and report only the items that need an action from me, one line each, because a digest of everything is a digest of nothing. Send nothing and stop."
+        },
+        {
+          "id": "deadline-radar",
+          "title": "Deadline Radar",
+          "kind": "prompt",
+          "text": "List everything due in the next 72 hours across the authorized task manager and what you know of my commitments, one line each, ranked by damage if missed. Flag anything that is impossible to hit so I renegotiate it today instead of apologizing later. Stop there."
+        },
+        {
+          "id": "top-blocker",
+          "title": "Top Blocker",
+          "kind": "prompt",
+          "text": "Across everything you know is open, name the single blocker costing me the most right now and give me the first move against it, startable in 10 minutes, because attacking the wrong bottleneck feels like progress and is not. One blocker only, then stop."
+        },
+        {
+          "id": "client-fires-scan",
+          "title": "Client Fires Scan",
+          "kind": "prompt",
+          "text": "Scan the client threads and email you can reach for anyone waiting on me, unhappy, or about to escalate, ranked by heat, because a client fire found in the morning costs one message and found at night costs a discount. Report only what needs action, then stop."
+        },
+        {
+          "id": "money-scan",
+          "title": "Money Scan",
+          "kind": "prompt",
+          "text": "Check for failed payments, unpaid invoices, expiring cards and renewals across what you can reach, because money leaks are silent until they are expensive. Report only actionable items with the fix for each, and stop."
+        },
+        {
+          "id": "pick-my-battles",
+          "title": "Pick My Battles",
+          "kind": "prompt",
+          "text": "I will tell you my energy level in one word. Based on it, propose the 3 tasks for today, exactly one of them startable in 10 minutes, and name what we are explicitly not doing today, because an unbounded list is how nothing ships. Then stop."
+        },
+        {
+          "id": "calendar-collisions",
+          "title": "Calendar Collisions",
+          "kind": "prompt",
+          "text": "Check the calendar I authorize against my deadlines and commitments and flag every collision or too-tight gap today and tomorrow, with the resolution for each, because a conflict found now is a reschedule and found live is a no-show. Then stop."
+        }
+      ]
+    },
+    {
+      "id": "clients",
+      "title": "Clients",
+      "color": "#7DCEC2",
+      "icon": "handshake",
+      "actions": [
+        {
+          "id": "reply-to-this-thread",
+          "title": "Reply To This Thread",
+          "kind": "prompt",
+          "text": "Draft a reply to the thread I am pasting. Short, warm, plain, lead with the answer, no emojis, no dashes. Give me the message only, nothing around it. Thread:"
+        },
+        {
+          "id": "reply-3-intents",
+          "title": "Reply, 3 Intents",
+          "kind": "prompt",
+          "text": "For the message I am pasting, draft three replies with different intents: agree and commit, push back with a reason, and buy time honestly. Show the one you would send first and say why in one line, because my 20 minutes of staring is usually just an unpicked intent. Message:"
+        },
+        {
+          "id": "bad-news-owned",
+          "title": "Bad News, Owned",
+          "kind": "prompt",
+          "text": "Draft the bad news message for what I am about to describe: own it plainly, give the new date, one line of reason, no groveling and no over-apologizing, because a clean owned delay keeps more trust than a decorated excuse. Message only."
+        },
+        {
+          "id": "scope-creep-check",
+          "title": "Scope Creep Check",
+          "kind": "prompt",
+          "text": "Here is a client request. Check it against what you know we agreed with this client and tell me if it is in scope. If it is not, draft the kind reply that says this is a paid addition, with a placeholder price, because free scope is a discount nobody thanked me for. Request:"
+        },
+        {
+          "id": "weekly-client-update",
+          "title": "Weekly Client Update",
+          "kind": "prompt",
+          "text": "Draft this week's status update for the client I name, from what you know of their project: what moved, what is next, what I need from them. Six lines maximum, warm and plain, because a long update is an unread update. Message only."
+        },
+        {
+          "id": "pre-meeting-brief",
+          "title": "Pre-Meeting Brief",
+          "kind": "prompt",
+          "text": "Give me everything relevant about the client I am about to meet, in 10 lines: state of work, open items, last decisions, money status, and the one thing to raise, because walking in primed is the whole difference. Then stop."
+        },
+        {
+          "id": "proposal-skeleton",
+          "title": "Proposal Skeleton",
+          "kind": "prompt",
+          "text": "Turn the request I am pasting into a proposal outline: understanding of the need, approach, deliverables, timeline, price placeholders, and next step, because a proposal started from blank is a proposal delayed a week. Outline only, then stop. Request:"
+        },
+        {
+          "id": "chase-the-payment",
+          "title": "Chase The Payment",
+          "kind": "prompt",
+          "text": "Draft the payment reminder for the invoice I describe: polite, firm, specific amount and date, one clear way to pay, because awkwardness about money is how it stays unpaid. If this is the second reminder, make it firmer without apology. Message only."
+        },
+        {
+          "id": "voice-note-to-reply",
+          "title": "Voice Note To Reply",
+          "kind": "prompt",
+          "text": "From the voice note transcript I am pasting, extract what they are actually asking for in one line, then draft my reply, because the ask is usually buried in minute two. Message only. Transcript:"
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Team",
+      "color": "#E5B879",
+      "icon": "users-round",
+      "actions": [
+        {
+          "id": "draft-a-task",
+          "title": "Draft A Task",
+          "kind": "prompt",
+          "text": "Turn the supplied content into a task draft: action title, description, proposed owner, project, due date and acceptance criteria. Use only the team and project details I provide. Mark unknown fields. Do not create or assign a task until I approve the draft."
+        },
+        {
+          "id": "brain-dump-to-tasks",
+          "title": "Brain Dump To Tasks",
+          "kind": "prompt",
+          "text": "Turn my brain dump into tasks grouped by project. Use short action titles and suggest owners and dates only from supplied context. Identify the one task I should start now. Return drafts; do not create tasks or notify anyone."
+        },
+        {
+          "id": "delegation-sweep",
+          "title": "Delegation Sweep",
+          "kind": "prompt",
+          "text": "Check the authorized task manager for tasks that are overdue or due today per employee, and draft one short reminder draft for each person in their language, specific to the task, because a generic reminder trains people to ignore reminders. Show me the drafts, send nothing, and stop."
+        },
+        {
+          "id": "review-this-work",
+          "title": "Review This Work",
+          "kind": "prompt",
+          "text": "Review the work I am pasting or screenshotting the way I would: specific, kind, and actionable, lead with what is right, then the fixes ranked by importance, because vague feedback produces a second bad version. Draft it as a message to the person. Work:"
+        },
+        {
+          "id": "answer-or-task",
+          "title": "Answer Or Task",
+          "kind": "prompt",
+          "text": "Decide whether the supplied message needs an answer or a task. Draft a short answer or a task with proposed owner and acceptance criteria. State missing details; do not create, assign or send anything."
+        },
+        {
+          "id": "weekly-team-digest",
+          "title": "Weekly Team Digest",
+          "kind": "prompt",
+          "text": "From the authorized task manager, summarize what each employee completed this week, one line each with the specific thing, so I can thank people for specifics and not for vibes, because specific praise is the cheapest retention tool I have. Then stop."
+        },
+        {
+          "id": "handoff-brief",
+          "title": "Handoff Brief",
+          "kind": "prompt",
+          "text": "Turn what I am about to describe into a delegation brief: context in two lines, the exact deliverable, deadline, references or examples, and what done looks like, because a task handed off without a definition of done comes back twice. Format it ready to paste into the authorized task manager."
+        },
+        {
+          "id": "unblock-my-employee",
+          "title": "Unblock My Employee",
+          "kind": "prompt",
+          "text": "Someone on my team is stuck on what I am pasting. Give me the smallest unblocking instruction I can send them right now, not a lecture, because their blocked hour costs more than my perfect answer. Message only. Their problem:"
+        },
+        {
+          "id": "who-owns-what",
+          "title": "Who Owns What",
+          "kind": "prompt",
+          "text": "From the authorized task manager, show me the current load per person: how many open tasks, what is heavy, who is overloaded and who has slack, because I delegate by memory and memory lies. Flag any task with no owner. Then stop."
+        }
+      ]
+    },
+    {
+      "id": "focus",
+      "title": "Focus",
+      "color": "#AE9CE1",
+      "icon": "timer",
+      "actions": [
+        {
+          "id": "one-next-action",
+          "title": "One Next Action",
+          "kind": "prompt",
+          "text": "Ask me nothing. Based on what you know about my open work, give me exactly ONE next action I can start in the next 10 minutes. One line. No options."
+        },
+        {
+          "id": "action-10-minute-version",
+          "title": "10-Minute Version",
+          "kind": "prompt",
+          "text": "Take the task I am about to describe, the one I keep avoiding, and shrink it to a 10 minute version that still moves it forward, because starting is the entire battle and the size of the task is the enemy. One version only, then stop."
+        },
+        {
+          "id": "unstick-me",
+          "title": "Unstick Me",
+          "kind": "prompt",
+          "text": "I am stuck. Ask me at most 2 questions, then give me the smallest possible first step. Do not give me a plan, give me a first move."
+        },
+        {
+          "id": "decide-for-me",
+          "title": "Decide For Me",
+          "kind": "prompt",
+          "text": "I keep circling a decision. I will describe it. Pick one option for me, state it in one line, give 2 reasons, and the first step, because a reversible decision does not deserve a third day of my loops. No pros and cons table."
+        },
+        {
+          "id": "timebox-25",
+          "title": "Timebox 25",
+          "kind": "prompt",
+          "text": "I am starting a 25 minute block. Ask me what I am working on in one line, then give me a 3 step plan sized to exactly fit 25 minutes, because a plan bigger than the box guarantees the box fails. Nothing else."
+        },
+        {
+          "id": "focus-companion",
+          "title": "Focus Companion",
+          "kind": "prompt",
+          "text": "Help me work on [TASK] for a 25-minute block. Define one finish line and ask me to return at a checkpoint. Check in when I message you; do not promise background monitoring or timed notifications unless supported and authorized."
+        },
+        {
+          "id": "park-a-thought",
+          "title": "Park A Thought",
+          "kind": "prompt",
+          "text": "Capture [THOUGHT] in a short note in this chat so I can return to [CURRENT TASK]. Do not promise a future reminder unless a reminder tool is available and I explicitly authorize one."
+        },
+        {
+          "id": "kill-my-open-loops",
+          "title": "Kill My Open Loops",
+          "kind": "prompt",
+          "text": "I will list the loops open in my head. For each one tell me: close it now in 2 minutes, delegate it, schedule it, or drop it, and be willing to say drop, because carrying them all is the actual exhaustion. Then give me the single loop to close first."
+        },
+        {
+          "id": "fried-mode",
+          "title": "Fried Mode",
+          "kind": "prompt",
+          "text": "I am fried. Give me one genuinely useful task that needs zero thinking and zero decisions, from my real open work, because a tired hour can still ship something mechanical. One task, then stop."
+        }
+      ]
+    },
+    {
+      "id": "find",
+      "title": "Find",
+      "color": "#E697A5",
+      "icon": "scan-search",
+      "actions": [
+        {
+          "id": "find-this-thing",
+          "title": "Find This Thing",
+          "kind": "prompt",
+          "text": "Find [ITEM] in the sources I name and authorize. Try relevant spelling variants. Report the source, date and matching evidence. If it is inside an attachment, identify the file without guessing its contents. Do not search unapproved accounts."
+        },
+        {
+          "id": "find-account-access",
+          "title": "Find Account Access",
+          "kind": "prompt",
+          "text": "For [SERVICE], identify the official sign-in or account recovery route and the name of the approved password-manager entry, if available. Never retrieve, print or paste passwords, tokens, recovery codes or secret values. Let me complete authentication in the service or vault."
+        },
+        {
+          "id": "find-the-file",
+          "title": "Find The File",
+          "kind": "prompt",
+          "text": "Find [FILE DESCRIPTION] in the folders or connected sources I explicitly authorize. Return the exact matching path or link with date and source. Identify uncertain matches and inaccessible sources. Do not search other accounts or private directories."
+        },
+        {
+          "id": "find-the-link",
+          "title": "Find The Link",
+          "kind": "prompt",
+          "text": "Find the last URL shared about the topic I name, across the messaging and email sources I authorize: the link itself, who sent it, and when, because I remember the link exists and nothing else. Topic:"
+        },
+        {
+          "id": "find-a-contact",
+          "title": "Find A Contact",
+          "kind": "prompt",
+          "text": "Find [CONTACT] in the address book or business records I explicitly provide or authorize. Resolve ambiguous names before returning the relevant business contact entry. Do not infer identities or search unrelated personal records."
+        },
+        {
+          "id": "what-did-we-decide",
+          "title": "What Did We Decide",
+          "kind": "prompt",
+          "text": "Search our past chats for what we decided about the topic I name. Quote the decision with its date and which chat it came from, and separate what I decided from what you merely suggested, because your suggestions are not my commitments. Topic:"
+        },
+        {
+          "id": "find-the-invoice",
+          "title": "Find The Invoice",
+          "kind": "prompt",
+          "text": "Find the transaction I describe in the email sources I authorize: amount, date, sender, and the attachment if there is one, because tax season does not accept I think I paid it. Transaction:"
+        },
+        {
+          "id": "rebuild-the-timeline",
+          "title": "Rebuild The Timeline",
+          "kind": "prompt",
+          "text": "Rebuild the timeline of the topic I name: every relevant message, file and decision in order, each with its source and date, because the story assembled beats my memory arguing with itself. Then give me the current state in 2 lines. Topic:"
+        },
+        {
+          "id": "where-does-this-live",
+          "title": "Where Does This Live",
+          "kind": "prompt",
+          "text": "Tell me which account, email or platform the subscription or asset I name is registered under: search email for signups, billing and receipts, because I have too many accounts and each service picked its own. Report the owner account and its payment state. Asset:"
+        }
+      ]
+    },
+    {
+      "id": "write",
+      "title": "Write",
+      "color": "#94C3DD",
+      "icon": "feather",
+      "actions": [
+        {
+          "id": "keep-my-voice",
+          "title": "Keep My Voice",
+          "kind": "prompt",
+          "text": "Edit my supplied draft in [LANGUAGE / DIALECT]. Preserve my wording, rhythm and tone. Fix only errors or unclear passages. Return the minimally edited draft and list any uncertainty separately. Draft: [TEXT]"
+        },
+        {
+          "id": "reply-in-my-voice",
+          "title": "Reply In My Voice",
+          "kind": "prompt",
+          "text": "Write my reply to the email I am pasting. Direct, no fluff, lead with the decision, 5 lines maximum. Output only the email body, because I will paste it as-is. Email:"
+        },
+        {
+          "id": "thread-draft",
+          "title": "Thread Draft",
+          "kind": "prompt",
+          "text": "Turn [CONTENT] into a thread of up to six posts for [PLATFORM] in [LANGUAGE / TONE]. Lead with a useful hook, keep claims grounded in the supplied content and respect the platform limits. Draft only."
+        },
+        {
+          "id": "summarize-to-5-lines",
+          "title": "Summarize To 5 Lines",
+          "kind": "prompt",
+          "text": "Compress what I am pasting into 5 lines I can actually scan. Keep numbers, names and dates exact, because a summary that rounds the numbers is a new document. Content:"
+        },
+        {
+          "id": "translate-with-tone",
+          "title": "Translate With Tone",
+          "kind": "prompt",
+          "text": "Translate [TEXT] from [SOURCE LANGUAGE] into [TARGET LANGUAGE], preserving tone, meaning, names and numbers. Flag ambiguity instead of inventing context. Return the translation."
+        },
+        {
+          "id": "polish-do-not-inflate",
+          "title": "Polish, Do Not Inflate",
+          "kind": "prompt",
+          "text": "Fix only what is broken in the text I am pasting: grammar, clarity, one dragging line. Keep my length, my voice, and my structure, because polishing is not rewriting and inflation is not improvement. Return it with minimal edits. Text:"
+        },
+        {
+          "id": "the-message-i-am-avoiding",
+          "title": "The Message I Am Avoiding",
+          "kind": "prompt",
+          "text": "I have been avoiding writing something. I will describe it. Draft it direct and kind, say the hard part in the first two lines, because the version I keep postponing gets worse every day it waits. Message only."
+        },
+        {
+          "id": "notes-into-a-doc",
+          "title": "Notes Into A Doc",
+          "kind": "prompt",
+          "text": "Structure the mess I am pasting into a clean document: a title, sections that follow the actual logic, and the loose ends listed at the bottom as open questions, because unstructured notes are write-only memory. Notes:"
+        },
+        {
+          "id": "action-5-hooks-ranked",
+          "title": "5 Hooks Ranked",
+          "kind": "prompt",
+          "text": "Give me 5 opening hooks for the content I am pasting, ranked, with one line on why the top one wins, because the first line decides whether the rest exists. No hashtags, no emojis. Content:"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "title": "Social",
+      "color": "#B6CC92",
+      "icon": "megaphone",
+      "actions": [
+        {
+          "id": "schedule-preview",
+          "title": "Schedule Preview",
+          "kind": "prompt",
+          "text": "Prepare a scheduling preview for [CONTENT]: exact account, channel, date, time zone, media and final text. Ask for missing details together. Show exactly what would publish and stop for approval before scheduling or posting."
+        },
+        {
+          "id": "one-idea-all-platforms",
+          "title": "One Idea, All Platforms",
+          "kind": "prompt",
+          "text": "Take the idea I am pasting and draft platform variants for the brand I name: IG caption, X post, LinkedIn post, each in that platform's rhythm and the brand's voice, because one text pasted everywhere reads pasted everywhere. Idea:"
+        },
+        {
+          "id": "daily-cards",
+          "title": "Daily Cards",
+          "kind": "prompt",
+          "text": "Use the supplied daily stories and brand guide to prepare distinct social cards for [FORMAT / SIZE]. Keep sources, dates and claims accurate. If image tools are available and authorized, create draft visuals; otherwise provide final copy and a layout brief. Do not publish."
+        },
+        {
+          "id": "campaign-skeleton",
+          "title": "Campaign Skeleton",
+          "kind": "prompt",
+          "text": "Build the campaign skeleton for the promo I describe: audience, the one angle, 3 posts with timing, and the CTA, because a campaign without one angle is three unrelated posts. Skeleton only, then stop."
+        },
+        {
+          "id": "repurpose-this",
+          "title": "Repurpose This",
+          "kind": "prompt",
+          "text": "Turn the long content I am pasting into a carousel outline with a caption: slide-by-slide text, 8 slides maximum, hook on slide one, because long content unrepurposed is reach left on the table. Content:"
+        },
+        {
+          "id": "caption-draft",
+          "title": "Caption Draft",
+          "kind": "prompt",
+          "text": "Write a two-line caption for [PRODUCT / IMAGE] in [LANGUAGE / TONE]. Match the supplied brand voice, avoid unsupported claims, and include a clear next step when appropriate. Return a draft only."
+        },
+        {
+          "id": "failed-posts-check",
+          "title": "Failed Posts Check",
+          "kind": "prompt",
+          "text": "Check the authorized publishing service for failed posts today: group the failures by channel, name the likely cause for each group, and give me the reconnect order that fixes the most with the fewest logins, because token rot eats mornings silently. Then stop."
+        },
+        {
+          "id": "keywords-and-tags",
+          "title": "Keywords And Tags",
+          "kind": "prompt",
+          "text": "Give me the keywords and tags for the post I am pasting, per platform, only ones that fit the actual content, because tag spam reads desperate and ranks worse. Post:"
+        },
+        {
+          "id": "week-of-content",
+          "title": "Week Of Content",
+          "kind": "prompt",
+          "text": "Draft a 7 day content plan for the brand I name from what you know of it: one line per day with format and topic, one day deliberately light, because a plan I cannot sustain is a plan I abandon by Wednesday. Plan only, then stop."
+        }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operations",
+      "color": "#DDAA83",
+      "icon": "network",
+      "actions": [
+        {
+          "id": "diagnose-the-stack",
+          "title": "Diagnose The Stack",
+          "kind": "prompt",
+          "text": "Diagnose the failing system from the supplied logs and configuration. Identify the failing layer, evidence, likely cause and one targeted next diagnostic. Do not restart services, change configuration or expose secret values. State what has not been verified."
+        },
+        {
+          "id": "explain-this-error",
+          "title": "Explain This Error",
+          "kind": "prompt",
+          "text": "Explain [ERROR] in two plain sentences. Identify the affected component and show one evidence-based fix or diagnostic command. Mark commands that would change state and wait for approval before running them."
+        },
+        {
+          "id": "screenshot-debug",
+          "title": "Screenshot Debug",
+          "kind": "prompt",
+          "text": "Look at the screenshot I am pasting and tell me what is broken, one fix only, because a list of five maybes is a fix for nothing. If you need one more screenshot to be sure, name exactly which screen."
+        },
+        {
+          "id": "publisher-health",
+          "title": "Publisher Health",
+          "kind": "prompt",
+          "text": "Inspect the explicitly authorized publishing service for failed jobs, disabled channels and authentication status. Return a prioritized repair plan without exposing tokens or changing connections. A connected badge is not proof that posts were delivered."
+        },
+        {
+          "id": "what-should-be-automated",
+          "title": "What Should Be Automated",
+          "kind": "prompt",
+          "text": "Look at what we just did or what I describe, and tell me if this is the third time or more. If yes, spec the automation: trigger, steps, where it runs on my machines, and the first 15 minute step to build it, because a loop survived three times will survive thirty. Then stop."
+        },
+        {
+          "id": "prove-it",
+          "title": "Prove It",
+          "kind": "prompt",
+          "text": "Paste the proof of what you just claimed: the actual output, the file diff, or the screenshot, because I do not accept a summary as evidence. If you did not actually run or check it, say so plainly before we continue."
+        },
+        {
+          "id": "subscription-audit",
+          "title": "Subscription Audit",
+          "kind": "prompt",
+          "text": "Audit my subscriptions from what you can reach in email: what I pay for, what overlaps, what looks idle, and what is on the wrong account, because tools multiply and cancellations do not. Rank the cuts by monthly savings, then stop."
+        },
+        {
+          "id": "security-sweep",
+          "title": "Security Sweep",
+          "kind": "prompt",
+          "text": "Look at what we just handled and flag every security smell: plaintext credentials, shared logins, weak passwords, things that should move to the vault, because convenience debt compounds into an incident. Rank by risk with the 5 minute fix for each, then stop."
+        },
+        {
+          "id": "verify-three-ways",
+          "title": "Verify Three Ways",
+          "kind": "prompt",
+          "text": "Take the conclusion we just reached and try to disprove it three separate ways before I act on it, because a claim I cannot falsify is not worth acting on. Report which attempts failed to break it and which succeeded, then stop."
+        }
+      ]
+    },
+    {
+      "id": "rescue",
+      "title": "Recover",
+      "color": "#A8B8C9",
+      "icon": "repeat-2",
+      "actions": [
+        {
+          "id": "close-the-loop",
+          "title": "Close The Loop",
+          "kind": "prompt",
+          "text": "End of day check. What did I ship today, what is still open, and what is the first thing I touch tomorrow morning. Keep it under 12 lines, because tomorrow-me should start with zero decisions."
+        },
+        {
+          "id": "weekly-reset",
+          "title": "Weekly Reset",
+          "kind": "prompt",
+          "text": "Review the projects I list: one line of current state for each, with evidence or an unknown marker. Choose the three priorities for the coming week, explain what can wait and name the first small action. Do not invent projects or change their status."
+        },
+        {
+          "id": "externalize-the-state",
+          "title": "Externalize The State",
+          "kind": "prompt",
+          "text": "Write the current state of what we are working on so a fresh chat can continue cold: done, in progress, decisions with reasons, open questions, and the exact next step, because this window will not survive and the summary is what does. Then stop."
+        },
+        {
+          "id": "memory-draft",
+          "title": "Memory Draft",
+          "kind": "prompt",
+          "text": "Draft a concise memory update from today's confirmed facts, decisions, corrections and completed work. Exclude sensitive information. Show the exact text and destination, if known. Do not persist anything until I approve it."
+        },
+        {
+          "id": "break-the-spiral",
+          "title": "Break The Spiral",
+          "kind": "prompt",
+          "text": "I am overwhelmed. Cut my list to 3 things and explicitly name what we are dropping or deferring, because the full list is the weight. No motivation speech, just the 3 and the first move on the first one."
+        },
+        {
+          "id": "say-no-for-me",
+          "title": "Say No For Me",
+          "kind": "prompt",
+          "text": "Draft the decline for the ask I am about to describe: kind, short, final, no fake maybe-later unless I say so, because a soft no becomes a second ask next week. Message only."
+        },
+        {
+          "id": "restart-ritual",
+          "title": "Restart Ritual",
+          "kind": "prompt",
+          "text": "I lost the thread of the project I name. Rebuild where we were: last state, last decisions, what stalled it, and the smallest step that restarts momentum, because re-entry cost is why paused projects die. Then stop."
+        },
+        {
+          "id": "damage-control",
+          "title": "Damage Control",
+          "kind": "prompt",
+          "text": "Something went wrong with a client or publicly. I will describe it. Give me the first 3 moves in strict order, the first one doable in 10 minutes, and draft the first message, because speed of the first response sets the whole tone. Then stop."
+        },
+        {
+          "id": "tell-me-the-truth",
+          "title": "Tell Me The Truth",
+          "kind": "prompt",
+          "text": "Look at everything you know about my work right now and tell me plainly what I am avoiding and what is not working, with evidence only, no cushioning, because the comfortable version costs me months. Three items maximum, then stop."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+:root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #231d18; background: #f7f1e8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.sheet { width: min(100%, 1920px); margin: auto; padding: 3.2vw 4.2vw 3vw; background: #f7f1e8; }
+.masthead { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #cfc2b2; padding-bottom: 1.4vw; font-size: .95vw; font-weight: 600; letter-spacing: .16vw; }
+.mark { display: flex; align-items: center; gap: .85vw; }
+.mark:before { content: ""; width: .7vw; height: .7vw; background: #8f5935; border-radius: 50%; }
+.edition { color: #6f6257; font-size: .8vw; letter-spacing: .1vw; }
+.intro { display: flex; justify-content: space-between; align-items: flex-end; padding: 2.2vw 0; gap: 3.6vw; }
+h1 { font-size: 4.2vw; line-height: 1.04; font-weight: 500; letter-spacing: -.2vw; margin: 0; max-width: 62vw; }
+h1 em { font-family: Georgia, serif; color: #8f5935; font-weight: 400; }
+.intro p { font-size: 1.2vw; line-height: 1.45; color: #6f6257; max-width: 21vw; margin: 0 0 .2vw; }
+.collection { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.7vw; }
+.card { min-width: 0; }
+.picture { background: #0e151e; border-radius: 1.2vw; overflow: hidden; line-height: 0; border: 1px solid #293646; }
+.picture img { width: 100%; height: auto; }
+.card h2 { font-size: 1.4vw; font-weight: 600; letter-spacing: -.03vw; margin: 1.1vw 0 .4vw; }
+.card h2 span { font: .7vw "Courier New", monospace; color: #8f5935; display: inline-block; margin-right: .8vw; vertical-align: middle; }
+.card p { font-size: .95vw; line-height: 1.45; color: #6f6257; margin: 0; max-width: 24vw; }
+.bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cfc2b2; margin-top: 2.3vw; padding-top: 1.4vw; font-size: .9vw; gap: 1.5vw; }
+.bottom strong { font-weight: 600; }
+.caption { color: #6f6257; max-width: 30vw; font-size: .75vw; text-align: right; line-height: 1.4; }
+.ring h1 { font-size: 3.8vw; }
+.ring .intro { padding: 1.7vw 0; }
+.ring .picture img { aspect-ratio: 900/850; }
+.ring .card h2 { margin-top: .85vw; }
+.ring .bottom { margin-top: 1.5vw; }
+.ring .sheet { padding-top: 2.5vw; }
+@media (max-width: 800px) {
+  .sheet { padding: 28px; }
+  .masthead { font-size: 13px; gap: 20px; }
+  .edition { font-size: 10px; }
+  .intro { display: block; padding: 30px 0; }
+  h1, .ring h1 { font-size: 48px; letter-spacing: -2px; max-width: none; }
+  .intro p { font-size: 18px; margin-top: 22px; max-width: none; }
+  .collection { grid-template-columns: 1fr; gap: 32px; }
+  .card h2 { font-size: 24px; }
+  .card h2 span { font-size: 12px; }
+  .card p { font-size: 16px; max-width: none; }
+  .bottom { display: block; font-size: 14px; }
+  .caption { text-align: left; margin-top: 20px; font-size: 12px; max-width: none; }
+  .ring .sheet { padding-top: 28px; }
+}

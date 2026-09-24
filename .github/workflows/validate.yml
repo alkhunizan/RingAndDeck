@@ -1,0 +1,32 @@
+name: Validate profiles
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/build.py
+      - run: python scripts/build.py --check
+      - name: Reject stale committed documentation
+        run: git diff --exit-code -- docs .generated-files.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate-profiles-${{ matrix.os }}
+          path: dist/
+          if-no-files-found: error
