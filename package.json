@@ -1,6 +1,6 @@
 {
   "name": "ring-and-deck-productivity",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "private": true,
   "description": "Build portable Actions Ring and Stream Deck profiles with shared artwork.",
   "license": "MIT",

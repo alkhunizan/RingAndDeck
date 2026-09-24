@@ -24,6 +24,10 @@ Subsequent UI import checks found two constraints not enforced by that JSON load
 
 ## Visual assets and privacy
 
-The renderer uses locally included Lucide SVG drawings with their ISC license. Original framing, gradients, accents and composition are generated from catalogs. Stream Deck packages contain SVGs; Logitech packages contain PNGs and icon templates with the same PNG imagery. No inherited personal artwork is copied.
+The local alpha.3 renderer uses full-color Microsoft Fluent Emoji Flat illustrations with their original MIT license. All 67 included SVGs use a 32 by 32 viewBox and retain their original colors. A pinned source manifest records the exact upstream paths and SHA-256 hashes. Earlier Lucide source assets retain their ISC license; historical alpha.1/alpha.2 evidence describes that earlier artwork.
+
+Familiar objects represent action meanings consistently: magnifiers for search and review, pens for writing, tools for builds, a lady beetle for debugging, robots for AI, and shields or keys for security. Pale icon fields separate the illustrations from a navy Stream Deck title strip. Native labels retain the shared size 8–10 fitting rule. Original framing and semantic accents are generated from catalogs. Stream Deck packages contain SVGs; Logitech packages contain PNGs and icon templates with the same PNG imagery. No inherited personal artwork is copied.
+
+This colorful alpha.3 revision is a local candidate. It includes the MINI-reported native fix: place glyphs in a transformed group because nested SVG viewports disappeared in Stream Deck 7.6.0.23012. XML regression checks and fresh package comparisons pass. MINI reports native Home pictograms and titles for all three fixed Deck profiles; navigation, action activation, physical controls and alpha.3 Ring imports remain unverified. Generated previews do not establish device-screen readability or native label placement. [Fix and evidence](../STREAM-DECK-ICON-FIX.md). See [the design record](../DESIGN-POLISH.md) and [validation status](../VALIDATION.md).
 
 Public guides deliberately retain full prompt text so reviewers can inspect behavior. Personal source inventories, hashes and extraction records are ignored local audit files. Publishing requires scanning the exact public tree and unpacked release artifacts, not merely trusting the catalogs.

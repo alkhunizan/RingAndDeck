@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 import sys
 import unittest
+import xml.etree.ElementTree as ET
 import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -201,8 +202,13 @@ class ProfileBuildTests(unittest.TestCase):
             page = json.loads(raw)
             for action in page["Controllers"][0]["Actions"].values():
                 state = action["States"][0]
-                self.assertIn(
-                    str(Path(filename).parent.as_posix()) + "/" + state["Image"], files
+                image = str(Path(filename).parent.as_posix()) + "/" + state["Image"]
+                self.assertIn(image, files)
+                # Stream Deck's SVG Tiny renderer silently drops nested <svg> artwork.
+                artwork = ET.fromstring(files[image])
+                self.assertEqual(artwork.tag, "{http://www.w3.org/2000/svg}svg", image)
+                self.assertFalse(
+                    artwork.findall(".//{http://www.w3.org/2000/svg}svg"), image
                 )
                 if action["UUID"].endswith(".text"):
                     self.assertFalse(action["Settings"]["isSendingEnter"])

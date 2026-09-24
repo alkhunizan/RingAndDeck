@@ -4,13 +4,15 @@
 
 Stop hunting for the same prompt or switching menus for a routine action. Ring & Deck puts coding, writing, research and Windows controls into six editable profiles. Choose a workflow, open its folders and send a useful starting prompt to the app you already use.
 
-Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. A shared graphite theme, soft category accents and action-specific symbols make the controls easier to recognize. [Explore every layout](docs/gallery.html).
+Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. Full-color familiar objects, consistent action meanings across devices and clear folder cues make the controls easier to recognize. [Explore every layout](docs/gallery.html).
 
-**Alpha prerelease candidate: `v0.1.0-alpha.2`.** This updates the Sharp build dependency to 0.35.4 with no profile functionality changes. All 13 automated tests pass. Native Code Ring evidence comes from alpha.1, which has the same actions and artwork; broader native and hardware acceptance remains incomplete. [Validation status](docs/VALIDATION.md).
+**Local visual candidate: `v0.1.0-alpha.3`. Not published.** This candidate refreshes the artwork in all six native packages and their generated layout guides. Prompt text, action labels, navigation, keyboard shortcuts and manual submission behavior are preserved. The MINI testing agent reports that the three fixed Stream Deck Home layouts render in its native editor; action activation, navigation, physical controls and alpha.3 Ring imports remain unverified. [Icon fix and evidence](docs/STREAM-DECK-ICON-FIX.md). [Visual design and review](docs/DESIGN-POLISH.md).
+
+The published download below remains **alpha.2**, with the previous artwork. Alpha.3 packages are built locally into `dist/`; they are not available at the alpha.2 download links.
 
 ## Download an alpha candidate
 
-Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2). Alpha.2 upload and remote verification are pending.
+Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2). Alpha.2 publication and uploaded hashes were verified; see the validation record. Its artwork predates this local candidate.
 
 | Device | Download (alpha candidate) |
 | --- | --- |
@@ -44,7 +46,7 @@ Actions Ring Home supports 8 controls; folders support up to 9. Code Ring and Wo
 
 ![Designed showcase of the Actions Ring workflow layouts](docs/screenshots/actions-ring-showcase.png)
 
-These screenshots are browser captures of designed showcases built from the generated layout guides. They are not native Stream Deck or Logi Options+ screenshots, and they do not demonstrate a successful import. Native fonts, placement and ring geometry may differ. [Explore the source layouts](docs/gallery.html).
+These generated layout previews show the unpublished alpha.3 artwork in designed showcases built from the generated layout guides. They are not native Stream Deck or Logi Options+ screenshots, and they do not demonstrate a successful import. Native fonts, placement and ring geometry may differ. [Explore the source layouts](docs/gallery.html).
 
 ## Native Code Ring checks
 
@@ -54,7 +56,7 @@ These screenshots are browser captures of designed showcases built from the gene
 
 ![Plan and Scope folder rendered in Logi Options+](docs/screenshots/code-ring-native-folder.jpg)
 
-*Actual Plan & Scope folder capture from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. It verifies that folder's rendering; deeper nested navigation, text pasting and hardware behavior remain unverified. Work Ring, Flow Ring and Stream Deck imports still need UI acceptance.*
+*Actual Plan & Scope folder capture from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. It verifies that folder's rendering; deeper nested navigation, text pasting and hardware behavior remain unverified. Work Ring and Flow Ring imports still need UI acceptance. Alpha.3 Stream Deck Home rendering has separate reported MINI evidence; navigation and action activation remain open.*
 
 ## How it works
 
@@ -83,12 +85,12 @@ python scripts/build.py --check
 
 Outputs in `dist/`:
 
-- `code-ring-0.1.0-alpha.2.lp5`
-- `work-ring-0.1.0-alpha.2.lp5`
-- `flow-ring-0.1.0-alpha.2.lp5`
-- `code-workflow-0.1.0-alpha.2.streamDeckProfile`
-- `ai-workflow-0.1.0-alpha.2.streamDeckProfile`
-- `browser-workflow-0.1.0-alpha.2.streamDeckProfile`
+- `code-ring-0.1.0-alpha.3.lp5`
+- `work-ring-0.1.0-alpha.3.lp5`
+- `flow-ring-0.1.0-alpha.3.lp5`
+- `code-workflow-0.1.0-alpha.3.streamDeckProfile`
+- `ai-workflow-0.1.0-alpha.3.streamDeckProfile`
+- `browser-workflow-0.1.0-alpha.3.streamDeckProfile`
 - `SHA256SUMS.txt`
 
 Back up your current profiles, then import these as separate profiles through the respective app's profile import control. **First test text actions in a blank scratch document.** Do not test them in a terminal, address bar or valuable document. Follow the [complete setup and acceptance checklist](docs/SETUP.md).
@@ -118,8 +120,8 @@ Edit the JSON catalogs and rebuild. The builder produces packages, full button g
 
 The build rejects stale generated files after a version, page or profile is removed. Review and archive only the listed files outside the repository before rebuilding. It never deletes your files.
 
-GitHub CI passed on Windows and Ubuntu for alpha.1. Alpha.2 CI and download verification are pending; the earlier runs are recorded in [validation](docs/VALIDATION.md). The workflow checks builds and uploads candidate artifacts; it does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
+GitHub CI and download hashes were verified for published alpha.2 on Windows and Ubuntu; the runs are recorded in [validation](docs/VALIDATION.md). The colorful alpha.3 candidate is local: 13 native tests, deterministic output, archive integrity, action comparisons and all 55 rendered guides pass validation. Native action and physical-device acceptance remain open; the separate MINI Home-rendering report is recorded in the icon-fix note. The workflow checks builds and uploads candidate artifacts; it does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
 
 ## License
 
-Prompt adaptations, builder and original visual composition: [MIT](LICENSE). Lucide SVG drawings: [ISC](assets/icons/LICENSE.txt), with [source notice](assets/icons/NOTICE.md). Product names belong to their respective owners; this is an independent community project.
+Prompt adaptations, builder and original visual composition: [MIT](LICENSE). The colorful alpha.3 artwork uses original Microsoft Fluent Emoji Flat illustrations under [MIT](assets/color-icons/LICENSE.txt), with [pinned source and attribution details](assets/color-icons/NOTICE.md). Earlier Lucide SVG drawings remain under [ISC](assets/icons/LICENSE.txt), with their [source notice](assets/icons/NOTICE.md). Product names belong to their respective owners; this is an independent community project.

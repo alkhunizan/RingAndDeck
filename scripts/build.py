@@ -173,7 +173,23 @@ def button_style(catalog, page, button):
     if button["kind"] == "folder":
         target = next(item for item in catalog["pages"] if item["id"] == button["page"])
         return target["color"], target["symbol"]
-    if button["kind"] in ("website", "hotkey"):
+    if button["kind"] == "website":
+        service_icons = {
+            "CHATGPT": "bot-message-square",
+            "CLAUDE": "bot-message-square",
+            "GEMINI": "bot-message-square",
+            "PERPLEXITY": "scan-search",
+            "GITHUB": "git-compare-arrows",
+            "VERCEL": "package-open",
+            "NETLIFY": "package-open",
+            "GOOGLE ADS": "megaphone",
+            "LOOKER": "chart-no-axes-combined",
+        }
+        label = " ".join(button["label"])
+        return page["color"], service_icons.get(label) or artwork.pick_icon(
+            label, "panels-top-left"
+        )
+    if button["kind"] == "hotkey":
         return page["color"], artwork.pick_icon(
             " ".join(button["label"]), "panels-top-left"
         )
@@ -286,7 +302,7 @@ def build_profile(catalog):
                 "States": [
                     {
                         "FontFamily": "Arial",
-                        "FontSize": 10,
+                        "FontSize": artwork.title_font_size(button["label"]),
                         "FontStyle": "Bold",
                         "FontUnderline": False,
                         "Image": image_path,
@@ -294,7 +310,7 @@ def build_profile(catalog):
                         "ShowTitle": True,
                         "Title": "\n".join(button["label"]),
                         "TitleAlignment": "bottom",
-                        "TitleColor": "#f8fafc",
+                        "TitleColor": "#FFFFFF",
                     }
                 ],
                 "UUID": action_uuid,
@@ -307,7 +323,7 @@ def build_profile(catalog):
                 "Name": page["title"],
             },
         )
-    files[root + "/Icon-LICENSE.txt"] = (ROOT / "assets/icons/LICENSE.txt").read_bytes()
+    files[root + "/Icon-LICENSE.txt"] = (ROOT / "assets/color-icons/LICENSE.txt").read_bytes()
     files[root + "/LICENSE.txt"] = (ROOT / "LICENSE").read_bytes()
     return files
 
@@ -344,9 +360,9 @@ def layout_svg(catalog, page):
         tiles += f'<g transform="translate({22 + x * 156},{76 + y * 156})">{inner}</g>'
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="812" height="564" viewBox="0 0 812 564">'
-        f'<rect width="812" height="564" rx="24" fill="#0E151E"/>'
-        f'<text x="24" y="43" fill="#F4F0E8" font-family="Arial,sans-serif" font-size="25" font-weight="700">{html.escape(catalog["name"] + " / " + page["title"])}</text>'
-        f'{tiles}<text x="24" y="552" fill="#A4B1C2" font-family="Arial,sans-serif" font-size="11">Layout guide. Text buttons paste; links open in your default browser; shortcuts act on the focused app.</text></svg>'
+        f'<rect width="812" height="564" rx="24" fill="#F7F9FD"/>'
+        f'<text x="24" y="43" fill="#172033" font-family="Arial,sans-serif" font-size="25" font-weight="700">{html.escape(catalog["name"] + " / " + page["title"])}</text>'
+        f'{tiles}<text x="24" y="552" fill="#56657A" font-family="Arial,sans-serif" font-size="11">Layout guide. Text buttons paste; links open in your default browser; shortcuts act on the focused app.</text></svg>'
     )
 
 
@@ -474,8 +490,8 @@ def compile_repository(root=ROOT, check=False):
             )
     expected["docs/gallery.html"] = (
         '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        "<title>Ring &amp; Deck: all layouts</title><style>body{margin:0;padding:32px;background:#07101c;color:#f8fafc;font:16px/1.6 Arial,sans-serif}main{max-width:1700px;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr));gap:24px}figure{margin:0}img{width:100%;height:auto}a:focus-visible{outline:3px solid #38bdf8}figcaption{color:#b6c2d1}h1{line-height:1.2}</style>"
-        '<main><h1>Ring &amp; Deck</h1><p>Three Stream Deck workflows. Three Actions Ring workflows. Refined controls for focused work.</p><p>Generated layout guides, not hardware screenshots. Select a layout to inspect it at full size.</p><div class="grid">'
+        '<title>Ring &amp; Deck: all layouts</title><link rel="stylesheet" href="showcase/showcase.css">'
+        '<main class="gallery"><header class="masthead"><a class="mark" href="showcase/stream-deck.html">RING &amp; DECK</a><span class="edition">ALPHA VISUAL CANDIDATE</span></header><section class="intro"><h1>Clear actions.<br><em>In full color.</em></h1><p>Six workflows with familiar, colorful action icons. Select any layout to see the details.</p></section><p class="guide-note">Generated layout guides, not native app or hardware screenshots. Text prompts remain yours to review and send.</p><div class="grid">'
         + "".join(gallery)
         + "</div></main></html>\n"
     ).encode("utf-8")

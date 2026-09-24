@@ -1,7 +1,7 @@
 {
   "id": "ai-workflow",
   "name": "AI Workflow",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Provider-neutral prompts for AI chat: control the session, research decisions, organize work, draft content and recover focus.",
   "prompts": {
     "orient-me": {
@@ -18,7 +18,8 @@
     },
     "stay-scoped": {
       "title": "Stay Scoped",
-      "text": "Standing rule: stay inside the scope we agreed. If you spot something outside scope worth doing, add it to a \"LATER\" list instead of doing it. Show me the LATER list only when the main task is done."
+      "text": "Standing rule: stay inside the scope we agreed. If you spot something outside scope worth doing, add it to a \"LATER\" list instead of doing it. Show me the LATER list only when the main task is done.",
+      "icon": "drafting-compass"
     },
     "plan-first": {
       "title": "Plan First",
@@ -34,7 +35,8 @@
     },
     "show-changes": {
       "title": "Show Changes",
-      "text": "Show me exactly what changed. Before vs after, item by item. Flag anything you changed that I didn't ask for."
+      "text": "Show me exactly what changed. Before vs after, item by item. Flag anything you changed that I didn't ask for.",
+      "icon": "git-compare-arrows"
     },
     "unstick-me": {
       "title": "Unstick Me",
@@ -43,7 +45,8 @@
     },
     "close-session": {
       "title": "Close Session",
-      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project."
+      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project.",
+      "icon": "list-checks"
     },
     "write-handoff": {
       "title": "Write Handoff",
@@ -51,7 +54,8 @@
     },
     "lock-scope": {
       "title": "Lock Scope",
-      "text": "Before we build anything: interview me with ONE grouped set of questions (max 5) to lock the spec :  goal, audience, must-haves, non-goals, deadline. Then write the locked spec back in under 20 lines and treat it as the contract for this project."
+      "text": "Before we build anything: interview me with ONE grouped set of questions (max 5) to lock the spec :  goal, audience, must-haves, non-goals, deadline. Then write the locked spec back in under 20 lines and treat it as the contract for this project.",
+      "icon": "shield-check"
     },
     "map-structure": {
       "title": "Map Structure",
@@ -67,7 +71,8 @@
     },
     "check-drift": {
       "title": "Check Drift",
-      "text": "Drift check: compare what our docs and plans SAY against what actually EXISTS (files, store, live site :  whatever applies). List every mismatch, worst first. Per item, either fix the doc or flag the work :  your call."
+      "text": "Drift check: compare what our docs and plans SAY against what actually EXISTS (files, store, live site :  whatever applies). List every mismatch, worst first. Per item, either fix the doc or flag the work :  your call.",
+      "icon": "drafting-compass"
     },
     "cleanup-plan": {
       "title": "Cleanup Plan",
@@ -91,7 +96,8 @@
     },
     "business-pulse": {
       "title": "Business Pulse",
-      "text": "Using the business data I supply or explicitly authorize, summarize recent orders, abandoned carts, stock issues and reviews for [DATE RANGE]. Identify the three actions that need attention, with evidence. Prepare the highest-value draft or analysis. Do not contact customers or change orders, stock, prices or accounts."
+      "text": "Using the business data I supply or explicitly authorize, summarize recent orders, abandoned carts, stock issues and reviews for [DATE RANGE]. Identify the three actions that need attention, with evidence. Prepare the highest-value draft or analysis. Do not contact customers or change orders, stock, prices or accounts.",
+      "icon": "chart-no-axes-combined"
     },
     "recovery-drafts": {
       "title": "Recovery Drafts",
@@ -99,7 +105,8 @@
     },
     "review-replies": {
       "title": "Review Replies",
-      "text": "From the reviews I supply or explicitly authorize, draft a reply to each in [LANGUAGE/TONE]. Thank positive reviewers, acknowledge problems and propose only fixes the business can actually provide. Flag reviews that need a human decision. Present the full batch for approval and post nothing."
+      "text": "From the reviews I supply or explicitly authorize, draft a reply to each in [LANGUAGE/TONE]. Thank positive reviewers, acknowledge problems and propose only fixes the business can actually provide. Flag reviews that need a human decision. Present the full batch for approval and post nothing.",
+      "icon": "mail"
     },
     "reply-queue": {
       "title": "Reply Queue",
@@ -107,11 +114,13 @@
     },
     "inbox-triage": {
       "title": "Inbox Triage",
-      "text": "Triage my authorized inbox or the messages I supply for the last [DAYS] days. Separate noise, actions, deadlines and money-related items. Draft replies where useful. Propose archive or label changes in one table. Do not archive, send, or change messages until I approve the batch."
+      "text": "Triage my authorized inbox or the messages I supply for the last [DAYS] days. Separate noise, actions, deadlines and money-related items. Draft replies where useful. Propose archive or label changes in one table. Do not archive, send, or change messages until I approve the batch.",
+      "icon": "mail"
     },
     "weekly-report": {
       "title": "Weekly Report",
-      "text": "Using the sales data I supply or explicitly authorize, compare [THIS PERIOD] with [COMPARISON PERIOD]: revenue, units, top products and material changes. Explain what the evidence supports and what is uncertain. Include one useful chart if supported. End with the highest-value action for the next period."
+      "text": "Using the sales data I supply or explicitly authorize, compare [THIS PERIOD] with [COMPARISON PERIOD]: revenue, units, top products and material changes. Explain what the evidence supports and what is uncertain. Include one useful chart if supported. End with the highest-value action for the next period.",
+      "icon": "file-text"
     },
     "social-brief": {
       "title": "Social Brief",
@@ -119,7 +128,8 @@
     },
     "repurpose-idea": {
       "title": "Repurpose Idea",
-      "text": "Take this one idea: [IDEA or pasted content]. Repurpose it into 5 native formats: X thread, IG carousel outline, 45-second video script, LinkedIn post, WhatsApp broadcast blurb. Each rebuilt for its platform, not copy-pasted. My voice."
+      "text": "Take this one idea: [IDEA or pasted content]. Repurpose it into 5 native formats: X thread, IG carousel outline, 45-second video script, LinkedIn post, WhatsApp broadcast blurb. Each rebuilt for its platform, not copy-pasted. My voice.",
+      "icon": "recycle"
     },
     "content-plan": {
       "title": "Content Plan",
@@ -135,11 +145,13 @@
     },
     "red-team": {
       "title": "Red Team",
-      "text": "Red-team this: [PLAN / DRAFT / DECISION]. Attack it like a smart rival who wants it to fail :  weakest assumptions, what breaks first, what I'm not seeing, worst realistic scenario. Then give me the 2 fixes that most reduce the risk."
+      "text": "Red-team this: [PLAN / DRAFT / DECISION]. Attack it like a smart rival who wants it to fail :  weakest assumptions, what breaks first, what I'm not seeing, worst realistic scenario. Then give me the 2 fixes that most reduce the risk.",
+      "icon": "shield-check"
     },
     "fresh-review": {
       "title": "Fresh Review",
-      "text": "Independently verify the claims, numbers, links and conclusions in this chat. If a separate reviewer is available and authorized, provide only the necessary context and request a fresh review. Otherwise conduct a separate verification pass yourself and disclose that limitation. Report disagreements, missing evidence and unresolved uncertainty. Do not imply independent review happened if it did not."
+      "text": "Independently verify the claims, numbers, links and conclusions in this chat. If a separate reviewer is available and authorized, provide only the necessary context and request a fresh review. Otherwise conduct a separate verification pass yourself and disclose that limitation. Report disagreements, missing evidence and unresolved uncertainty. Do not imply independent review happened if it did not.",
+      "icon": "scan-search"
     },
     "research-team": {
       "title": "Research Team",
@@ -167,11 +179,13 @@
     },
     "brain-dump": {
       "title": "Brain Dump",
-      "text": "Brain dump incoming :  my next message will be everything in my head, messy. Your job: sort it into projects, tasks, ideas, worries, and trash. Give every task a next action. Then tell me the ONE thing that matters most today."
+      "text": "Brain dump incoming :  my next message will be everything in my head, messy. Your job: sort it into projects, tasks, ideas, worries, and trash. Give every task a next action. Then tell me the ONE thing that matters most today.",
+      "icon": "notebook-pen"
     },
     "find-priority": {
       "title": "Find Priority",
-      "text": "Look at everything on my plate (this chat + connected tools) and tell me: what's the frog :  the one task I'm avoiding that matters most? Then make starting it as easy as possible: prep the file, the draft, or the first step yourself."
+      "text": "Look at everything on my plate (this chat + connected tools) and tell me: what's the frog :  the one task I'm avoiding that matters most? Then make starting it as easy as possible: prep the file, the draft, or the first step yourself.",
+      "icon": "list-checks"
     },
     "timebox-task": {
       "title": "Timebox Task",
@@ -187,7 +201,8 @@
     },
     "brief-mode": {
       "title": "Brief Mode",
-      "text": "Switch to TL;DR mode for the rest of this chat: max 5 lines per answer, decision first, no background unless I ask for it."
+      "text": "Switch to TL;DR mode for the rest of this chat: max 5 lines per answer, decision first, no background unless I ask for it.",
+      "icon": "clipboard-minus"
     },
     "teach-topic": {
       "title": "Teach Topic",
@@ -195,7 +210,8 @@
     },
     "save-context": {
       "title": "Save Context",
-      "text": "Save this properly: write what we just produced or decided into the project as a clean doc a future session can use. Clear name, context, decisions, open items. Confirm the path when done."
+      "text": "Save this properly: write what we just produced or decided into the project as a clean doc a future session can use. Clear name, context, decisions, open items. Confirm the path when done.",
+      "icon": "notebook-pen"
     },
     "task-template": {
       "title": "Task Template",
@@ -203,18 +219,20 @@
     },
     "daily-brief": {
       "title": "Daily Brief",
-      "text": "Prepare a morning brief from the calendar, messages and business data I supply or explicitly authorize. Show today's commitments, urgent actions, important changes and the one priority that matters most. Use [TIME ZONE]. Label inaccessible sources and do not invent missing information. Draft replies where useful, but send nothing."
+      "text": "Prepare a morning brief from the calendar, messages and business data I supply or explicitly authorize. Show today's commitments, urgent actions, important changes and the one priority that matters most. Use [TIME ZONE]. Label inaccessible sources and do not invent missing information. Draft replies where useful, but send nothing.",
+      "icon": "clipboard-list"
     },
     "save-session": {
       "title": "Close and hand off the session",
-      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project.\n\nThen:\n\nWrite a handoff.md a fresh AI assistant session could run with: goal, current state, key file paths and links, decisions with reasons, next steps in order, and known traps. Assume zero memory of this chat. Save it to the project."
+      "text": "Close this session properly:\n1) What we accomplished.\n2) Decisions made and why.\n3) Open loops, each with an owner (you or me).\n4) Anything only I can do.\nUnder 15 lines. Save anything durable to the project.\n\nThen:\n\nWrite a handoff.md a fresh AI assistant session could run with: goal, current state, key file paths and links, decisions with reasons, next steps in order, and known traps. Assume zero memory of this chat. Save it to the project.",
+      "icon": "notebook-pen"
     }
   },
   "pages": [
     {
       "id": "home",
       "title": "Home",
-      "color": "#9FAEF5",
+      "color": "#B99BFF",
       "symbol": "chat",
       "buttons": [
         {
@@ -350,7 +368,7 @@
     {
       "id": "control",
       "title": "Control",
-      "color": "#7DCEC2",
+      "color": "#B99BFF",
       "symbol": "bot-message-square",
       "buttons": [
         {
@@ -457,7 +475,7 @@
     {
       "id": "work",
       "title": "Work",
-      "color": "#E5B879",
+      "color": "#45D5CC",
       "symbol": "clipboard-list",
       "buttons": [
         {
@@ -555,7 +573,7 @@
     {
       "id": "operations",
       "title": "Operations",
-      "color": "#AE9CE1",
+      "color": "#45D5CC",
       "symbol": "network",
       "buttons": [
         {
@@ -617,7 +635,7 @@
     {
       "id": "content",
       "title": "Content",
-      "color": "#E697A5",
+      "color": "#FFD447",
       "symbol": "feather",
       "buttons": [
         {
@@ -670,7 +688,7 @@
     {
       "id": "decisions",
       "title": "Decisions",
-      "color": "#94C3DD",
+      "color": "#B99BFF",
       "symbol": "scale",
       "buttons": [
         {
@@ -732,7 +750,7 @@
     {
       "id": "focus",
       "title": "Focus",
-      "color": "#B6CC92",
+      "color": "#FF9B45",
       "symbol": "timer",
       "buttons": [
         {
@@ -785,7 +803,7 @@
     {
       "id": "context",
       "title": "Context",
-      "color": "#DDAA83",
+      "color": "#49A8FF",
       "symbol": "map",
       "buttons": [
         {

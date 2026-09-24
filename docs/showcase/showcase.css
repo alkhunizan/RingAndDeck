@@ -1,43 +1,44 @@
-:root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #231d18; background: #f7f1e8; }
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:200 900;font-display:swap;src:url("fonts/source-sans-3.woff2") format("woff2")}
+@font-face{font-family:"Spectral";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/spectral-medium.woff2") format("woff2")}
+@font-face{font-family:"Spectral";font-style:italic;font-weight:500;font-display:swap;src:url("fonts/spectral-medium-italic.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-mono.woff2") format("woff2")}
+:root { color-scheme: light; font-family: "Source Sans 3", Arial, sans-serif; color: #172033; background: #f7f9fd; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-.sheet { width: min(100%, 1920px); margin: auto; padding: 3.2vw 4.2vw 3vw; background: #f7f1e8; }
-.masthead { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #cfc2b2; padding-bottom: 1.4vw; font-size: .95vw; font-weight: 600; letter-spacing: .16vw; }
-.mark { display: flex; align-items: center; gap: .85vw; }
-.mark:before { content: ""; width: .7vw; height: .7vw; background: #8f5935; border-radius: 50%; }
-.edition { color: #6f6257; font-size: .8vw; letter-spacing: .1vw; }
-.intro { display: flex; justify-content: space-between; align-items: flex-end; padding: 2.2vw 0; gap: 3.6vw; }
-h1 { font-size: 4.2vw; line-height: 1.04; font-weight: 500; letter-spacing: -.2vw; margin: 0; max-width: 62vw; }
-h1 em { font-family: Georgia, serif; color: #8f5935; font-weight: 400; }
-.intro p { font-size: 1.2vw; line-height: 1.45; color: #6f6257; max-width: 21vw; margin: 0 0 .2vw; }
-.collection { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.7vw; }
+a { color: #4965d6; text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid #3b9cff; outline-offset: 6px; }
+.sheet, .gallery { width: min(100%, 1440px); margin: auto; padding: 40px 48px; }
+.masthead { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dce4f0; padding-bottom: 20px; font-size: 14px; font-weight: 600; letter-spacing: .16em; gap: 24px; }
+.mark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #172033; }
+.mark:before { content: ""; width: 12px; height: 12px; background: #3b9cff; border-radius: 50%; flex: 0 0 auto; }
+.edition { color: #56657a; font-size: 12px; letter-spacing: .08em; text-align: right; }
+.intro { display: flex; justify-content: space-between; align-items: flex-end; padding: 40px 0; gap: 48px; }
+h1 { font-family: "Spectral", Georgia, serif; font-size: clamp(44px, 5vw, 70px); line-height: 1.06; font-weight: 500; letter-spacing: -.02em; margin: 0; }
+h1 em { color: #4965d6; font-weight: 500; }
+.intro p { font-size: 18px; line-height: 1.55; color: #56657a; max-width: 280px; margin: 0 0 4px; }
+.collection { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .card { min-width: 0; }
-.picture { background: #0e151e; border-radius: 1.2vw; overflow: hidden; line-height: 0; border: 1px solid #293646; }
-.picture img { width: 100%; height: auto; }
-.card h2 { font-size: 1.4vw; font-weight: 600; letter-spacing: -.03vw; margin: 1.1vw 0 .4vw; }
-.card h2 span { font: .7vw "Courier New", monospace; color: #8f5935; display: inline-block; margin-right: .8vw; vertical-align: middle; }
-.card p { font-size: .95vw; line-height: 1.45; color: #6f6257; margin: 0; max-width: 24vw; }
-.bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cfc2b2; margin-top: 2.3vw; padding-top: 1.4vw; font-size: .9vw; gap: 1.5vw; }
+.picture { background: #f7f9fd; border-radius: 14px; overflow: hidden; line-height: 0; border: 1px solid #dce4f0; }
+.picture img { display: block; width: 100%; height: auto; }
+.card h2 { font-size: 24px; font-weight: 600; margin: 20px 0 8px; }
+.card h2 span { font: 12px "IBM Plex Mono", monospace; color: #4965d6; display: inline-block; margin-right: 12px; vertical-align: middle; }
+.card p { font-size: 16px; line-height: 1.5; color: #56657a; margin: 0; }
+.bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #dce4f0; margin-top: 32px; padding-top: 24px; font-size: 14px; gap: 24px; }
 .bottom strong { font-weight: 600; }
-.caption { color: #6f6257; max-width: 30vw; font-size: .75vw; text-align: right; line-height: 1.4; }
-.ring h1 { font-size: 3.8vw; }
-.ring .intro { padding: 1.7vw 0; }
-.ring .picture img { aspect-ratio: 900/850; }
-.ring .card h2 { margin-top: .85vw; }
-.ring .bottom { margin-top: 1.5vw; }
-.ring .sheet { padding-top: 2.5vw; }
+.caption { color: #56657a; max-width: 300px; font-size: 12px; text-align: right; line-height: 1.5; }
+.guide-note { margin: 0 0 32px; color: #56657a; max-width: 760px; line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 540px), 1fr)); gap: 40px 24px; }
+.grid figure { margin: 0; }
+.grid img { width: 100%; height: auto; display: block; border: 1px solid #dce4f0; border-radius: 14px; }
+.grid figcaption { color: #56657a; margin-top: 12px; font-size: 16px; }
 @media (max-width: 800px) {
-  .sheet { padding: 28px; }
-  .masthead { font-size: 13px; gap: 20px; }
-  .edition { font-size: 10px; }
-  .intro { display: block; padding: 30px 0; }
-  h1, .ring h1 { font-size: 48px; letter-spacing: -2px; max-width: none; }
-  .intro p { font-size: 18px; margin-top: 22px; max-width: none; }
-  .collection { grid-template-columns: 1fr; gap: 32px; }
-  .card h2 { font-size: 24px; }
-  .card h2 span { font-size: 12px; }
-  .card p { font-size: 16px; max-width: none; }
-  .bottom { display: block; font-size: 14px; }
-  .caption { text-align: left; margin-top: 20px; font-size: 12px; max-width: none; }
-  .ring .sheet { padding-top: 28px; }
+ .sheet, .gallery { padding: 24px 16px; }
+ .masthead { font-size: 12px; gap: 16px; }
+ .edition { font-size: 10px; max-width: 150px; }
+ .intro { display: block; padding: 32px 0; }
+ .intro p { margin-top: 24px; max-width: none; }
+ .collection { grid-template-columns: 1fr; gap: 32px; }
+ .bottom { display: block; }
+ .bottom > * { display: block; margin-top: 12px; }
+ .caption { text-align: left; max-width: none; }
 }

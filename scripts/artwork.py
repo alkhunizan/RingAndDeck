@@ -1,22 +1,31 @@
 """Shared, scalable artwork for native controls and honest layout previews."""
 
-import hashlib
+from functools import cache
 import html
+import json
 from pathlib import Path
 import re
 
 ASSETS = Path(__file__).resolve().parents[1] / "assets/icons"
-PALETTE = [
-    "#9FAEF5",
-    "#7DCEC2",
-    "#E5B879",
-    "#AE9CE1",
-    "#E697A5",
-    "#94C3DD",
-    "#B6CC92",
-    "#DDAA83",
-    "#A8B8C9",
-]
+COLOR_ASSETS = ASSETS.parent / "color-icons"
+INK = "#111827"
+WHITE = "#FFFFFF"
+TITLE_ADVANCES = {
+    character: units / 1000
+    for characters, units in (
+        ("ABCDHKNUR", 722),
+        ("EPSVXY", 667),
+        ("FLTZ", 611),
+        ("GOQ", 778),
+        ("J0123456789", 556),
+        ("M", 833),
+        ("W", 944),
+        ("I /", 278),
+        ("-", 333),
+        ("+", 584),
+    )
+    for character in characters
+}
 ALIASES = {
     "code": "blocks",
     "check": "shield-check",
@@ -39,10 +48,10 @@ RULES = [
     ("map|context|orient|prime|framework", "map"),
     ("risk|harden|safe|stress|gate", "shield-check"),
     ("review|adversarial|opposite|argue|counter", "swords"),
-    ("git|diff|rebase|branch|commit|worktree|merge", "git-compare-arrows"),
+    (r"\bgit\b|diff|rebase|branch|commit|worktree|merge", "git-compare-arrows"),
     ("write|draft|polish|voice|caption", "feather"),
     ("translate|language|tone|english", "languages"),
-    ("speak|dictat|mic", "mic"),
+    (r"speak|dictat|\bmic\b|microphone", "mic"),
     ("capture|screenshot|photo", "camera"),
     ("clipboard|copy", "copy-plus"),
     ("paste|compress|shorten|trim", "clipboard-minus"),
@@ -53,7 +62,7 @@ RULES = [
     ("team|person|people|council|employee|owner", "users-round"),
     ("plan|task|checklist|list|priorit|done", "list-checks"),
     ("build|implement|code|fix", "hammer"),
-    ("tool|automation|stack|environment|integrat|api", "network"),
+    (r"tool|automation|stack|environment|integrat|\bapi\b", "network"),
     ("pattern|interface|architecture|structure", "blocks"),
     ("learn|explain|teach|mentor|simple", "book-open"),
     ("research|question|missing", "telescope"),
@@ -61,7 +70,7 @@ RULES = [
     ("table|metric|data", "table-2"),
     ("compare|decid|choose|trade|budget|cheaper", "scale"),
     ("content|campaign|social|publish|audience", "megaphone"),
-    ("win|delivered|ship|release", "trophy"),
+    (r"\bwin\b|delivered|ship|release", "trophy"),
     ("goal|mission|finish|checkpoint", "flag"),
     ("save|memory|record|note|park", "notebook-pen"),
     ("next|start|first|step|continue", "footprints"),
@@ -69,7 +78,7 @@ RULES = [
     ("funnel|filter|waste", "funnel"),
     ("browser|tab|window|layout|zoom", "panels-top-left"),
     ("file|folder|drive", "folder-open"),
-    ("ai|prompt|assistant|chat|agent", "bot-message-square"),
+    (r"\bai\b|prompt|assistant|chat|agent", "bot-message-square"),
     ("improve|creative|idea|best", "sparkles"),
 ]
 
@@ -89,51 +98,84 @@ def valid_icon(name):
     )
 
 
-def glyph(name):
-    if name == "back":
-        return '<path d="m10 5-7 7 7 7M3 12h18"/>'
+@cache
+def _color_manifest():
+    return json.loads((COLOR_ASSETS / "manifest.json").read_text(encoding="utf-8"))
+
+
+def _icon_name(name):
     name = ALIASES.get(name, name)
-    if not re.fullmatch(r"[a-z0-9-]+", name):
+    if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name):
         raise ValueError("Invalid icon name")
-    source = (ASSETS / (name + ".svg")).read_text(encoding="utf-8")
+    return name
+
+
+def accent_for_symbol(name):
+    return _color_manifest()[_icon_name(name)]["accent"]
+
+
+@cache
+def glyph(name):
+    name = _icon_name(name)
+    source = (COLOR_ASSETS / (name + ".svg")).read_text(encoding="utf-8")
     return source[source.index(">", source.index("<svg")) + 1 : source.rindex("</svg>")]
 
 
+def title_font_size(labels):
+    """Native 72px title size, shared with the double-size preview artwork."""
+    # Arial Bold advances estimate a 132px line before native raster hinting.
+    widest = max(
+        (sum(TITLE_ADVANCES.get(character, 1) for character in label) for label in labels),
+        default=0,
+    )
+    return max(8, min(10, int(66 / widest))) if widest else 10
+
+
 def icon_svg(color, symbol, labels=None, folder=False, ring=False):
-    """A generous symbol area stays clear of the application's title overlay."""
-    key = hashlib.sha256(
-        (color + symbol + str(folder) + str(ring)).encode()
-    ).hexdigest()[:10]
-    radius = 70 if ring else 19
-    shape = (
-        f'<circle cx="72" cy="72" r="69" fill="url(#bg{key})"/>'
-        if ring
-        else f'<rect x="2" y="2" width="140" height="140" rx="{radius}" fill="url(#bg{key})"/>'
+    """Familiar full-color objects share one native and preview composition."""
+    if not re.fullmatch(r"#[0-9a-fA-F]{6}", color):
+        raise ValueError("Invalid icon color")
+    accent = accent_for_symbol(symbol)
+    opening = '<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">'
+    if ring:
+        surface = (
+            '<circle cx="72" cy="72" r="69" fill="#F5F8FF"/>'
+            f'<circle cx="72" cy="72" r="67" fill="none" stroke="{accent}" stroke-width="3"/>'
+        )
+        symbol_size = 86
+        symbol_y = 29
+        navigation = (
+            f'<circle cx="111" cy="111" r="13.5" fill="{INK}"/>'
+            f'<path d="m108 106 6 5-6 5" fill="none" stroke="{WHITE}" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>'
+            if folder else ""
+        )
+        text = ""
+    else:
+        surface = (
+            f'<rect x="2" y="2" width="140" height="140" rx="19" fill="{INK}"/>'
+            '<path d="M21 2h102a19 19 0 0 1 19 19v77H2V21A19 19 0 0 1 21 2Z" fill="#F5F8FF"/>'
+            f'<path d="M3 98h138" stroke="{accent}" stroke-width="3"/>'
+            '<rect x="2.75" y="2.75" width="138.5" height="138.5" rx="18.25" fill="none" stroke="#DDE5F1" stroke-width="1.5"/>'
+        )
+        symbol_size, symbol_y = 82, 10
+        navigation = (
+            f'<circle cx="124" cy="18" r="10.5" fill="{INK}"/>'
+            f'<path d="m122 14 4 4-4 4" fill="none" stroke="{WHITE}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+            if folder else ""
+        )
+        text = ""
+        font_size = title_font_size(labels or []) * 2
+        for index, label in enumerate(labels or []):
+            y = 134 - (len(labels) - index - 1) * font_size
+            text += (
+                f'<text x="72" y="{y}" text-anchor="middle" fill="{WHITE}" '
+                f'font-family="Arial,sans-serif" font-size="{font_size}" font-weight="700">'
+                f"{html.escape(label)}</text>"
+            )
+    symbol_x = (144 - symbol_size) / 2
+    # Stream Deck renders SVG Tiny, which drops nested <svg>; place the 32px glyph with a transform.
+    mark = (
+        f'<g transform="translate({symbol_x:g} {symbol_y:g}) scale({symbol_size / 32:g})">'
+        f"{glyph(symbol)}</g>"
     )
-    rim = (
-        '<circle cx="72" cy="72" r="67.5"/>'
-        if ring
-        else '<rect x="3.5" y="3.5" width="137" height="137" rx="18"/>'
-    )
-    text = ""
-    if labels:
-        for i, label in enumerate(labels):
-            y = 111 + i * 19 if len(labels) > 1 else 121
-            text += f'<text x="72" y="{y}" text-anchor="middle" fill="#F4F0E8" font-family="Arial,sans-serif" font-size="14" font-weight="700">{html.escape(label)}</text>'
-    motif = (
-        '<circle cx="114" cy="23" r="2"/><circle cx="121" cy="23" r="2"/><circle cx="128" cy="23" r="2"/>'
-        if folder and not ring
-        else ""
-    )
-    symbol_y, symbol_size = (39, 66) if ring else (28, 60)
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">'
-        f'<defs><linearGradient id="bg{key}" x2=".7" y2="1"><stop stop-color="#28313D"/><stop offset="1" stop-color="#131B25"/></linearGradient>'
-        f'<radialGradient id="light{key}"><stop stop-color="{color}" stop-opacity=".18"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></radialGradient></defs>'
-        f'{shape}<g fill="none" stroke="{color}" stroke-opacity=".45" stroke-width="1.2">{rim}</g>'
-        f'<circle cx="72" cy="62" r="57" fill="url(#light{key})"/>'
-        f'<path d="M57 12h30" stroke="{color}" stroke-width="3" stroke-linecap="round"/>'
-        f'<g fill="{color}" opacity=".85">{motif}</g>'
-        f'<svg x="{(144 - symbol_size) / 2}" y="{symbol_y}" width="{symbol_size}" height="{symbol_size}" viewBox="0 0 24 24" fill="none" stroke="#F4F0E8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">{glyph(symbol)}</svg>'
-        f"{text}</svg>"
-    )
+    return opening + surface + mark + navigation + text + "</svg>"

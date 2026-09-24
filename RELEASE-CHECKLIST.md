@@ -1,6 +1,21 @@
 # Public release checklist
 
-Current candidate: `v0.1.0-alpha.2`. The update changes the Sharp build dependency and release metadata, with no profile functionality changes.
+Current local candidate: `v0.1.0-alpha.3`. It adds colorful artwork and the MINI-reported Stream Deck nested-SVG fix while preserving action behavior. Public `v0.1.0-alpha.2` remains unchanged. No alpha.3 release, tag, push or marketplace submission is authorized by this checklist.
+
+## Alpha.3 local preparation
+
+- [x] Import the complete colorful handoff source, including the MINI fix, into an isolated Git branch.
+- [x] Preserve all six updated handoff package hashes in a fresh local build.
+- [x] Pass all 13 tests and deterministic output checks; parse key XML to reject descendant SVG elements.
+- [x] Independently inspect 257 Deck key images and 262 Ring icon templates, archive integrity, references and license bytes.
+- [x] Compare native behavior with immutable public main `bf98287c53d034540ba4204ba4d220ffc9dc114c`.
+- [x] Record the MINI-reported Home rendering and remaining native limits separately in [the fix note](docs/STREAM-DECK-ICON-FIX.md).
+- [x] Prepare [draft alpha.3 release notes](docs/releases/v0.1.0-alpha.3.md).
+- [ ] Complete native action, folder/Back, Ring import and physical-device acceptance.
+- [ ] Obtain Aziz's explicit approval before any publication or marketplace submission.
+- [ ] Recheck exact artifacts and existing tags/releases before an approved alpha.3 prerelease; never duplicate alpha.2.
+
+The following sections retain historical alpha.1/alpha.2 preparation evidence.
 
 ## Preparation completed
 
@@ -53,4 +68,4 @@ The checked UI steps below belong to alpha.1. Alpha.2 retains the same actions a
 - [ ] Test documented Windows/browser controls on the intended devices.
 - [ ] Record device models, vendor versions and platforms used for acceptance.
 
-Stream Deck opens but has not accepted the attempted UI input, so its import remains unverified. Publishing an alpha candidate does not complete the native or hardware acceptance checklist.
+The historical Stream Deck attempt did not establish an import. The separate alpha.3 MINI report now establishes reported Home rendering for all three fixed profiles only. Publishing an alpha candidate does not complete the native or hardware acceptance checklist.
