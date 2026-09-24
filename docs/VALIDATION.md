@@ -69,6 +69,10 @@ GitHub CI passed on Ubuntu and Windows for alpha.1 source commit `dcd4b5b4af93a6
 
 ## Alpha.2 publication verification
 
-The [v0.1.0-alpha.2 candidate](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2) is being prepared. Its final archive checks, public asset download/hash comparison and Windows/Ubuntu CI runs are pending. Prior alpha.1 results do not claim those steps are complete for alpha.2.
+The [v0.1.0-alpha.2 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2) is public. On 2026-09-24, all 9 release assets were downloaded anonymously and matched the local SHA-256 hashes. All four repository screenshots also matched byte for byte.
+
+The final package audit and redacted Gitleaks scan passed with 0 findings, and all 900 original source hashes remained unchanged. Stream Deck archives are byte-identical to alpha.1. The LP5 differences are restricted to the release version in `ProfileInfo.json` and `metadata/LoupedeckPackage.yaml`.
+
+Ubuntu and Windows CI passed for alpha.2 source commit `4786038078b9eae4e3ec35a2d2a7a5f0c06ddd15`, including the new dependency audit: [main run](https://github.com/alkhunizan/RingAndDeck/actions/runs/35961732171), [tag run](https://github.com/alkhunizan/RingAndDeck/actions/runs/35961795909).
 
 Keep the release marked as a prerelease until the outstanding native and hardware checks are recorded. Publication and CI do not establish device acceptance.

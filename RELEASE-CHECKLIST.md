@@ -27,10 +27,10 @@ Current candidate: `v0.1.0-alpha.2`. The update changes the Sharp build dependen
 - [x] Update Sharp from 0.34.5 to 0.35.4; npm audit now reports 0 vulnerabilities, down from 2 high-severity advisories.
 - [x] Confirm all six packages remain byte-identical after the dependency upgrade with the release version held constant.
 - [x] Pass all 13 unit tests after the build dependency update.
-- [ ] Verify final alpha.2 package contents, hashes and privacy scans after the version bump.
-- [ ] Publish `v0.1.0-alpha.2` as a prerelease with six packages, checksums and showcase images.
-- [ ] Download the alpha.2 assets anonymously and compare hashes.
-- [ ] Record passing Windows and Ubuntu CI runs for alpha.2.
+- [x] Verify final alpha.2 package contents, hashes and privacy scans after the version bump.
+- [x] Publish `v0.1.0-alpha.2` as a prerelease with six packages, checksums and showcase images.
+- [x] Download all 9 alpha.2 assets anonymously and compare hashes.
+- [x] Record passing Windows and Ubuntu CI runs for alpha.2, including the dependency audit.
 
 ## Prior alpha.1 publication verified
 
