@@ -23,10 +23,10 @@
 ## Prerelease publication
 
 - [x] Two complete 1279 by 722 showcase PNGs prepared with captions identifying browser captures of designed layouts, not native app screenshots.
-- [ ] Recheck the final six packages, hashes and privacy scan after the layout-mode fix.
-- [ ] Publish to [alkhunizan/RingAndDeck](https://github.com/alkhunizan/RingAndDeck) with the release marked as a prerelease.
-- [ ] Verify all six download links, source/tag, SHA256SUMS.txt and showcase images from GitHub.
-- [ ] Run GitHub CI and record its result without treating a workflow upload as a passing run.
+- [x] Recheck the final six packages, hashes and privacy scan after the layout-mode and Home-capacity fixes.
+- [x] Publish to [alkhunizan/RingAndDeck](https://github.com/alkhunizan/RingAndDeck) with the release marked as a prerelease.
+- [x] Download all 9 release assets anonymously and compare hashes; verify all four repository screenshots byte for byte.
+- [x] Verify passing GitHub CI on Ubuntu and Windows for both main and the release tag; links are in the validation record.
 
 ## Native and hardware acceptance still required
 

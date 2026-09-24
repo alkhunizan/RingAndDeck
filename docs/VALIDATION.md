@@ -53,4 +53,8 @@ Work Ring and Flow Ring UI imports, deeper nested runtime navigation, text inser
 
 The two showcase PNGs are browser captures of designed pages using generated layout guides. They are not native app screenshots or evidence of a successful import. Native fonts, placement and geometry may differ.
 
-Publication of [RingAndDeck](https://github.com/alkhunizan/RingAndDeck) and the `v0.1.0-alpha.1` prerelease is authorized. Upload and remote CI verification are still pending in this report. Keep the release marked as a prerelease until the outstanding native and hardware checks are recorded; publication alone does not satisfy them.
+[RingAndDeck](https://github.com/alkhunizan/RingAndDeck) and the [v0.1.0-alpha.1 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.1) are public. On 2026-09-24, all 9 release assets were downloaded anonymously and matched the local SHA-256 hashes: six packages, the checksum file and two showcase PNGs. All four repository screenshot files also matched byte for byte.
+
+GitHub CI passed on Ubuntu and Windows for release source commit `dcd4b5b4af93a6e5917d69ecce92ff82522f7f06`: [main run](https://github.com/alkhunizan/RingAndDeck/actions/runs/35961144961), [tag run](https://github.com/alkhunizan/RingAndDeck/actions/runs/35961173531). The exact public source and unpacked packages passed the final redacted Gitleaks scan with 0 findings; all 900 original source hashes remained unchanged.
+
+Keep the release marked as a prerelease until the outstanding native and hardware checks are recorded. Publication and CI do not establish device acceptance.
