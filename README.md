@@ -1,29 +1,32 @@
 # Ring & Deck
 
+[![Validate profiles](https://github.com/alkhunizan/RingAndDeck/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/alkhunizan/RingAndDeck/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Reusable prompts and everyday controls for Logitech Actions Ring and Elgato Stream Deck.**
 
 Stop hunting for the same prompt or switching menus for a routine action. Ring & Deck puts coding, writing, research and Windows controls into six editable profiles. Choose a workflow, open its folders and send a useful starting prompt to the app you already use.
 
-Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. Full-color familiar objects, consistent action meanings across devices and clear folder cues make the controls easier to recognize. [Explore every layout](docs/gallery.html).
+Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. Full-color familiar objects, consistent action meanings across devices and clear folder cues make the controls easier to recognize. Explore the illustrated profile guides below; the [complete HTML gallery](docs/gallery.html) can also be opened locally after cloning or downloading the source.
 
-**Local visual candidate: `v0.1.0-alpha.3`. Not published.** This candidate refreshes the artwork in all six native packages and their generated layout guides. Prompt text, action labels, navigation, keyboard shortcuts and manual submission behavior are preserved. The MINI testing agent reports that the three fixed Stream Deck Home layouts render in its native editor; action activation, navigation, physical controls and alpha.3 Ring imports remain unverified. [Icon fix and evidence](docs/STREAM-DECK-ICON-FIX.md). [Visual design and review](docs/DESIGN-POLISH.md).
+**Windows alpha prerelease: `v0.1.0-alpha.3`.** This candidate refreshes the artwork in all six native packages and their generated layout guides. Prompt text, action labels, navigation, keyboard shortcuts and manual submission behavior are preserved. The MINI testing agent reports that the three fixed Stream Deck Home layouts render in its native editor; action activation, navigation, physical controls and alpha.3 Ring imports remain unverified. [Icon fix and evidence](docs/STREAM-DECK-ICON-FIX.md). [Visual design and review](docs/DESIGN-POLISH.md).
 
-The published download below remains **alpha.2**, with the previous artwork. Alpha.3 packages are built locally into `dist/`; they are not available at the alpha.2 download links.
+The downloads below contain the colorful alpha.3 artwork and the Stream Deck icon-rendering fix. Earlier alpha.2 downloads remain available in the release history. Native action and physical-device acceptance remain incomplete; this is a prerelease.
 
 ## Download an alpha candidate
 
-Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.2). Alpha.2 publication and uploaded hashes were verified; see the validation record. Its artwork predates this local candidate.
+Get packages and release details from the [GitHub alpha prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/v0.1.0-alpha.3). Choose one profile below, or [download all six profiles in one ZIP](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/RingAndDeck-0.1.0-alpha.3-profiles.zip).
 
 | Device | Download (alpha candidate) |
 | --- | --- |
-| Actions Ring | [Code Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/code-ring-0.1.0-alpha.2.lp5) |
-| Actions Ring | [Work Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/work-ring-0.1.0-alpha.2.lp5) |
-| Actions Ring | [Flow Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/flow-ring-0.1.0-alpha.2.lp5) |
-| 15-key Stream Deck | [Code Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/code-workflow-0.1.0-alpha.2.streamDeckProfile) |
-| 15-key Stream Deck | [AI Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/ai-workflow-0.1.0-alpha.2.streamDeckProfile) |
-| 15-key Stream Deck | [Browser Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/browser-workflow-0.1.0-alpha.2.streamDeckProfile) |
+| Actions Ring | [Code Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/code-ring-0.1.0-alpha.3.lp5) |
+| Actions Ring | [Work Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/work-ring-0.1.0-alpha.3.lp5) |
+| Actions Ring | [Flow Ring](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/flow-ring-0.1.0-alpha.3.lp5) |
+| 15-key Stream Deck | [Code Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/code-workflow-0.1.0-alpha.3.streamDeckProfile) |
+| 15-key Stream Deck | [AI Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/ai-workflow-0.1.0-alpha.3.streamDeckProfile) |
+| 15-key Stream Deck | [Browser Workflow](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/browser-workflow-0.1.0-alpha.3.streamDeckProfile) |
 
-Verify downloads against [SHA256SUMS.txt](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.2/SHA256SUMS.txt). Back up your current profiles and import candidates separately. Start with a blank scratch document and the [setup checklist](docs/SETUP.md).
+Verify downloads against [SHA256SUMS.txt](https://github.com/alkhunizan/RingAndDeck/releases/download/v0.1.0-alpha.3/SHA256SUMS.txt). Back up your current profiles and import candidates separately. Start with a blank scratch document and the [setup checklist](docs/SETUP.md).
 
 ## Choose a workflow
 
@@ -46,7 +49,7 @@ Actions Ring Home supports 8 controls; folders support up to 9. Code Ring and Wo
 
 ![Designed showcase of the Actions Ring workflow layouts](docs/screenshots/actions-ring-showcase.png)
 
-These generated layout previews show the unpublished alpha.3 artwork in designed showcases built from the generated layout guides. They are not native Stream Deck or Logi Options+ screenshots, and they do not demonstrate a successful import. Native fonts, placement and ring geometry may differ. [Explore the source layouts](docs/gallery.html).
+These generated layout previews show the alpha.3 artwork in designed showcases built from the generated layout guides. They are not native Stream Deck or Logi Options+ screenshots, and they do not demonstrate a successful import. Native fonts, placement and ring geometry may differ. [Explore the source layouts](docs/gallery.html).
 
 ## Native Code Ring checks
 
@@ -120,7 +123,7 @@ Edit the JSON catalogs and rebuild. The builder produces packages, full button g
 
 The build rejects stale generated files after a version, page or profile is removed. Review and archive only the listed files outside the repository before rebuilding. It never deletes your files.
 
-GitHub CI and download hashes were verified for published alpha.2 on Windows and Ubuntu; the runs are recorded in [validation](docs/VALIDATION.md). The colorful alpha.3 candidate is local: 13 native tests, deterministic output, archive integrity, action comparisons and all 55 rendered guides pass validation. Native action and physical-device acceptance remain open; the separate MINI Home-rendering report is recorded in the icon-fix note. The workflow checks builds and uploads candidate artifacts; it does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
+GitHub CI and download hashes were verified for published alpha.2 on Windows and Ubuntu; the runs are recorded in [validation](docs/VALIDATION.md). The colorful alpha.3 packages pass 13 automated tests, deterministic output checks, archive integrity checks and action comparisons; all 55 rendered guides have been reviewed. See the [current CI runs](https://github.com/alkhunizan/RingAndDeck/actions/workflows/validate.yml) and [release history](CHANGELOG.md). Native action and physical-device acceptance remain open; the separate MINI Home-rendering report is recorded in the icon-fix note. The workflow checks builds and uploads candidate artifacts; it does not publish a release. [Release checklist](RELEASE-CHECKLIST.md) | [Known limits](KNOWN-ISSUES.md) | [Format research](docs/research/profile-format.md).
 
 ## License
 

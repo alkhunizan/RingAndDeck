@@ -1,6 +1,6 @@
 # Public release checklist
 
-Current local candidate: `v0.1.0-alpha.3`. It adds colorful artwork and the MINI-reported Stream Deck nested-SVG fix while preserving action behavior. Public `v0.1.0-alpha.2` remains unchanged. No alpha.3 release, tag, push or marketplace submission is authorized by this checklist.
+Current alpha prerelease: `v0.1.0-alpha.3`. It adds colorful artwork and the MINI-reported Stream Deck nested-SVG fix while preserving action behavior. Public `v0.1.0-alpha.2` remains unchanged. The owner authorized GitHub alpha.3 publication on 2026-09-24. Marketplace submissions remain separate.
 
 ## Alpha.3 local preparation
 
@@ -12,8 +12,8 @@ Current local candidate: `v0.1.0-alpha.3`. It adds colorful artwork and the MINI
 - [x] Record the MINI-reported Home rendering and remaining native limits separately in [the fix note](docs/STREAM-DECK-ICON-FIX.md).
 - [x] Prepare [draft alpha.3 release notes](docs/releases/v0.1.0-alpha.3.md).
 - [ ] Complete native action, folder/Back, Ring import and physical-device acceptance.
-- [ ] Obtain Aziz's explicit approval before any publication or marketplace submission.
-- [ ] Recheck exact artifacts and existing tags/releases before an approved alpha.3 prerelease; never duplicate alpha.2.
+- [x] Obtain the owner's explicit approval for GitHub alpha.3 publication. Marketplace submissions remain separate.
+- [x] Rebuild and match all six prepared alpha.3 package checksums before publication; preserve alpha.2.
 
 The following sections retain historical alpha.1/alpha.2 preparation evidence.
 

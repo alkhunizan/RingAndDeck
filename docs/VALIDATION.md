@@ -1,8 +1,8 @@
 # Validation status
 
-## Local alpha.3 visual candidate
+## Alpha.3 validation
 
-The 2026-09-24 colorful revision is local and unpublished. It replaces the earlier warm artwork with full-color Microsoft Fluent Emoji Flat illustrations on pale icon fields, with navy Stream Deck title strips and semantic action accents. The native labels retain their shared 8–10 sizing rule. New icon artwork and generated guides must not inherit the alpha.1/alpha.2 native UI acceptance claims below. Alpha.2 remains the published release.
+The 2026-09-24 colorful revision is the alpha.3 prerelease candidate. It replaces the earlier warm artwork with full-color Microsoft Fluent Emoji Flat illustrations on pale icon fields, with navy Stream Deck title strips and semantic action accents. The native labels retain their shared 8–10 sizing rule. New icon artwork and generated guides must not inherit the alpha.1/alpha.2 native UI acceptance claims below. Alpha.2 remains available unchanged in the release history.
 
 All 67 source SVGs have verified manifest hashes and 32 by 32 viewBoxes; acquisition checks found no scripts, external references, gradients, element IDs or embedded images. The original Microsoft MIT license and pinned provenance are included. Fresh native validation passes all 13 tests, deterministic build and package comparisons. All 262 Ring images and 257 Deck keys pass geometry and title checks; all 55 guides were visually reviewed. Companion website format, lint, typecheck and all 1,269 tests pass; the production build and responsive browser check are recorded in the final handoff. See [the visual review record](DESIGN-POLISH.md).
 
@@ -14,7 +14,7 @@ Anonymous verification on 2026-09-24 reconfirmed all nine public alpha.2 asset d
 
 ## Published alpha.2 evidence
 
-Published alpha: `0.1.0-alpha.2`, prepared 2026-09-24. This updated the build dependency without changing profile functionality. The alpha.1 and alpha.2 publication, build and native UI evidence below is historical; it does not validate the local alpha.3 artwork.
+Published alpha: `0.1.0-alpha.2`, prepared 2026-09-24. This updated the build dependency without changing profile functionality. The alpha.1 and alpha.2 publication, build and native UI evidence below is historical; it does not validate the alpha.3 artwork.
 
 ## Build dependency update
 
@@ -28,7 +28,7 @@ With the release version held constant, all six packages remained byte-identical
 | --- | --- | --- |
 | Three Actions Ring profiles | Code Ring: 81 prompts; Work Ring: 81 prompts; Flow Ring: 65 prompts + 7 standard shortcuts | Prepared |
 | Three Stream Deck profiles | Code Workflow: 83 prompts; AI Workflow: 51 prompts; Browser Workflow: 46 prompts + 14 links + 3 shortcuts | Prepared |
-| Visual assets in alpha.2 | Shared graphite theme, category accents, action-specific Lucide symbols, native SVG/PNG assets and 55 generated layout guides | Historical; replaced by the local alpha.3 candidate described above |
+| Visual assets in alpha.2 | Shared graphite theme, category accents, action-specific Lucide symbols, native SVG/PNG assets and 55 generated layout guides | Historical; replaced by the alpha.3 candidate described above |
 | Personal information removed | Catalog review, source identity comparison and exact source/unpacked-package scans | Passed within stated scanner limits |
 | Originals preserved | SHA-256 comparison of 900 original source files across the six selected profiles | Unchanged |
 | Rebuildable public source | Six editable catalogs, local assets, pinned Sharp lockfile, builders, tests, docs and licenses | Prepared |
