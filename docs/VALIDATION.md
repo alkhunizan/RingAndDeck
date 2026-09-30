@@ -6,7 +6,7 @@ The [alpha.3 prerelease](https://github.com/alkhunizan/RingAndDeck/releases/tag/
 
 The annotated release tag resolves to the exact prepared source commit `aefcf302157d85143e442008180e1583af11e131`. [Release-tag CI](https://github.com/alkhunizan/RingAndDeck/actions/runs/35974205381) passed on Windows and Ubuntu, including the dependency audit, 13 tests, fresh build and generated-file checks. Subsequent commits update publication documentation and contribution templates without changing the released profile bytes. The tag's preparation-time documentation records its original local-candidate status; the current README and this page record publication.
 
-Native actions, folder/Back navigation, physical controls and alpha.3 Ring imports remain unverified. Marketplace listings and the companion website are separate from this GitHub publication.
+Saved local records confirm all three alpha.3 Ring imports and sampled folder/editor Back checks, as documented below. Runtime actions, complete runtime navigation and physical controls remain unverified. Marketplace listings and the companion website are separate from this GitHub publication. The [Elgato collection](https://marketplace.elgato.com/product/ai-productivity-workflows-78656753-93f5-4c48-a0c6-37a6c2e40d1d) was published on 2026-09-30; [current marketplace status](MARKETPLACE-STATUS.md) distinguishes that publication from hardware acceptance and the unsubmitted Logitech candidate.
 ## Alpha.3 validation
 
 The 2026-09-24 colorful revision is the alpha.3 prerelease candidate. It replaces the earlier warm artwork with full-color Microsoft Fluent Emoji Flat illustrations on pale icon fields, with navy Stream Deck title strips and semantic action accents. The native labels retain their shared 8–10 sizing rule. New icon artwork and generated guides must not inherit the alpha.1/alpha.2 native UI acceptance claims below. Alpha.2 remains available unchanged in the release history.
@@ -74,9 +74,15 @@ The final alpha.1 Code Ring UI import succeeded. Home displays 8 populated icons
 
 *Native folder rendering from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. Deeper nested runtime navigation remains unverified.*
 
+## Native alpha.3 editor evidence
+
+The saved preparation-PC records from 2026-09-24 were reviewed on 2026-09-30. Code Ring, Work Ring and Flow Ring alpha.3 imported through the native Actions Ring editor. Installed metadata reports version `0.1.0-alpha.3` for all three; all 227 installed prompt definitions matched the packages. Home displays eight populated controls for each profile. Sampled folders and editor Back checks passed. These are recorded editor results, not a fresh hardware test or physical runtime acceptance.
+
+[Native screenshots, environment and remaining tests](NATIVE-ALPHA3.md). Private installed profile identifiers, machine paths and backups are excluded from the public evidence note. No released profile package bytes changed.
+
 ## Native acceptance still open
 
-Work Ring and Flow Ring UI imports, deeper nested runtime navigation, text insertion and physical-control checks remain unverified. The historical alpha.1/alpha.2 Stream Deck attempt below did not establish a native import; the later alpha.3 MINI Home-rendering report is recorded separately above. Original profiles have been backed up. Follow the [setup checklist](SETUP.md) and keep candidate imports separate from working profiles.
+Deeper nested runtime navigation, text insertion, focus return and physical-control checks remain unverified. Alpha.3 Ring UI imports are recorded above. The historical alpha.1/alpha.2 Stream Deck attempt did not establish a native import; the later alpha.3 MINI Home-rendering report is recorded separately above. Original profiles have been backed up. Follow the [setup checklist](SETUP.md) and keep candidate imports separate from working profiles.
 
 ## Showcase provenance
 

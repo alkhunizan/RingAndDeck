@@ -9,9 +9,11 @@ Stop hunting for the same prompt or switching menus for a routine action. Ring &
 
 Three profiles for **Logitech Actions Ring**, and three for **Elgato Stream Deck**. Full-color familiar objects, consistent action meanings across devices and clear folder cues make the controls easier to recognize. Explore the illustrated profile guides below; the [complete HTML gallery](docs/gallery.html) can also be opened locally after cloning or downloading the source.
 
-**Windows alpha prerelease: `v0.1.0-alpha.3`.** This candidate refreshes the artwork in all six native packages and their generated layout guides. Prompt text, action labels, navigation, keyboard shortcuts and manual submission behavior are preserved. The MINI testing agent reports that the three fixed Stream Deck Home layouts render in its native editor; action activation, navigation, physical controls and alpha.3 Ring imports remain unverified. [Icon fix and evidence](docs/STREAM-DECK-ICON-FIX.md). [Visual design and review](docs/DESIGN-POLISH.md).
+**Windows alpha prerelease: `v0.1.0-alpha.3`.** This release refreshes the artwork in all six native packages and their generated layout guides. Prompt text, action labels, navigation, keyboard shortcuts and manual submission behavior are preserved. The MINI testing agent reports that the three fixed Stream Deck Home layouts render in its native editor. Saved local records also confirm all three alpha.3 Ring imports and sampled editor navigation; runtime action activation and physical controls remain unverified. [Ring editor evidence](docs/NATIVE-ALPHA3.md). [Icon fix and evidence](docs/STREAM-DECK-ICON-FIX.md). [Visual design and review](docs/DESIGN-POLISH.md).
 
 The downloads below contain the colorful alpha.3 artwork and the Stream Deck icon-rendering fix. Earlier alpha.2 downloads remain available in the release history. Native action and physical-device acceptance remain incomplete; this is a prerelease.
+
+**Live and free on Elgato Marketplace:** [AI Productivity Workflows](https://marketplace.elgato.com/product/ai-productivity-workflows-78656753-93f5-4c48-a0c6-37a6c2e40d1d), containing Code Workflow, AI Workflow and Browser Workflow for Windows and the 15-key Stream Deck. [Creator profile](https://marketplace.elgato.com/@azizme). Marketplace approval does not establish complete hardware validation or partner certification. [Marketplace status and Logitech route](docs/MARKETPLACE-STATUS.md).
 
 ## Download an alpha candidate
 
@@ -51,7 +53,11 @@ Actions Ring Home supports 8 controls; folders support up to 9. Code Ring and Wo
 
 These generated layout previews show the alpha.3 artwork in designed showcases built from the generated layout guides. They are not native Stream Deck or Logi Options+ screenshots, and they do not demonstrate a successful import. Native fonts, placement and ring geometry may differ. [Explore the source layouts](docs/gallery.html).
 
-## Native Code Ring checks
+## Native Ring editor checks
+
+Saved records from 24 September 2026 confirm native-editor imports of Code Ring, Work Ring and Flow Ring alpha.3, matching versions and prompt definitions, eight populated Home controls and sampled folder/editor Back checks. [All three native Home screenshots and exact limitations](docs/NATIVE-ALPHA3.md). These checks do not establish prompt execution or physical operation.
+
+### Historical alpha.1 checks
 
 ![Code Ring imported into Logi Options+ with eight populated Home controls](docs/screenshots/code-ring-native-home.jpg)
 
@@ -59,7 +65,7 @@ These generated layout previews show the alpha.3 artwork in designed showcases b
 
 ![Plan and Scope folder rendered in Logi Options+](docs/screenshots/code-ring-native-folder.jpg)
 
-*Actual Plan & Scope folder capture from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. It verifies that folder's rendering; deeper nested navigation, text pasting and hardware behavior remain unverified. Work Ring and Flow Ring imports still need UI acceptance. Alpha.3 Stream Deck Home rendering has separate reported MINI evidence; navigation and action activation remain open.*
+*Actual Plan & Scope folder capture from the build preceding the final alpha.1 import, with the same 9 actions retained in alpha.2. It verifies that folder's rendering; deeper runtime navigation, text pasting and hardware behavior remain unverified. The later alpha.3 Ring editor imports are recorded above. Alpha.3 Stream Deck Home rendering has separate reported MINI evidence; runtime navigation and action activation remain open.*
 
 ## How it works
 
