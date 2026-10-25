@@ -9,6 +9,6 @@
     "check": "python -m unittest discover -s tests -v && python scripts/build.py --check"
   },
   "dependencies": {
-    "sharp": "0.35.4"
+    "sharp": "0.35.5"
   }
 }
